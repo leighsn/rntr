@@ -13,6 +13,7 @@ class App extends Component {
         <p>Hi</p>
         <LinkComponent />
         {this.props.children}
+    
       </div>
     );
   }

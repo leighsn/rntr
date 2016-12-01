@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, hashHistory, IndexRoute } from 'react-router'
-import { SignUpComponent } from './components/SignUpComponent'
+import SignUpComponent from './components/SignUpComponent'
 
 // import components
 import App from './components/App'

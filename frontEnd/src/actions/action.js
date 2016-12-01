@@ -9,7 +9,11 @@ const signUp = function(email, password){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
+      if(!!data.error){
+        alert(data.error)
+      } else {
       dispatch({type: 'NEW_USER', payload: data})
+    }
     })
   }
 }
@@ -23,7 +27,11 @@ const logIn = function(email, password){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
+      if(!!data.error){
+      alert(data.error)
+    } else {
       dispatch({type: 'LOG_IN', payload: data})
+    }
     })
   }
 }

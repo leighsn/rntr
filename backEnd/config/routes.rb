@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :distances, only: [:create]
   resources :destinations
   resources :users
   resources :sessions

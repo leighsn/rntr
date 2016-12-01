@@ -6,7 +6,7 @@ const LinkComponent = () => {
     <div>
       <Link to="/show-test">Home</Link>
       <Link to="/sign-up">Sign Up</Link>
-      <Link to="/map">Map</Link>
+      <Link to="/distance">Distance</Link>
       <Link to="/log-in">Log In</Link>
 
     </div>

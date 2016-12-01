@@ -20,13 +20,13 @@ const signUp = function(email, password){
 const getDistance = function(origin, destination){
   return function(dispatch){
     $.ajax({
-      url: 'http://localhost:3000/destinations',
+      url: 'http://localhost:3000/distances',
       type: 'POST',
-      data: JSON.stringify({auth: {email: email, password: password}}),
+      data: JSON.stringify({route: {origin: origin, destination: destination}}),
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-      dispatch({type: 'NEW_USER', payload: data})
+      dispatch({type: 'GET_DISTANCE', payload: data})
     })
   }
 }

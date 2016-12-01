@@ -1,19 +1,20 @@
 import React from 'react'
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
+import { getDistance } from '../actions/action.js'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 
-const MapComponent = (props) => {
+
+const DistanceComponent = (props) => {
 
   function handleSubmit(event){
     event.preventDefault()
-    
+
     // props.signUp(event.target.children[1].value, event.target.children[3].value)
 
-    props.geoLocate(event.target.children[1].value, event.target.children[3].value)
+    props.getDistance(event.target.children[1].value, event.target.children[4].value)
   }
 
-  
 
 
   return (
@@ -35,5 +36,9 @@ const MapComponent = (props) => {
   )
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({getDistance: getDistance},dispatch)
+}
 
-module.exports = MapComponent
+export default connect(null, mapDispatchToProps)(DistanceComponent)
+// module.exports = MapComponent

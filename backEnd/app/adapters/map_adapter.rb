@@ -1,0 +1,2 @@
+class MapAdapter
+end

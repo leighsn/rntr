@@ -16,13 +16,13 @@ const SignUpComponent = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         <label for='email'>Email:</label>
-        <input type='email' id='email' />
+        <input type='email' id='email' /><br/>
 
         <label for='password'>Password:</label>
-        <input type='password' id='password' />
+        <input type='password' id='password' /><br/>
 
         <label for='confirm'>Confirm Password:</label>
-        <input type='password' id='confirm' />
+        <input type='password' id='confirm' /><br/>
 
         <input type='submit' />
       </form>

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
      render json: {jwt: jwt}
 
    else
-     render json: {error: 'user not found'}
+     render json: {error: 'email is not unique'}
    end
 
  end

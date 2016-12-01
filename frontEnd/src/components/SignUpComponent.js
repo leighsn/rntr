@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { signUp } from '../../actions/action.js'
+import { signUp } from '../actions/action.js'
 import { bindActionCreators } from 'redux';
 
 
@@ -14,7 +14,7 @@ const SignUpComponent = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit.bind(this)}>
         <label for='email'>Email:</label>
         <input type='email' id='email' /><br/>
 

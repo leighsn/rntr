@@ -3,7 +3,7 @@ var $ = require("jquery");
 const signUp = function(email, password){
   return function(dispatch){
     $.ajax({
-      url: 'https://localhost:3000/users',
+      url: 'http://localhost:3000/users',
       type: 'POST',
       data: JSON.stringify({auth: {email: email, password: password}}),
       contentType:"application/json; charset=utf-8",
@@ -13,5 +13,4 @@ const signUp = function(email, password){
     })
   }
 }
-
-module.exports = signUp
+export {signUp}

@@ -67,3 +67,11 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+Started POST "/users" for ::1 at 2016-12-01 14:27:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  has_many: :destinations
+           ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_many: :destinations
+
 
  def show
     user = User.find_by(email: params[:email])

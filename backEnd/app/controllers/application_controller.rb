@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_user
+  
 
   def authenticate_user
     render json:{error: "Unauthorized User"} unless signed_in?

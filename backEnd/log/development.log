@@ -75,3 +75,94 @@ SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/users_c
            ^):
   
 app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+Started POST "/users" for ::1 at 2016-12-01 14:29:06 -0500
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  has_many: :destinations
+           ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+Started POST "/users" for ::1 at 2016-12-01 14:29:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"auth"=>{"email"=>"hello@hi"}, "user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for ::1 at 2016-12-01 14:29:52 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"auth"=>{"email"=>"hello@hi"}, "user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-01 14:30:03 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"auth"=>{"email"=>"hello@hi"}, "user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-01 14:31:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"auth"=>{"email"=>"hello@hi"}, "user"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:29:in `user_params'
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2016-12-01 14:32:30 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"hi@hello"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hi@hello"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 17.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-01 14:33:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"goodbye@bye"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "goodbye@bye"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2016-12-01 14:35:56 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"aaa@bbb", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aaa@bbb"], ["LIMIT", 1]]
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "aaa@bbb"], ["password_digest", "$2a$10$7hp5PGrqwBly9zOvczTh8.bWPEoQfOk882cRn0wibEe.GIhAcrflW"], ["created_at", 2016-12-01 19:35:56 UTC], ["updated_at", 2016-12-01 19:35:56 UTC]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 7.6ms)
+
+
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: syntax error, unexpected ',', expecting ')'
+   JWT.encode (payload, Rails.application.secrets[:s...
+                       ^
+/Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: dynamic constant assignment
+/Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: syntax error, unexpected ')', expecting '='
+/Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+lib/auth.rb:5: syntax error, unexpected ',', expecting ')'
+lib/auth.rb:5: dynamic constant assignment
+lib/auth.rb:5: syntax error, unexpected ')', expecting '='
+lib/auth.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2016-12-01 14:39:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"zaa@bbb", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (5.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zaa@bbb"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "zaa@bbb"], ["password_digest", "$2a$10$v2wlheI22UMPwhzUiVw4RuSg7EuDRRdt0JyXL1jGt6PQcfaIx5ALq"], ["created_at", 2016-12-01 19:39:19 UTC], ["updated_at", 2016-12-01 19:39:19 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 0.2ms | ActiveRecord: 13.6ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m

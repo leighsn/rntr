@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user
+  # skip_before_action :authenticate_user
   def create
     user = User.find_by(email: auth_params[:email])
 
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
    private
     def auth_params
-      params.require(:auth).permit(:email, :password)
+      params.require(:user).permit(:email, :password)
     end
 
 end

@@ -1,11 +1,10 @@
 require 'byebug'
-require 'httparty'
-require_relative '../adapters/distance_adapter.rb'
+require_relative '../adapters/yelp_adapter.rb'
 
 class YelpController < ApplicationController
 
   def create
-     amenities = YelpAdapter.search(search: params)
+     amenities = YelpAdapter.search(search: params[:amenities][:search], location: params[:amenities][:zipcode])
      render json: {amenities: amenities}
   end
 

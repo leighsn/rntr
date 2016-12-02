@@ -17,7 +17,6 @@ const DistanceComponent = (props) => {
   }
 
 
-
   return (
     <div>
       <br/>

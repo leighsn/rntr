@@ -554,6 +554,7 @@ Processing by DistancesController#create as HTML
 Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:16 -0500
   [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by DistancesController#create as HTML
@@ -735,5 +736,118 @@ Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:27:55 -0500
 Processing by DistancesController#create as HTML
   Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
 Completed 200 OK in 452ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+=======
+Started POST "/distances" for ::1 at 2016-12-02 09:40:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave, Brooklyn", "destination"=>"11 Broadway, New York"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave, Brooklyn", "destination"=>"11 Broadway, New York"}}}
+Completed 200 OK in 893ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]?{%22address%22:%22[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]%22}" for ::1 at 2016-12-02 15:09:03 -0500
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:10:06 -0500
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:11:18 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn NY 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+NY+11226", "crime"=>{}}
+Completed 500 Internal Server Error in 70913ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/adapters/crime_adapter.rb:19:in `toLatLong'
+app/adapters/crime_adapter.rb:6:in `get_crime'
+app/controllers/crimes_controller.rb:7:in `show'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:12:53 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn NY 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+NY+11226", "crime"=>{}}
+Completed 200 OK in 38008ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:07 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 918ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:11 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 424ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:12 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 303ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:12 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 300ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:13 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 315ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:34 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 356ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:34:50 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1180ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:36:10 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1432ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-02 15:39:41 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}}}
+Completed 200 OK in 402ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-02 15:40:22 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}}}
+Completed 200 OK in 144ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:43:19 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 449ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:45:29 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 788ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:46:45 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1234ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+>>>>>>> master
 
 

@@ -14,9 +14,6 @@ const signUp = function(email, password){
   }
 }
 
-
-
-
 const getDistance = function(origin, destination){
   return function(dispatch){
     $.ajax({
@@ -30,8 +27,6 @@ const getDistance = function(origin, destination){
     })
   }
 }
-
-
 
 const logIn = function(email, password){
   return function(dispatch){
@@ -47,4 +42,19 @@ const logIn = function(email, password){
   }
 }
 
-export {signUp, logIn, getDistance}
+const getSchools = function(zipcode, grade){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/schools',
+      type: 'POST',
+      data: JSON.stringify({school: {zipcode: zipcode, grade: grade}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      console.log(data)
+      dispatch({type: 'GET_SCHOOLS', payload: data})
+    })
+  }
+}
+
+export {signUp, logIn, getDistance, getSchools}

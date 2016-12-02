@@ -4,6 +4,8 @@ function reducer(state={}, action) {
       return action.payload
     case 'GET_DISTANCE':
       return action.payload
+    case 'GET_SCHOOLS':
+      return action.payload
     case 'LOG_IN':
       console.log(action.payload)
       return action.payload

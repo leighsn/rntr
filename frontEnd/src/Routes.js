@@ -12,6 +12,7 @@ import App from './components/App'
 import TestComponent from './components/TestComponent'
 
 const Routes = (
+
   <Route path="/" component={App} >
     <Route path="/show-test" component={TestComponent}/>
     <Route path="/sign-up" component={SignUpComponent}/>

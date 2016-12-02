@@ -10,10 +10,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Hi</p>
         <LinkComponent />
         {this.props.children}
-    
       </div>
     );
   }

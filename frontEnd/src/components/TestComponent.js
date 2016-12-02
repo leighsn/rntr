@@ -1,9 +1,18 @@
 import React from 'react'
 
 export default () => {
+debugger
+  function handleClick(event){
+    event.preventDefault()
+    let token = localStorage.getItem('token')
+    alert(token)
+
+  }
+
   return (
+
     <div>
-      <p>This is my test component! It should only display after clicking the link</p>
+      <button onClick={handleClick}>Show Token</button>
     </div>
   )
 }

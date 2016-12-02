@@ -1,4 +1,5 @@
 var $ = require("jquery");
+import { browserHistory } from 'react-router'
 
 const signUp = function(email, password){
   return function(dispatch){
@@ -9,7 +10,13 @@ const signUp = function(email, password){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-      dispatch({type: 'NEW_USER', payload: data})
+      if(!!data.error){
+        alert(data.error)
+      } else {
+      browserHistory.push('/show-test')
+      localStorage.setItem('token', data.jwt)
+      dispatch({type: 'LOG_IN', payload: data})
+    }
     })
   }
 }
@@ -42,7 +49,13 @@ const logIn = function(email, password){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
+      if(!!data.error){
+      alert(data.error)
+    } else {
+      browserHistory.push('/show-test')
+      localStorage.setItem('token', data.jwt)
       dispatch({type: 'LOG_IN', payload: data})
+    }
     })
   }
 }

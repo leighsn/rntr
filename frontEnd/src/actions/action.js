@@ -60,4 +60,18 @@ const logIn = function(email, password){
   }
 }
 
-export {signUp, logIn, getDistance}
+const getAmenities = function(search, location){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/amenities',
+      type: 'POST',
+      data: JSON.stringify({amenities: {search: search, location: location}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_AMENITIES', payload: data})
+    })
+  }
+}
+
+export {signUp, logIn, getDistance, getAmenities}

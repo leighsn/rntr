@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default () => {
-
+debugger
   function handleClick(event){
     event.preventDefault()
     let token = localStorage.getItem('token')
@@ -10,6 +10,7 @@ export default () => {
   }
 
   return (
+
     <div>
       <button onClick={handleClick}>Show Token</button>
     </div>

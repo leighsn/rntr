@@ -3,6 +3,7 @@ import { Route, hashHistory, IndexRoute } from 'react-router'
 import SignUpComponent from './components/SignUpComponent'
 
 import DistanceComponent from './components/DistanceComponent'
+import AmenitiesComponent from './components/AmenitiesComponent'
 
 import LogInComponent from './components/LogInComponent'
 
@@ -17,6 +18,7 @@ const Routes = (
     <Route path="/show-test" component={TestComponent}/>
     <Route path="/sign-up" component={SignUpComponent}/>
     <Route path="/distance" component={DistanceComponent}/>
+    <Route path="/amenities" component={AmenitiesComponent}/>
     <Route path="/log-in" component={LogInComponent}/>
   </Route>
 )

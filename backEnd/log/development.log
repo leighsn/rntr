@@ -554,3 +554,177 @@ Processing by DistancesController#create as HTML
 Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/amenities" for ::1 at 2016-12-02 15:03:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/amenities" for ::1 at 2016-12-02 15:03:08 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/amenities" for ::1 at 2016-12-02 15:04:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/amenities" for ::1 at 2016-12-02 15:05:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/amenities" for ::1 at 2016-12-02 15:06:44 -0500
+  
+SyntaxError (/Users/jsegarra3/Development/code/RNTR/rntr/backEnd/app/adapters/yelp_adapter.rb:17: syntax error, unexpected tIDENTIFIER, expecting '}'
+...                            lon:result.fetch("coordinate").f...
+...                               ^
+/Users/jsegarra3/Development/code/RNTR/rntr/backEnd/app/adapters/yelp_adapter.rb:18: syntax error, unexpected '}', expecting keyword_end):
+  
+app/adapters/yelp_adapter.rb:17: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/adapters/yelp_adapter.rb:18: syntax error, unexpected '}', expecting keyword_end
+Started POST "/amenities" for ::1 at 2016-12-02 15:07:19 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 409ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:07:39 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 1189ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:08:25 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:08:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:15:10 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:16:33 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'

@@ -524,3 +524,33 @@ Processing by DistancesController#create as HTML
 Completed 204 No Content in 17383ms (ActiveRecord: 0.0ms)
 
 
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:52:47 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"50 Trinity Place, New York, NY 10006", "destination"=>"86 Trinity Place, New York, NY 10006"}, "distance"=>{"route"=>{"origin"=>"50 Trinity Place, New York, NY 10006", "destination"=>"86 Trinity Place, New York, NY 10006"}}}
+Completed 204 No Content in 424722ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:59:52 -0500
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:59:52 -0500
+Processing by DistancesController#create as HTML
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}, "distance"=>{"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}}}
+  Parameters: {"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}, "distance"=>{"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}}}
+Completed 204 No Content in 2479ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 4175ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 19:00:15 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}, "distance"=>{"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}}}
+Completed 200 OK in 225ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 19:00:16 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}, "distance"=>{"route"=>{"origin"=>"disneyland", "destination"=>"disneyworld"}}}
+Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+

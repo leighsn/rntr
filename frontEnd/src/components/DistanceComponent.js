@@ -19,7 +19,7 @@ const DistanceComponent = (props) => {
 
   return (
     <div>
-    <br/>
+      <br/>
       Im the map Im the map
       <br/>
       <br/>
@@ -32,6 +32,7 @@ const DistanceComponent = (props) => {
 
         <input type='submit' />
       </form>
+      <h4>Travel Time: {props.travel_time}</h4>
     </div>
   )
 }
@@ -40,5 +41,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({getDistance: getDistance},dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(DistanceComponent)
+function mapStateToProps(state) {
+  return {travel_time: state.travel_time}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DistanceComponent)
 // module.exports = MapComponent

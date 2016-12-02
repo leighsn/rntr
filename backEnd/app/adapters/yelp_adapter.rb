@@ -1,4 +1,4 @@
-class YelpApi
+class YelpAdapter
 
   def self.client
 
@@ -12,6 +12,10 @@ class YelpApi
 
   def self.search(search:, location:)
     businesses = self.client.search(location, {term: search,radius_filter:1000}).businesses
+    businesses.map{|result| {name: result.fetch("name"),
+                            lat:result.fetch("coordinate").fetch("latitude")
+                            lon:result.fetch("coordinate").fetch("longitude")
+                            }}
   end
 
 end

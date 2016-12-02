@@ -2,7 +2,7 @@
 # API Key: AIzaSyAkmquJSszSyTQei0VfZkamDVtODzYK1kE
 require 'byebug'
 require 'httparty'
-class DistanceAdapter 
+class DistanceAdapter
   include HTTParty
 
   def self.get_distance(origin:, destination:)
@@ -10,4 +10,3 @@ class DistanceAdapter
      JSON(response.body)["routes"][0]["legs"][0]["duration"]["text"]
   end
 end
-

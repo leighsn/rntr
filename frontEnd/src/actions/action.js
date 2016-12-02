@@ -38,6 +38,19 @@ const getDistance = function(origin, destination){
   }
 }
 
+const getCrime = function(address){
+  return function(dispatch){
+    $.ajax({
+      url: `http://localhost:3000/crimes/${address}`,
+      type: 'GET',
+      data: JSON.stringify({address: address}),
+      contentType: "application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_CRIME', payload: data})
+    })
+  }
+}
 
 
 const logIn = function(email, password){
@@ -60,4 +73,4 @@ const logIn = function(email, password){
   }
 }
 
-export {signUp, logIn, getDistance}
+export {signUp, logIn, getDistance, getCrime}

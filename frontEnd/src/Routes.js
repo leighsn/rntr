@@ -5,6 +5,7 @@ import SignUpComponent from './components/SignUpComponent'
 import DistanceComponent from './components/DistanceComponent'
 
 import LogInComponent from './components/LogInComponent'
+import CrimeComponent from './components/CrimeComponent'
 
 
 // import components
@@ -18,6 +19,7 @@ const Routes = (
     <Route path="/sign-up" component={SignUpComponent}/>
     <Route path="/distance" component={DistanceComponent}/>
     <Route path="/log-in" component={LogInComponent}/>
+    <Route path="/crime" component={CrimeComponent} />
   </Route>
 )
 

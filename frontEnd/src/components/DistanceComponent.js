@@ -25,7 +25,7 @@ const DistanceComponent = (props) => {
       <br/>
       <form onSubmit={handleSubmit.bind(this)}>
         <label for='Origin'>Origin:</label>
-        <input type='text' id='origin' onChange={handleChange.bind(this) /><br/>
+        <input type='text' id='origin' onChange={handleChange.bind(this)} /><br/>
 
         <label for='Destination'>Destination:</label>
         <input type='text' id='destination' onChange={handleChange.bind(this)} /><br/>

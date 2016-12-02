@@ -82,26 +82,22 @@ const logIn = function(email, password){
   }
 }
 
-<<<<<<< HEAD
+
 
 const getAutocompletes = function(value){
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/getautocompletes/${encodeURIComponent(value)}`,
-      type: 'GET'
+      type: 'GET',
+      data: JSON.stringify({value: value}),
+      contentType: "application/json; charset=utf-8",
+      dataType:"json"
     }).done(function(data){
-      if(!!data.error){
-      alert(data.error)
-    } else {
- 
+        debugger
       dispatch({type: 'CHANGE_AUTOCOMPLETE', payload: data})
-    }
     })
   }
 }
 
 
-export {signUp, logIn, getDistance, getAutocompletes} // 
-=======
-export {signUp, logIn, getDistance, getCrime}
->>>>>>> master
+export {signUp, logIn, getDistance, getAutocompletes,getCrime} // 

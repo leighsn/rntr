@@ -851,3 +851,233 @@ Completed 200 OK in 1234ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 >>>>>>> master
 
 
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/tim?{%22value%22:%22tim%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/time?{%22value%22:%22time%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/times?{%22value%22:%22times%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"times\"}"=>nil, "id"=>"times", "getautocomplete"=>{}}
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"time\"}"=>nil, "id"=>"time", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"tim\"}"=>nil, "id"=>"tim", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 118486ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:01 -0500
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:19:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
+Did you mean?  get_autocompletes):
+NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
+Did you mean?  get_autocompletes):
+  
+  
+app/controllers/getautocompletes_controller.rb:8:in `show'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:51 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:19:51 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/tim?{%22value%22:%22tim%22}" for 127.0.0.1 at 2016-12-02 16:19:52 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"tim\"}"=>nil, "id"=>"tim", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 16:20:58 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 16:20:59 -0500
+Completed 200 OK in 2570883ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/bryan?{%22value%22:%22bryan%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Started GET "/getautocompletes/bry?{%22value%22:%22bry%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Started GET "/getautocompletes/brya?{%22value%22:%22brya%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"bry\"}"=>nil, "id"=>"bry", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"bryan\"}"=>nil, "id"=>"bryan", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"brya\"}"=>nil, "id"=>"brya", "getautocomplete"=>{}}
+Completed 200 OK in 12767ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 17112ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 19246ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 678730ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/adapters/getautocompletes_adapter.rb:12:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:16:11 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 823ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/adapters/getautocompletes_adapter.rb:11:in `block in get_autocompletes'
+app/adapters/getautocompletes_adapter.rb:10:in `map'
+app/adapters/getautocompletes_adapter.rb:10:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 17:17:30 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 111301ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/adapters/getautocompletes_adapter.rb:12:in `block in get_autocompletes'
+app/adapters/getautocompletes_adapter.rb:11:in `map'
+app/adapters/getautocompletes_adapter.rb:11:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/bry?{%22value%22:%22bry%22}" for 127.0.0.1 at 2016-12-02 17:19:30 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"bry\"}"=>nil, "id"=>"bry", "getautocomplete"=>{}}
+Completed 200 OK in 222ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:20:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 200 OK in 577ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 17:21:43 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 238491ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/getautocompletes_controller.rb:10:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:26:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 17:31:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'

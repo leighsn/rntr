@@ -554,3 +554,186 @@ Processing by DistancesController#create as HTML
 Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}, "distance"=>{"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}}}
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:10:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:20 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}, "distance"=>{"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}}}
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:10:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:34 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Disneyland", "destination"=>"Disneyworld"}, "distance"=>{"route"=>{"origin"=>"Disneyland", "destination"=>"Disneyworld"}}}
+Completed 200 OK in 631ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:44 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
+Completed 200 OK in 434ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:54 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"42 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"42 Street Bryant Park"}}}
+Completed 200 OK in 476ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:59 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 1712ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:32:07 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 866ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:32:10 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 313ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:57:58 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:59:37 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:00:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"times square", "destination"=>"bryant park"}, "distance"=>{"route"=>{"origin"=>"times square", "destination"=>"bryant park"}}}
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:00:21 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"times square", "destination"=>"bryant park"}, "distance"=>{"route"=>{"origin"=>"times square", "destination"=>"bryant park"}}}
+Completed 200 OK in 235ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 949ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:27:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
+Completed 200 OK in 452ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+

@@ -4,6 +4,8 @@ function user(state={}, action) {
   switch(action.type) {
     case 'LOG_IN':
       return {userID: action.payload.user_id, userEmail: action.payload.user_email}
+    case 'UPDATE_PREFERENCES':
+      return action.payload
     default:
       return state;
   }

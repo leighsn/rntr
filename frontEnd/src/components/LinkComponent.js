@@ -5,6 +5,7 @@ const LinkComponent = () => {
   return (
     <div>
       <Link to="/home">Home</Link>
+      <Link to="/preferences">Preferences</Link>
       <Link to="/sign-up">Sign Up</Link>
       <Link to="/distance">Distance</Link>
       <Link to="/school">School</Link>

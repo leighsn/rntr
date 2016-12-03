@@ -129,4 +129,20 @@ const getSchools = function(zipcode, grade){
 }
 
 
-export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch} //
+
+const savePreferences = function(userState,prefState){
+  return function(dispatch){
+    $.ajax({
+      url: `http://localhost:3000/users/${userState.userID}/edit`,
+      type: 'POST',
+      data: JSON.stringify(prefState),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      console.log(data)
+      dispatch({type: 'UPDATE_PREFERENCES', payload: data})
+    })
+  }
+}
+
+export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch, savePreferences} //

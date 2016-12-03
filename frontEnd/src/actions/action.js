@@ -26,7 +26,7 @@ const signUp = function(email, password){
 //dispatch twice
 //first dispatch if to update state // creating user
 // second dispatch is to get the data from the response and put that as payload.
-  // logging in  
+  // logging in
 
         //headers: {authorization: localStorage.getItem('jwt')}
 
@@ -57,6 +57,20 @@ const getCrime = function(address){
       dataType:"json"
     }).done(function(data){
       dispatch({type: 'GET_CRIME', payload: data})
+    })
+  }
+}
+
+const aptSearch = function(address){
+  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
+  return function(dispatch){
+    $.ajax({
+      url: `http://localhost:3000/apts/${urlAddress}`,
+      type: 'GET',
+      contentType: "application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'SHOW_APT', payload: data})
     })
   }
 }
@@ -100,4 +114,4 @@ const getAutocompletes = function(value){
 }
 
 
-export {signUp, logIn, getDistance, getAutocompletes,getCrime} // 
+export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch} //

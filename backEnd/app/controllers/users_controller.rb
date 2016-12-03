@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  def show
     user = User.find_by(email: params[:email])
     jwt = Auth.issue({user_id: user.id})
-     render json: {jwt: jwt}
+     render json: {jwt: jwt, user_id: user.id, user_email: user.email}
  end
 
  def create
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
    if user.save
      jwt = Auth.issue({user_id: user.id})
-     render json: {jwt: jwt}
+     render json: {jwt: jwt, user_id: user.id, user_email: user.email}
 
    else
      render json: {error: 'email is not unique'}

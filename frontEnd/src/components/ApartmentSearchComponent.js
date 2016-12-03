@@ -55,6 +55,7 @@ class ApartmentSearchComponent extends Component {
         <p>Misdemeanors: {this.props.apartment.crime.misdemeanor}</p>
         <p>Felonies: {this.props.apartment.crime.felony}</p>
         <h4>Commute: {this.props.apartment.commute}</h4>
+        <h3>There are {this.props.apartment.schools} good schools nearby</h3>
         </div>
 
         </div>

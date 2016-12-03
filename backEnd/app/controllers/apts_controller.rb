@@ -7,10 +7,11 @@ require_relative '../adapters/yelp_adapter.rb'
 class AptsController < ApplicationController
 
   def show
+     zip = params["id"][-5..-1]
      crime_data = CrimeAdapter.get_crime(params["id"])
      distance_data = DistanceAdapter.get_distance(origin: params["id"], destination: "11 broadway, New York, NY 10004")
-     
-     render json: {crime_data: crime_data, distance_data: distance_data}
+     school_data = SchoolAdapter.get_good_schools(zip)
+     render json: {crime_data: crime_data, distance_data: distance_data, school_data: school_data.length}
 
   end
 

@@ -9,20 +9,17 @@ function user(state={}, action) {
   }
 }
 
-function apartment(state={crime:{},commute:""}, action) {
+function apartment(state={crime:{},commute:"",schools:""}, action) {
   switch(action.type) {
     case 'SHOW_APT':
-      return{crime: action.payload.crime_data, commute: action.payload.distance_data}
+      return{crime: action.payload.crime_data, commute: action.payload.distance_data, schools: action.payload.school_data}
     case 'GET_DISTANCE':
       return action.payload
-<<<<<<< HEAD
     case 'GET_SCHOOLS':
       return action.payload
     case 'LOG_IN':
       console.log(action.payload)
-=======
     case 'GET_CRIME':
->>>>>>> merger
       return action.payload
     default:
       return state;

@@ -44,8 +44,7 @@ const getDistance = function(origin, destination){
   }
 }
 
-<<<<<<< HEAD
-=======
+
 const getCrime = function(address){
   return function(dispatch){
     $.ajax({
@@ -75,7 +74,7 @@ const aptSearch = function(address){
 }
 
 
->>>>>>> merger
+
 const logIn = function(email, password){
   return function(dispatch){
     $.ajax({
@@ -113,7 +112,7 @@ const getAutocompletes = function(value){
   }
 }
 
-<<<<<<< HEAD
+
 const getSchools = function(zipcode, grade){
   return function(dispatch){
     $.ajax({
@@ -129,8 +128,5 @@ const getSchools = function(zipcode, grade){
   }
 }
 
-export {signUp, logIn, getDistance, getSchools}
-=======
 
 export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch} //
->>>>>>> merger

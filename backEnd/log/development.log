@@ -1393,3 +1393,10 @@ puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
 >>>>>>> merger
+Started GET "/apts/27%20Crooke%20Ave%20Brooklyn%20New%20York%2011226" for ::1 at 2016-12-03 16:29:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"27 Crooke Ave Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 802ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+

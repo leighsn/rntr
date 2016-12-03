@@ -1,20 +1,20 @@
 import React from 'react'
-import { getDistance } from '../actions/action.js'
+import { getDistance, getAutocompletes} from '../actions/action.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 
 
 const DistanceComponent = (props) => {
 
   function handleSubmit(event){
     event.preventDefault()
-
-    // props.signUp(event.target.children[1].value, event.target.children[3].value)
-
     props.getDistance(event.target.children[1].value, event.target.children[4].value)
-  }
 
+  }
+  function handleChange(event){
+
+    props.getAutocompletes(event.target.value)
+  }
 
 
   return (
@@ -25,10 +25,10 @@ const DistanceComponent = (props) => {
       <br/>
       <form onSubmit={handleSubmit.bind(this)}>
         <label for='Origin'>Origin:</label>
-        <input type='text' id='origin' /><br/>
+        <input type='text' id='origin' onChange={handleChange.bind(this)} /><br/>
 
         <label for='Destination'>Destination:</label>
-        <input type='text' id='destination' /><br/>
+        <input type='text' id='destination' onChange={handleChange.bind(this)} /><br/>
 
         <input type='submit' />
       </form>
@@ -38,7 +38,7 @@ const DistanceComponent = (props) => {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getDistance: getDistance},dispatch)
+  return bindActionCreators({getDistance: getDistance, getAutocompletes: getAutocompletes},dispatch)
 }
 
 function mapStateToProps(state) {

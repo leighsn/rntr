@@ -554,6 +554,7 @@ Processing by DistancesController#create as HTML
 Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started POST "/schools" for ::1 at 2016-12-02 10:18:28 -0500
   
 ActiveRecord::PendingMigrationError (
@@ -566,6 +567,92 @@ Migrations are pending. To resolve this issue, run:
   
 activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
 activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+=======
+<<<<<<< HEAD
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}, "distance"=>{"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}}}
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:10:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:20 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}, "distance"=>{"route"=>{"origin"=>"JY Square Mall", "destination"=>"10 BC Homes Subdivision Amarillo Street"}}}
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:10:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:34 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Disneyland", "destination"=>"Disneyworld"}, "distance"=>{"route"=>{"origin"=>"Disneyland", "destination"=>"Disneyworld"}}}
+Completed 200 OK in 631ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:44 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
+Completed 200 OK in 434ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:54 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"42 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"42 Street Bryant Park"}}}
+Completed 200 OK in 476ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:59 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 1712ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:32:07 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 866ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:32:10 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}, "distance"=>{"route"=>{"origin"=>"42 Street Times Square", "destination"=>"47 Street Bryant Park"}}}
+Completed 200 OK in 313ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:57:58 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+>>>>>>> merger
 actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
 activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
 activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
@@ -594,6 +681,7 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
   [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
   [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7437883753703932935);[0m
@@ -888,3 +976,420 @@ Processing by SchoolsController#create as HTML
 Completed 200 OK in 844ms (Views: 0.7ms | ActiveRecord: 0.0ms)
 
 
+=======
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:59:37 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:00:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"times square", "destination"=>"bryant park"}, "distance"=>{"route"=>{"origin"=>"times square", "destination"=>"bryant park"}}}
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:00:21 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"times square", "destination"=>"bryant park"}, "distance"=>{"route"=>{"origin"=>"times square", "destination"=>"bryant park"}}}
+Completed 200 OK in 235ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 949ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:27:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
+Completed 200 OK in 452ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+=======
+Started POST "/distances" for ::1 at 2016-12-02 09:40:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave, Brooklyn", "destination"=>"11 Broadway, New York"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave, Brooklyn", "destination"=>"11 Broadway, New York"}}}
+Completed 200 OK in 893ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]?{%22address%22:%22[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]%22}" for ::1 at 2016-12-02 15:09:03 -0500
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:10:06 -0500
+  
+SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:11:18 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn NY 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+NY+11226", "crime"=>{}}
+Completed 500 Internal Server Error in 70913ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/adapters/crime_adapter.rb:19:in `toLatLong'
+app/adapters/crime_adapter.rb:6:in `get_crime'
+app/controllers/crimes_controller.rb:7:in `show'
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:12:53 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn NY 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+NY+11226", "crime"=>{}}
+Completed 200 OK in 38008ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:07 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 918ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:11 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 424ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:12 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 303ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:12 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 300ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:13 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 315ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:31:34 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 356ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:34:50 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1180ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:36:10 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1432ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-02 15:39:41 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}}}
+Completed 200 OK in 402ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-02 15:40:22 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}, "distance"=>{"route"=>{"origin"=>"27 Crooke Ave Brooklyn NY", "destination"=>"11 Broadway New York NY"}}}
+Completed 200 OK in 144ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:43:19 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 449ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:45:29 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 788ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+New%20York+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+New%20York+11226%22}" for ::1 at 2016-12-02 15:46:45 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"27 Crooke Ave Brooklyn New York 11226\"}"=>nil, "id"=>"27 Crooke Ave+Brooklyn+New York+11226", "crime"=>{}}
+Completed 200 OK in 1234ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+>>>>>>> master
+
+
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/tim?{%22value%22:%22tim%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/time?{%22value%22:%22time%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+Started GET "/getautocompletes/times?{%22value%22:%22times%22}" for 127.0.0.1 at 2016-12-02 16:15:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"times\"}"=>nil, "id"=>"times", "getautocomplete"=>{}}
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"time\"}"=>nil, "id"=>"time", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"tim\"}"=>nil, "id"=>"tim", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 118486ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:01 -0500
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:19:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
+Did you mean?  get_autocompletes):
+NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
+Did you mean?  get_autocompletes):
+  
+  
+app/controllers/getautocompletes_controller.rb:8:in `show'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:51 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"t\"}"=>nil, "id"=>"t", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:19:51 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"ti\"}"=>nil, "id"=>"ti", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/tim?{%22value%22:%22tim%22}" for 127.0.0.1 at 2016-12-02 16:19:52 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"tim\"}"=>nil, "id"=>"tim", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
+  
+app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 16:20:58 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 16:20:59 -0500
+Completed 200 OK in 2570883ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/bryan?{%22value%22:%22bryan%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Started GET "/getautocompletes/bry?{%22value%22:%22bry%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Started GET "/getautocompletes/brya?{%22value%22:%22brya%22}" for 127.0.0.1 at 2016-12-02 17:03:50 -0500
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"bry\"}"=>nil, "id"=>"bry", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"bryan\"}"=>nil, "id"=>"bryan", "getautocomplete"=>{}}
+  Parameters: {"{\"value\":\"brya\"}"=>nil, "id"=>"brya", "getautocomplete"=>{}}
+Completed 200 OK in 12767ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 17112ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 19246ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 678730ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/adapters/getautocompletes_adapter.rb:12:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:16:11 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 823ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/adapters/getautocompletes_adapter.rb:11:in `block in get_autocompletes'
+app/adapters/getautocompletes_adapter.rb:10:in `map'
+app/adapters/getautocompletes_adapter.rb:10:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 17:17:30 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 111301ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/adapters/getautocompletes_adapter.rb:12:in `block in get_autocompletes'
+app/adapters/getautocompletes_adapter.rb:11:in `map'
+app/adapters/getautocompletes_adapter.rb:11:in `get_autocompletes'
+app/controllers/getautocompletes_controller.rb:8:in `show'
+Started GET "/getautocompletes/bry?{%22value%22:%22bry%22}" for 127.0.0.1 at 2016-12-02 17:19:30 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"bry\"}"=>nil, "id"=>"bry", "getautocomplete"=>{}}
+Completed 200 OK in 222ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:20:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 200 OK in 577ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/br?{%22value%22:%22br%22}" for 127.0.0.1 at 2016-12-02 17:21:43 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"br\"}"=>nil, "id"=>"br", "getautocomplete"=>{}}
+Completed 500 Internal Server Error in 238491ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/getautocompletes_controller.rb:10:in `show'
+Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:26:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"b\"}"=>nil, "id"=>"b", "getautocomplete"=>{}}
+Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 17:31:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+>>>>>>> merger

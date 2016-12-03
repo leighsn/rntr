@@ -9,6 +9,7 @@ const SignUpComponent = (props) => {
   function handleSubmit(event){
     event.preventDefault()
     props.signUp(event.target.children[1].value, event.target.children[4].value)
+    // this.setState({..})
   }
 
 

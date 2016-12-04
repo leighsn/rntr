@@ -15,7 +15,7 @@ class SchoolAdapter
 
   def self.get_good_schools(zipcode)
     @zipcode = zipcode
-    @grade = 'B'
+    @grade = 'A'
     filter_schools
   end
 

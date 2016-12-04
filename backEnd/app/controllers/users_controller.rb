@@ -20,13 +20,19 @@ class UsersController < ApplicationController
 
  end
 
+ def update
+   user = User.find(params["id"])
+   user.update(user_params)
+   render json: {user_id: user.id, destination: user.destination, commute: user.commute, safety:user.safety, amenities: user.amenities, schools: user.schools}
+ end
+
  def index
    @users = User.all
    render json: {users: @users.to_json}
  end
 
  def user_params
-   params.require(:user).permit(:email, :password)
+   params.require(:user).permit(:email, :password, :commute, :safety, :destination, :schools, :amenities)
  end
 
 end

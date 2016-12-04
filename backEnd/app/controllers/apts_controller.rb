@@ -15,4 +15,18 @@ class AptsController < ApplicationController
 
   end
 
+  private
+  def commute_score
+  end
+
+  def crime_score(felonies)
+
+  end
+
+  def amenities_score
+  end
+
+  def school_score
+  end
+
 end

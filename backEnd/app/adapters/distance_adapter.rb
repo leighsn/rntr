@@ -6,7 +6,10 @@ class DistanceAdapter
   include HTTParty
 
   def self.get_distance(origin:, destination:)
+
      response = self.get("https://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}4&key=AIzaSyAkmquJSszSyTQei0VfZkamDVtODzYK1kE")
      JSON(response.body)["routes"][0]["legs"][0]["duration"]["text"]
   end
+
+
 end

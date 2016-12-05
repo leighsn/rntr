@@ -3,23 +3,41 @@ require_relative '../adapters/distance_adapter.rb'
 require_relative '../adapters/map_adapter.rb'
 require_relative '../adapters/school_adapter.rb'
 require_relative '../adapters/yelp_adapter.rb'
-
+require 'byebug'
 class AptsController < ApplicationController
 
   def show
+     data = params["id"].split("&")
+     apartment = Apartment.create(address: data[0], user_id: data[1])
 
-    data = params["id"].split("&")
-    address = data[0]
-    id = data[1]
-    user = User.find(id)
+     user = User.find(data[1])
+    #  crime_data = CrimeAdapter.get_crime(address)
+     apt_crime = CrimeAdapter.get_crime(apartment)
+     apt_commute = DistanceAdapter.get_distance(apartment)
+    #  origin: apartment.address, destination: apartment.user.destination)
+     apt_school = SchoolAdapter.get_all_grades(apartment)
 
-     zip = address[-5..-1]
-     crime_data = CrimeAdapter.get_crime(address)
-     scores[:crime] = crime_score(crime_data[:felony])
-     distance_data = DistanceAdapter.get_distance(origin: address, destination: "11 broadway, New York, NY 10004")
-     school_data = SchoolAdapter.get_good_schools(zip)
-     render json: {crime_data: crime_data, distance_data: distance_data, school_data: school_data.length}
+     weights = calculate_weights(user)
+     score = calculate_score(apartment, weights)
 
+     render json: {
+       data: {
+         crime_data: {
+           felonies: apt_crime.felonies,
+           misdemeanors: apt_crime.misdemeanors,
+           violations: apt_crime.violations
+         },
+         distance_data: apt_commute.duration,
+         school_data: {
+           a_schools: apt_school.a_schools,
+           b_schools: apt_school.b_schools,
+           c_schools: apt_school.c_schools,
+           d_schools: apt_school.d_schools,
+           f_schools: apt_school.f_schools,
+         }
+       },
+       apartment_score: score
+     }
   end
 
   private
@@ -44,14 +62,13 @@ class AptsController < ApplicationController
       score = 2
     else
       score = 1
-
+    end
   end
 
   def crime_score(felonies)
     score = felonies / 10
     score >= 10 ? roundScore = 9 : roundScore = score.floor
     10 - roundScore
-
   end
 
   def amenities_score
@@ -64,18 +81,18 @@ class AptsController < ApplicationController
     score
   end
 
-  def calculate_weights(prefs)
-    total = prefs[:schools] + prefs[:amenities] + prefs[:safety] + prefs[:commute]
-    weights[:schools] = prefs[:schools] / total.to_f
-    weights[:amenities] = prefs[:amenities] / total.to_f
-    weights[:safety] = prefs[:safety] / total.to_f
-    weights[:commute] = prefs[:commute] / total.to_f
+  def calculate_weights(user)
+    weights = {}
+    total = user.schools + user.amenities + user.safety + user.commute
+    weights[:schools] = user.schools / total.to_f
+    weights[:amenities] = user.amenities / total.to_f
+    weights[:safety] = user.safety / total.to_f
+    weights[:commute] = user.commute / total.to_f
     weights
   end
 
-  def calculate_score(scores, weights)
-    (scores[:schools] * weights[:schools]) + (scores[:commute] * weights[:commute]) + (scores[:safety] * weights[:safety]) + (scores[:amenities] * weights[:amenities])
+  def calculate_score(apartment, weights)
+    (school_score(apartment.apt_schools.first.a_schools) * weights[:schools]) + (commute_score(apartment.apt_commutes.first.duration.to_i) * weights[:commute]) + (crime_score(apartment.apt_crimes.first.felonies) * weights[:safety]) + (amenities_score * weights[:amenities])
   end
 
-end
 end

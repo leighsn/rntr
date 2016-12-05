@@ -152,4 +152,4 @@ const getAmenities = function(search, location){
   }
 }
 
-export { signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences }
+export { signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences, getSchools }

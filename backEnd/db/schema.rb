@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204205203) do
+ActiveRecord::Schema.define(version: 20161205192716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apartments", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "address"
+  end
+
+  create_table "apt_amenities", force: :cascade do |t|
+    t.integer "apartment_id"
+    t.integer "count"
+    t.string  "name"
+  end
+
+  create_table "apt_commutes", force: :cascade do |t|
+    t.integer "apartment_id"
+    t.string  "duration"
+  end
+
+  create_table "apt_crimes", force: :cascade do |t|
+    t.integer "apartment_id"
+    t.integer "felonies"
+    t.integer "misdemeanors"
+    t.integer "violations"
+  end
+
+  create_table "apt_schools", force: :cascade do |t|
+    t.integer "apartment_id"
+    t.integer "a_schools"
+    t.integer "b_schools"
+    t.integer "c_schools"
+    t.integer "d_schools"
+    t.integer "f_schools"
+  end
 
   create_table "destinations", force: :cascade do |t|
     t.integer  "user_id"

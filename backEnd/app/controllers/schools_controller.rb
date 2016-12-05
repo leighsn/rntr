@@ -7,7 +7,7 @@ class SchoolsController < ApplicationController
   def show
     zip = params["id"][-5..-1]
     results = SchoolAdapter.get_good_schools(zip)
-    byebug
+    # byebug
     render json: {schools: results}
   end
 

@@ -1781,3 +1781,164 @@ Processing by GetautocompletesController#show as HTML
 Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:35:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 115526ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226" for ::1 at 2016-12-05 11:37:41 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 44366ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:38:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 149ms (Views: 0.2ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?4" for ::1 at 2016-12-05 11:39:12 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"4"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:40:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 64226ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:40:20 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 147641ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:42:55 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 22563ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:43:17 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{}" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:46 -0500
+Processing by SessionsController#create as HTML
+  [1m[36mUser Load (2334.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 2483ms (Views: 0.2ms | ActiveRecord: 2334.2ms)
+
+
+  [1m[36mUser Load (140.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 0.2ms | ActiveRecord: 140.7ms)
+
+
+Completed 200 OK in 89611ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3687ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:46:18 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 10312ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:46:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?4" for ::1 at 2016-12-05 11:46:39 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"4"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 28992ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:47:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22id%22:4}" for ::1 at 2016-12-05 11:47:39 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 150327ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:50:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user%22:{%22id%22:4}}" for ::1 at 2016-12-05 11:50:33 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user\":{\"id\":4}}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 290544ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:55:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:55:33 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}
+Completed 500 Internal Server Error in 5830ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/adapters/school_adapter.rb:12:in `fetch'
+app/adapters/school_adapter.rb:12:in `block in filter_schools'
+app/adapters/school_adapter.rb:12:in `filter_schools'
+app/adapters/school_adapter.rb:19:in `get_good_schools'
+app/controllers/apts_controller.rb:14:in `show'
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:55:45 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}
+Completed 500 Internal Server Error in 153622ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/adapters/school_adapter.rb:12:in `fetch'
+app/adapters/school_adapter.rb:12:in `block in filter_schools'
+app/adapters/school_adapter.rb:12:in `filter_schools'
+app/adapters/school_adapter.rb:19:in `get_good_schools'
+app/controllers/apts_controller.rb:14:in `show'
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:58:28 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}

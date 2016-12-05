@@ -9,6 +9,7 @@ class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
       this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1}
+      this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   }
   // handleCommuteChange(event){
   //   this.setState({commute_weight: event.target.value})
@@ -21,13 +22,15 @@ class PreferencesComponent extends React.Component{
   }
 
   handleChange(event){
+    debugger
     let newStateAttr = {}
-    newStateAttr[event.target.id] = event.target.value
+    newStateAttr[event.target.id] = parseInt(event.target.value)
     this.setState(newStateAttr)
   }
 
   render(){
     return(
+
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
@@ -35,63 +38,41 @@ class PreferencesComponent extends React.Component{
           <input type="text" id="destination" onChange={this.handleChange.bind(this)}/></p>
 
           <p><label id="commute">Commute:</label>
+
+
           <select id="commute" onChange={this.handleChange.bind(this)}>
-              <option value='-'>-</option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
+            <option value='-'>-</option>
+              {
+                this.options.map(opt => {
+                return <option value={opt}>{opt}</option>
+              })}
           </select></p>
 
           <p><label id="schools">Schools:</label>
             <select id="schools" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
             </select></p>
 
           <p><label id="safety">Safety:</label>
             <select id="safety" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
             </select></p>
 
           <p><label id="amenities">Amenities:</label>
             <select id="amenities" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
             </select></p>
 
           <p><input type="submit"/></p>

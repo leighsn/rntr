@@ -59,8 +59,8 @@ const getCrime = function(address){
   }
 }
 
-const aptSearch = function(address){
-  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
+const aptSearch = function(address, userID){
+  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,
@@ -106,7 +106,7 @@ const getAutocompletes = function(value){
       contentType: "application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-        
+
       dispatch({type: 'CHANGE_AUTOCOMPLETE', payload: data})
     })
   }

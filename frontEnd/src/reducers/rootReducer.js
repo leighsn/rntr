@@ -20,8 +20,6 @@ function apartment(state={crime:{},commute:"",schools:""}, action) {
       return action.payload
     case 'GET_SCHOOLS':
       return action.payload
-    case 'LOG_IN':
-      console.log(action.payload)
     case 'GET_CRIME':
       return action.payload
     default:

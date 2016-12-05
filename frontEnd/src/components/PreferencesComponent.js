@@ -20,7 +20,6 @@ class PreferencesComponent extends React.Component{
   }
 
   handleChange(event){
-    debugger
     let newStateAttr = {}
     newStateAttr[event.target.id] = parseInt(event.target.value)
 
@@ -45,6 +44,7 @@ class PreferencesComponent extends React.Component{
             id="destination"
             style={{width: '30%'}}
             onPlaceSelected={(place) => {
+              this.setState({"destination": place})
               console.log(place);
             }}
             types={['address']}

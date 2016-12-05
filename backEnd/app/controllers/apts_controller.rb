@@ -27,7 +27,7 @@ class AptsController < ApplicationController
            misdemeanors: apt_crime.misdemeanors,
            violations: apt_crime.violations
          },
-         distance_data: apt_commute.duration,
+         distance_data: apt_commute.duration.to_i,
          school_data: {
            a_schools: apt_school.a_schools,
            b_schools: apt_school.b_schools,

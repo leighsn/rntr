@@ -5091,3 +5091,97 @@ Unpermitted parameter: destination
 Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.2ms)
 
 
+Started POST "/sessions" for ::1 at 2016-12-05 18:00:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 149ms (Views: 0.5ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 18:00:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/1051%2077th%20Street%20Brooklyn%20New%20york%2011228&1" for ::1 at 2016-12-05 18:00:49 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1051 77th Street Brooklyn New york 11228&1", "apt"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 1], ["address", "1051 77th Street Brooklyn New york 11228"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 16], ["felonies", 15], ["misdemeanors", 22], ["violations", 9]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 1466ms (ActiveRecord: 17.6ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:12:in `get_distance'
+app/controllers/apts_controller.rb:16:in `show'
+Started GET "/apts/1051%2077th%20Street%20Brooklyn%20New%20york%2011228&1" for ::1 at 2016-12-05 18:00:51 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1051 77th Street Brooklyn New york 11228&1", "apt"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 1], ["address", "1051 77th Street Brooklyn New york 11228"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 17], ["felonies", 15], ["misdemeanors", 22], ["violations", 9]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 892ms (ActiveRecord: 10.7ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:12:in `get_distance'
+app/controllers/apts_controller.rb:16:in `show'
+Started POST "/sessions" for ::1 at 2016-12-05 18:02:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/apts/1051%2077th%20Street%20Brooklyn%20NY%2011228&1" for ::1 at 2016-12-05 18:03:03 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1051 77th Street Brooklyn NY 11228&1", "apt"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 1], ["address", "1051 77th Street Brooklyn NY 11228"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 18], ["felonies", 15], ["misdemeanors", 22], ["violations", 9]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 90634ms (ActiveRecord: 17.4ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:12:in `get_distance'
+app/controllers/apts_controller.rb:16:in `show'
+Started PATCH "/users/1" for ::1 at 2016-12-05 18:04:34 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>{"address_components"=>[{"long_name"=>"Disneyland Drive", "short_name"=>"Disneyland Dr", "types"=>["route"]}, {"long_name"=>"Anaheim", "short_name"=>"Anaheim", "types"=>["locality", "political"]}, {"long_name"=>"California", "short_name"=>"CA", "types"=>["administrative_area_level_1", "political"]}, {"long_name"=>"United States", "short_name"=>"US", "types"=>["country", "political"]}, {"long_name"=>"92802", "short_name"=>"92802", "types"=>["postal_code"]}], "adr_address"=>"<span class=\"street-address\">Disneyland Dr</span>, <span class=\"locality\">Anaheim</span>, <span class=\"region\">CA</span> <span class=\"postal-code\">92802</span>, <span class=\"country-name\">USA</span>", "formatted_address"=>"Disneyland Dr, Anaheim, CA 92802, USA", "geometry"=>{"location"=>{"lat"=>33.8154078, "lng"=>-117.9236525}}, "icon"=>"https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png", "id"=>"b02d49f68e6b63d662ee389b531eee171fa7031f", "name"=>"Disneyland Drive", "place_id"=>"ChIJj-XU_NXX3IARWBF-EO-FKfg", "reference"=>"CmRbAAAABprt2pmgIA6ifxoQziyL9tr_ObzuHD5ZwX4UVWw66HfxCeR6d42HbC3jQGTE-nG6gQGaS1-_bMaIurLoEOZcIpbpiS_lT1PCsWaUaY3681I1xmrKQGNxsfnYvR_z-eNjEhDZ51nzibXrIl5pHiNxCwD5GhSVbpX2GqR3QEQlRi6DbRVNrL8P_w", "scope"=>"GOOGLE", "types"=>["route"], "url"=>"https://maps.google.com/?q=Disneyland+Dr,+Anaheim,+CA+92802,+USA&ftid=0x80dcd7d5fcd4e58f:0xf82985ef107e1158", "utc_offset"=>-480, "vicinity"=>"Anaheim", "html_attributions"=>[]}, "commute"=>2, "schools"=>3, "amenities"=>6, "safety"=>3}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.GyjHaIE_Q60c4szH0Dg-kGKbmMLtuO_Axo8-Gt78_cc", "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: destination
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "commute" = $1, "schools" = $2, "amenities" = $3, "safety" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["commute", 2], ["schools", 3], ["amenities", 6], ["safety", 3], ["updated_at", 2016-12-05 23:04:34 UTC], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (Views: 0.4ms | ActiveRecord: 6.3ms)
+
+

@@ -2,8 +2,7 @@ import React from 'react'
 import { savePreferences } from '../actions/action.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-
+import Autocomplete from 'react-google-autocomplete';
 
 class PreferencesComponent extends React.Component{
   constructor(props){
@@ -36,10 +35,19 @@ class PreferencesComponent extends React.Component{
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
-          <p><label id="destination">Destination:</label>
-          <input type="text" id="destination" onChange={this.handleDestinationChange.bind(this)}/></p>
+          <label id="destination">Destination:</label>
+          <Autocomplete
+            onChange={this.handleDestinationChange.bind(this)}
+            id="destination"
+            style={{width: '30%'}}
+            onPlaceSelected={(place) => {
+              console.log(place);
+            }}
+            types={['address']}
+            componentRestrictions={{country: "us"}}
+          />
 
-          <p><label id="commute">Commute:</label>
+          <p><label id="commute">Commute: </label>
           <select id="commute" onChange={this.handleChange.bind(this)}>
               <option value='-'>-</option>
               <option value='1'>1</option>
@@ -54,7 +62,7 @@ class PreferencesComponent extends React.Component{
               <option value='10'>10</option>
           </select></p>
 
-          <p><label id="schools">Schools:</label>
+          <p><label id="schools">Schools: </label>
             <select id="schools" onChange={this.handleChange.bind(this)}>
                 <option value='-'>-</option>
                 <option value='1'>1</option>
@@ -69,7 +77,7 @@ class PreferencesComponent extends React.Component{
                 <option value='10'>10</option>
             </select></p>
 
-          <p><label id="safety">Safety:</label>
+          <p><label id="safety">Safety: </label>
             <select id="safety" onChange={this.handleChange.bind(this)}>
                 <option value='-'>-</option>
                 <option value='1'>1</option>
@@ -84,7 +92,7 @@ class PreferencesComponent extends React.Component{
                 <option value='10'>10</option>
             </select></p>
 
-          <p><label id="amenities">Amenities:</label>
+          <p><label id="amenities">Amenities: </label>
             <select id="amenities" onChange={this.handleChange.bind(this)}>
                 <option value='-'>-</option>
                 <option value='1'>1</option>

@@ -1968,3 +1968,411 @@ Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 10.7ms)
 
 
   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/getautocompletes/368%20West%20117th%20Street%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%22368%20West%20117th%20Street,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:14 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"368 West 117th Street, New York, NY, United States\"}"=>nil, "id"=>"368 West 117th Street, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 586ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%225%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:18 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 Broadway, New York, NY, United States\"}"=>nil, "id"=>"5 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:19 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 385ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:35 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 145ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:36 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%22%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:46 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\" Broadway, New York, NY, United States\"}"=>nil, "id"=>" Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/3%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%223%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:46 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"3 Broadway, New York, NY, United States\"}"=>nil, "id"=>"3 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 133ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/30%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%2230%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:47 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"30 Broadway, New York, NY, United States\"}"=>nil, "id"=>"30 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 132ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:47 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 340ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:48 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:09:06 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 115ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 12:10:54 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "destination" = $1, "commute" = $2, "schools" = $3, "amenities" = $4, "safety" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["destination", ""], ["commute", 1], ["schools", 1], ["amenities", 1], ["safety", 1], ["updated_at", 2016-12-05 17:10:55 UTC], ["id", 2]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:10:59 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"", "destination"=>""}, "distance"=>{"route"=>{"origin"=>"", "destination"=>""}}}
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:11:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started GET "/getautocompletes/5?{%22value%22:%225%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5\"}"=>nil, "id"=>"5", "getautocomplete"=>{}}
+Started GET "/getautocompletes/50?{%22value%22:%2250%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"50\"}"=>nil, "id"=>"50", "getautocomplete"=>{}}
+Completed 200 OK in 171ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500?{%22value%22:%22500%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500\"}"=>nil, "id"=>"500", "getautocomplete"=>{}}
+Completed 200 OK in 162ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20?{%22value%22:%22500%20%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 \"}"=>nil, "id"=>"500 ", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20b?{%22value%22:%22500%20b%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 b\"}"=>nil, "id"=>"500 b", "getautocomplete"=>{}}
+Completed 200 OK in 146ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 203ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bo?{%22value%22:%22500%20bo%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bo\"}"=>nil, "id"=>"500 bo", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20bor?{%22value%22:%22500%20bor%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bor\"}"=>nil, "id"=>"500 bor", "getautocomplete"=>{}}
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bora?{%22value%22:%22500%20bora%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bora\"}"=>nil, "id"=>"500 bora", "getautocomplete"=>{}}
+Completed 200 OK in 211ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 151ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 173ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bor?{%22value%22:%22500%20bor%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bor\"}"=>nil, "id"=>"500 bor", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20bo?{%22value%22:%22500%20bo%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bo\"}"=>nil, "id"=>"500 bo", "getautocomplete"=>{}}
+Completed 200 OK in 212ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20b?{%22value%22:%22500%20b%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 b\"}"=>nil, "id"=>"500 b", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20br?{%22value%22:%22500%20br%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 br\"}"=>nil, "id"=>"500 br", "getautocomplete"=>{}}
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bro?{%22value%22:%22500%20bro%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bro\"}"=>nil, "id"=>"500 bro", "getautocomplete"=>{}}
+Completed 200 OK in 151ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broa?{%22value%22:%22500%20broa%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broa\"}"=>nil, "id"=>"500 broa", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20broad?{%22value%22:%22500%20broad%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broad\"}"=>nil, "id"=>"500 broad", "getautocomplete"=>{}}
+Completed 200 OK in 193ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 228ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadw?{%22value%22:%22500%20broadw%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadw\"}"=>nil, "id"=>"500 broadw", "getautocomplete"=>{}}
+Completed 200 OK in 203ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadwa?{%22value%22:%22500%20broadwa%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadwa\"}"=>nil, "id"=>"500 broadwa", "getautocomplete"=>{}}
+Completed 200 OK in 179ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadway?{%22value%22:%22500%20broadway%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadway\"}"=>nil, "id"=>"500 broadway", "getautocomplete"=>{}}
+Completed 200 OK in 171ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 185ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/1?{%22value%22:%221%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"1\"}"=>nil, "id"=>"1", "getautocomplete"=>{}}
+Completed 200 OK in 162ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for ::1 at 2016-12-05 12:11:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/getautocompletes/5?{%22value%22:%225%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5\"}"=>nil, "id"=>"5", "getautocomplete"=>{}}
+Completed 200 OK in 128ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20?{%22value%22:%225%20%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 \"}"=>nil, "id"=>"5 ", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20b?{%22value%22:%225%20b%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 b\"}"=>nil, "id"=>"5 b", "getautocomplete"=>{}}
+Completed 200 OK in 177ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20br?{%22value%22:%225%20br%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 br\"}"=>nil, "id"=>"5 br", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20bro?{%22value%22:%225%20bro%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 bro\"}"=>nil, "id"=>"5 bro", "getautocomplete"=>{}}
+Completed 200 OK in 246ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 157ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broa?{%22value%22:%225%20broa%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broa\"}"=>nil, "id"=>"5 broa", "getautocomplete"=>{}}
+Completed 200 OK in 167ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broad?{%22value%22:%225%20broad%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broad\"}"=>nil, "id"=>"5 broad", "getautocomplete"=>{}}
+Completed 200 OK in 211ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broadw?{%22value%22:%225%20broadw%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadw\"}"=>nil, "id"=>"5 broadw", "getautocomplete"=>{}}
+Completed 200 OK in 183ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broadwa?{%22value%22:%225%20broadwa%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadwa\"}"=>nil, "id"=>"5 broadwa", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20broadway?{%22value%22:%225%20broadway%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadway\"}"=>nil, "id"=>"5 broadway", "getautocomplete"=>{}}
+Completed 200 OK in 180ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 178ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}, "distance"=>{"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}}}
+Completed 200 OK in 227ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 397ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:10 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}, "distance"=>{"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}}}
+Completed 200 OK in 137ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 12:11:27 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Started GET "/getautocompletes/as?{%22value%22:%22as%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"as\"}"=>nil, "id"=>"as", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asd?{%22value%22:%22asd%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asd\"}"=>nil, "id"=>"asd", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdf?{%22value%22:%22asdf%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdf\"}"=>nil, "id"=>"asdf", "getautocomplete"=>{}}
+Completed 200 OK in 258ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 199ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 179ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 192ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Started GET "/getautocompletes/as?{%22value%22:%22as%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"as\"}"=>nil, "id"=>"as", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asd?{%22value%22:%22asd%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asd\"}"=>nil, "id"=>"asd", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdf?{%22value%22:%22asdf%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdf\"}"=>nil, "id"=>"asdf", "getautocomplete"=>{}}
+Completed 200 OK in 151ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 210ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfa?{%22value%22:%22asdfa%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfa\"}"=>nil, "id"=>"asdfa", "getautocomplete"=>{}}
+Completed 200 OK in 214ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 150ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfad?{%22value%22:%22asdfad%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfad\"}"=>nil, "id"=>"asdfad", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdfads?{%22value%22:%22asdfads%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfads\"}"=>nil, "id"=>"asdfads", "getautocomplete"=>{}}
+Completed 200 OK in 155ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfadsf?{%22value%22:%22asdfadsf%22}" for ::1 at 2016-12-05 12:11:29 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfadsf\"}"=>nil, "id"=>"asdfadsf", "getautocomplete"=>{}}
+Completed 200 OK in 141ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 187ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 207ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:29 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"asdf", "destination"=>"asdfadsf"}, "distance"=>{"route"=>{"origin"=>"asdf", "destination"=>"asdfadsf"}}}
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/distance_adapter.rb:11:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 12:11:33 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 12:11:37 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 13:01:57 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Completed 200 OK in 214ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+

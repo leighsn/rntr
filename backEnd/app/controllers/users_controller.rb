@@ -23,7 +23,7 @@ class UsersController < ApplicationController
  def update
    user = User.find(params["id"])
    user.update(user_params)
-   render json: {user_id: user.id, destination: user.destination, commute: user.commute, safety:user.safety, amenities: user.amenities, schools: user.schools}
+   render json: {user_id: user.id, destination: user.destination, commute: user.commute, safety:user.safety, amenities: user.amenities, schools: user.schools, category_1: user.category_1, category_2: user.category_2, category_3: user.category_3}
  end
 
  def index
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
  end
 
  def user_params
-   params.require(:user).permit(:email, :password, :commute, :safety, :destination, :schools, :amenities)
+   params.require(:user).permit(:email, :password, :commute, :safety, :destination, :schools, :amenities, :category_1, :category_2, :category_3)
  end
 
 end

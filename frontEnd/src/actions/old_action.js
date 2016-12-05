@@ -24,6 +24,35 @@ const signUp = function(email, password){
   }
 }
 
+
+const getDistance = function(origin, destination){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/distances',
+      type: 'POST',
+      data: JSON.stringify({route: {origin: origin, destination: destination}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_DISTANCE', payload: data})
+    })
+  }
+}
+
+const getCrime = function(address){
+  return function(dispatch){
+    $.ajax({
+      url: `http://localhost:3000/crimes/${address}`,
+      type: 'GET',
+      data: JSON.stringify({address: address}),
+      contentType: "application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_CRIME', payload: data})
+    })
+  }
+}
+
 const aptSearch = function(address, userID){
   let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
   return function(dispatch){
@@ -58,6 +87,36 @@ const logIn = function(email, password){
   }
 }
 
+const getAutocompletes = function(value){
+  return function(dispatch){
+    $.ajax({
+      url: `http://localhost:3000/getautocompletes/${encodeURIComponent(value)}`,
+      type: 'GET',
+      data: JSON.stringify({value: value}),
+      contentType: "application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+
+      dispatch({type: 'CHANGE_AUTOCOMPLETE', payload: data})
+    })
+  }
+}
+
+const getSchools = function(zipcode, grade){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/schools',
+      type: 'POST',
+      data: JSON.stringify({school: {zipcode: zipcode, grade: grade}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      console.log(data)
+      dispatch({type: 'GET_SCHOOLS', payload: data})
+    })
+  }
+}
+
 const savePreferences = function(userState, prefState){
   return function(dispatch){
     $.ajax({
@@ -74,4 +133,18 @@ const savePreferences = function(userState, prefState){
 }
 
 
-export { signUp, logIn, aptSearch, savePreferences }
+const getAmenities = function(search, location){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/amenities',
+      type: 'POST',
+      data: JSON.stringify({amenities: {search: search, location: location}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_AMENITIES', payload: data})
+    })
+  }
+}
+
+export { signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences, getSchools }

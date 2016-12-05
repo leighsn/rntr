@@ -16,15 +16,6 @@ function apartment(state={}, action) {
   switch(action.type) {
     case 'SHOW_APT':
       return action.payload
-    case 'GET_DISTANCE':
-      return action.payload
-    case 'GET_SCHOOLS':
-      return action.payload
-    case 'GET_AMENITIES':
-      return action.payload
-    
-    case 'GET_CRIME':
-      return action.payload
     default:
       return state;
   }

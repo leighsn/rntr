@@ -16,11 +16,16 @@ class PreferencesComponent extends React.Component{
 
   handleSubmit(event){
     event.preventDefault()
-    debugger
     this.props.savePreferences(this.props.user, this.state)
   }
 
   handleChange(event){
+    let newStateAttr = {}
+    newStateAttr[event.target.id] = parseInt(event.target.value)
+    this.setState(newStateAttr)
+  }
+
+  handleDestinationChange(event){
     let newStateAttr = {}
     newStateAttr[event.target.id] = event.target.value
     this.setState(newStateAttr)
@@ -32,7 +37,7 @@ class PreferencesComponent extends React.Component{
         <form onSubmit={this.handleSubmit.bind(this)}>
 
           <p><label id="destination">Destination:</label>
-          <input type="text" id="destination" onChange={this.handleChange.bind(this)}/></p>
+          <input type="text" id="destination" onChange={this.handleDestinationChange.bind(this)}/></p>
 
           <p><label id="commute">Commute:</label>
           <select id="commute" onChange={this.handleChange.bind(this)}>

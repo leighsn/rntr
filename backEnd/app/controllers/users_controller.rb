@@ -1,3 +1,5 @@
+require 'byebug'
+
 class UsersController < ApplicationController
 
 
@@ -21,8 +23,9 @@ class UsersController < ApplicationController
  end
 
  def update
-   user = User.find(params["id"])
-   user.update(user_params)
+   userId = Auth.decode(params["token"])["user_id"]
+   user = User.find(userId)
+   user.update(pref_params)
    render json: {user_id: user.id, destination: user.destination, commute: user.commute, safety:user.safety, amenities: user.amenities, schools: user.schools}
  end
 
@@ -33,6 +36,10 @@ class UsersController < ApplicationController
 
  def user_params
    params.require(:user).permit(:email, :password, :commute, :safety, :destination, :schools, :amenities)
+ end
+
+ def pref_params
+   params.require(:prefState).permit(:destination, :commute, :schools, :amenities, :safety)
  end
 
 end

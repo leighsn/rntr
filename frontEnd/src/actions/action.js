@@ -106,7 +106,7 @@ const getAutocompletes = function(value){
       contentType: "application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-        
+
       dispatch({type: 'CHANGE_AUTOCOMPLETE', payload: data})
     })
   }
@@ -130,14 +130,13 @@ const getSchools = function(zipcode, grade){
 
 
 
-const savePreferences = function(userState,prefState){
-  debugger
+const savePreferences = function(userState, prefState){
   // prefState[userID] = userState.userID
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
       type: 'PATCH',
-      data: JSON.stringify(prefState),
+      data: JSON.stringify({prefState: prefState, token: localStorage.token}),
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){

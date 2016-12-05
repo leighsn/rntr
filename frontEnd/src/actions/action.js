@@ -59,6 +59,20 @@ const getCrime = function(address){
   }
 }
 
+
+
+// const getAmenities = function(categories){
+//   return function(dispatch){
+//     $.ajax({
+//       url: `http://localhost:3000/categories/`,
+//       type: 'GET',
+//       data: JSON.stringify({address: address}),
+//     })
+//   }
+
+// }
+
+
 const aptSearch = function(address){
   let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
   return function(dispatch){

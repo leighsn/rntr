@@ -8,8 +8,9 @@ import { bindActionCreators } from 'redux';
 class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
-      this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1}
+      this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1, category_1: "", category_2: "", category_3: ""}
   }
+
   // handleCommuteChange(event){
   //   this.setState({commute_weight: event.target.value})
   // }
@@ -21,10 +22,13 @@ class PreferencesComponent extends React.Component{
   }
 
   handleChange(event){
+    
     let newStateAttr = {}
     newStateAttr[event.target.id] = event.target.value
     this.setState(newStateAttr)
   }
+
+
 
   render(){
     return(
@@ -79,7 +83,20 @@ class PreferencesComponent extends React.Component{
                 <option value='10'>10</option>
             </select></p>
 
+          
+
           <p><label id="amenities">Amenities:</label>
+
+            <label id="category_1"> Category 1:</label>
+            <input type="text" id="category_1" onChange={this.handleChange.bind(this)} /> 
+         
+            <label id="category_2"> Category 2:</label>
+            <input type="text" id="category_2" onChange={this.handleChange.bind(this)} /> 
+         
+            <label id="category_3"> Category 3:</label>
+            <input type="text" id="category_3" onChange={this.handleChange.bind(this)} /> 
+          
+         
             <select id="amenities" onChange={this.handleChange.bind(this)}>
                 <option value='-'>-</option>
                 <option value='1'>1</option>

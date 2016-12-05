@@ -5,7 +5,8 @@ function user(state={}, action) {
     case 'LOG_IN':
       return {userID: action.payload.user_id, userEmail: action.payload.user_email}
     case 'UPDATE_PREFERENCES':
-      return action.payload
+    console.log(action.payload)
+      return {userID: action.payload.user_id, destination: action.payload.destination, commute: action.payload.commute, schools: action.payload.schools, safety: action.payload.safety, amenities: action.payload.amenities}
     default:
       return state;
   }

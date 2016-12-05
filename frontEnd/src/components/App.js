@@ -10,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h4>{this.props.user.userEmail}</h4>
         <LinkComponent />
         {this.props.children}
       </div>

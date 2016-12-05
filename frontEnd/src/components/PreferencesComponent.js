@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
-      this.state = {destination: "",commute: "", schools: "", amenities: "", safety: ""}
+      this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1}
   }
   // handleCommuteChange(event){
   //   this.setState({commute_weight: event.target.value})
@@ -16,6 +16,7 @@ class PreferencesComponent extends React.Component{
 
   handleSubmit(event){
     event.preventDefault()
+    debugger
     this.props.savePreferences(this.props.user, this.state)
   }
 
@@ -30,22 +31,70 @@ class PreferencesComponent extends React.Component{
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
-          <label id="destination">Destination:</label>
-          <input type="text" id="destination" onChange={this.handleChange.bind(this)}/>
+          <p><label id="destination">Destination:</label>
+          <input type="text" id="destination" onChange={this.handleChange.bind(this)}/></p>
 
-          <label id="commute">Commute:</label>
-          <input type="text" id="commute" onChange={this.handleChange.bind(this)}/>
+          <p><label id="commute">Commute:</label>
+          <select id="commute" onChange={this.handleChange.bind(this)}>
+              <option value='-'>-</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
+          </select></p>
 
-          <label id="schools">Schools:</label>
-          <input type="text" id="schools" onChange={this.handleChange.bind(this)}/>
+          <p><label id="schools">Schools:</label>
+            <select id="schools" onChange={this.handleChange.bind(this)}>
+                <option value='-'>-</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+            </select></p>
 
-          <label id="safety">Safety:</label>
-          <input type="text" id="safety" onChange={this.handleChange.bind(this)}/>
+          <p><label id="safety">Safety:</label>
+            <select id="safety" onChange={this.handleChange.bind(this)}>
+                <option value='-'>-</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+            </select></p>
 
-          <label id="schools">Amenities:</label>
-          <input type="text" id="amenities" onChange={this.handleChange.bind(this)}/>
+          <p><label id="amenities">Amenities:</label>
+            <select id="amenities" onChange={this.handleChange.bind(this)}>
+                <option value='-'>-</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+            </select></p>
 
-          <input type="submit"/>
+          <p><input type="submit"/></p>
         </form>
       </div>
     )

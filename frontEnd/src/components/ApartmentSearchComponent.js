@@ -25,7 +25,8 @@ class ApartmentSearchComponent extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.props.aptSearch(this.state)
+    
+    this.props.aptSearch(this.state, this.props.user.userID)
   }
 
 

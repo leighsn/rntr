@@ -25,6 +25,7 @@ function apartment(state={crime:{},commute:"",schools:""}, action) {
     case 'LOG_IN':
       console.log(action.payload)
       state.token = action.payload.jwt
+    case 'GET_CRIME':
       return action.payload
     default:
       return state;

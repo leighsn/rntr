@@ -95,8 +95,6 @@ const logIn = function(email, password){
   }
 }
 
-
-
 const getAutocompletes = function(value){
   return function(dispatch){
     $.ajax({
@@ -111,7 +109,6 @@ const getAutocompletes = function(value){
     })
   }
 }
-
 
 const getSchools = function(zipcode, grade){
   return function(dispatch){
@@ -128,8 +125,6 @@ const getSchools = function(zipcode, grade){
   }
 }
 
-
-
 const savePreferences = function(userState, prefState){
   // prefState[userID] = userState.userID
   return function(dispatch){
@@ -142,8 +137,20 @@ const savePreferences = function(userState, prefState){
     }).done(function(data){
       console.log(data)
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
+
+
+const getAmenities = function(search, location){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/amenities',
+      type: 'POST',
+      data: JSON.stringify({amenities: {search: search, location: location}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_AMENITIES', payload: data})
     })
   }
 }
 
-export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch, savePreferences} //
+export {signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences}

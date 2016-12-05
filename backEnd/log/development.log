@@ -2470,3 +2470,154 @@ Yelp::Error::InvalidSignature (Signature was invalid):
 
 app/adapters/yelp_adapter.rb:14:in `search'
 app/controllers/amenities_controller.rb:7:in `create'
+Started GET "/ec36991c626d244f2c41.hot-update.json" for ::1 at 2016-12-05 13:31:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ec36991c626d244f2c41.hot-update.json"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-12-05 13:31:54 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/nick-scaglione/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nick-scaglione/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (12.0ms)
+Completed 200 OK in 35ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:34 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:35 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:38 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/sessions" for ::1 at 2016-12-05 13:33:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 0.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET,%205B+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET,%205B+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:41 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET, 5B NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET, 5B+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 2154ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:48 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 1062ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:49 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 358ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:54 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 448ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:55 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 434ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:56 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 423ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:10 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 496ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20w%20117%20st+NEW%20YORK+NY+10026?{%22address%22:%22368%20w%20117%20st+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:17 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 w 117 st NEW YORK NY 10026\"}"=>nil, "id"=>"368 w 117 st+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 1299ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20w%20117%20st+NEW%20YORK+NY+10026?{%22address%22:%22368%20w%20117%20st+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:19 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 w 117 st NEW YORK NY 10026\"}"=>nil, "id"=>"368 w 117 st+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 425ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:43 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 836ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:44 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 385ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-05 13:34:57 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'

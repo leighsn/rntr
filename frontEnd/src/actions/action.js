@@ -1,4 +1,4 @@
-var $ = require("jquery");
+import $ from 'jquery'
 import { browserHistory } from 'react-router'
 
 const signUp = function(email, password){
@@ -16,10 +16,10 @@ const signUp = function(email, password){
       if(!!data.error){
         alert(data.error)
       } else {
-      browserHistory.push('/show-test') //sets url
-      localStorage.setItem('token', data.jwt)
-      dispatch({type: 'LOG_IN', payload: data})
-    }
+        browserHistory.push('/show-test') //sets url
+        localStorage.setItem('token', data.jwt)
+        dispatch({type: 'LOG_IN', payload: data})
+      }
     })
   }
 }
@@ -43,7 +43,6 @@ const getDistance = function(origin, destination){
     })
   }
 }
-
 
 const getCrime = function(address){
   return function(dispatch){
@@ -72,8 +71,6 @@ const aptSearch = function(address){
     })
   }
 }
-
-
 
 const logIn = function(email, password){
   return function(dispatch){
@@ -126,7 +123,6 @@ const getSchools = function(zipcode, grade){
 }
 
 const savePreferences = function(userState, prefState){
-  // prefState[userID] = userState.userID
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
@@ -137,6 +133,9 @@ const savePreferences = function(userState, prefState){
     }).done(function(data){
       console.log(data)
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
+    })
+  }
+}
 
 
 const getAmenities = function(search, location){
@@ -153,4 +152,4 @@ const getAmenities = function(search, location){
   }
 }
 
-export {signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences}
+export { signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences }

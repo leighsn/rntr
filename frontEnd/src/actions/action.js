@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import { browserHistory } from 'react-router'
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 const signUp = function(email, password){
   //dispatch({type: CREATING_USER})
@@ -79,6 +80,7 @@ const logIn = function(email, password){
 
 const savePreferences = function(userState, prefState){
   return function(dispatch){
+    dispatch(showLoading())
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
       type: 'PATCH',
@@ -86,7 +88,7 @@ const savePreferences = function(userState, prefState){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-      console.log(data)
+      dispatch(hideLoading())
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
     })
   }

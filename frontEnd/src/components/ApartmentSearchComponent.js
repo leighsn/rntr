@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { aptSearch } from '../actions/action'
 import { browserHistory } from 'react-router'
-var Loading = require('react-loading')
+import LoadingBar from 'react-redux-loading-bar'
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
+
 
 
 class ApartmentSearchComponent extends Component {
@@ -30,6 +32,7 @@ class ApartmentSearchComponent extends Component {
     event.preventDefault()
     if(!!this.props.user.destination)
     {
+      this.props.showLoading()
       this.props.aptSearch(this.state, this.props.user.userID)
     }
     else {
@@ -42,7 +45,7 @@ class ApartmentSearchComponent extends Component {
   render() {
     return (
       <div>
-       <Loading type='balls' color='#e3e3e3' />
+        <LoadingBar />
         <br/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Street:</label>
@@ -55,14 +58,13 @@ class ApartmentSearchComponent extends Component {
           <input type='text' id='zip' onChange={this.handleZipChange.bind(this)} /><br/>
           <input type='submit' value='Search' />
         </form>
-
         </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({aptSearch: aptSearch}, dispatch)
+  return bindActionCreators({aptSearch: aptSearch, showLoading: showLoading}, dispatch)
 }
 
 function mapStateToProps(state) {

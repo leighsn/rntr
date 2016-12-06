@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { loadingBarReducer } from 'react-redux-loading-bar'
 
 function user(state={}, action) {
   switch(action.type) {
@@ -20,5 +21,5 @@ function apartment(state={}, action) {
       return state;
   }
 }
-const rootReducer = combineReducers({user, apartment})
+const rootReducer = combineReducers({user, apartment, LoadingBar: loadingBarReducer})
 export default rootReducer

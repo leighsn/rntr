@@ -42,7 +42,7 @@ class UsersController < ApplicationController
  end
 
  def pref_params
-   params.require(:prefState).permit(:destination, :commute, :schools, :amenities, :safety)
+   params.require(:prefState).permit(:destination, :commute, :schools, :amenities, :safety, :category_1, :category_2, :category_3)
  end
 
 end

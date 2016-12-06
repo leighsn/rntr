@@ -25,7 +25,7 @@ class ApartmentSearchComponent extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    
+
     this.props.aptSearch(this.state, this.props.user.userID)
   }
 
@@ -51,12 +51,7 @@ class ApartmentSearchComponent extends Component {
         </form>
 
         <div>
-        <h4>Crime Data:</h4>
-        <p>Violations: {this.props.apartment.crime.violation}</p>
-        <p>Misdemeanors: {this.props.apartment.crime.misdemeanor}</p>
-        <p>Felonies: {this.props.apartment.crime.felony}</p>
-        <h4>Commute: {this.props.apartment.commute}</h4>
-        <h3>There are {this.props.apartment.schools} good schools nearby</h3>
+      
         </div>
 
         </div>

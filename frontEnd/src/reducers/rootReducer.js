@@ -12,20 +12,9 @@ function user(state={}, action) {
   }
 }
 
-function apartment(state={crime:{},commute:"",schools:""}, action) {
+function apartment(state={}, action) {
   switch(action.type) {
     case 'SHOW_APT':
-      return{crime: action.payload.crime_data, commute: action.payload.distance_data, schools: action.payload.school_data}
-    case 'GET_DISTANCE':
-      return action.payload
-    case 'GET_SCHOOLS':
-      return action.payload
-    case 'GET_AMENITIES':
-      return action.payload
-    case 'LOG_IN':
-      console.log(action.payload)
-      state.token = action.payload.jwt
-    case 'GET_CRIME':
       return action.payload
     default:
       return state;

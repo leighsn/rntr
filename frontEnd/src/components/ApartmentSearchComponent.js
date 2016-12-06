@@ -5,6 +5,7 @@ import { aptSearch } from '../actions/action'
 import { browserHistory } from 'react-router'
 var Loading = require('react-loading')
 
+
 class ApartmentSearchComponent extends Component {
 
   constructor(props){
@@ -54,6 +55,7 @@ class ApartmentSearchComponent extends Component {
           <input type='text' id='zip' onChange={this.handleZipChange.bind(this)} /><br/>
           <input type='submit' value='Search' />
         </form>
+
         </div>
     )
   }

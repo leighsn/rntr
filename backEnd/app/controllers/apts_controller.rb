@@ -81,8 +81,8 @@ class AptsController < ApplicationController
     10 - roundScore
   end
 
-  def amenities_score
-    7
+  def amenities_score(apartment)
+    total = apartment.apt_amenities.pluck(:count).inject(&:+) / 6.0
   end
 
   def school_score(schools)
@@ -90,6 +90,8 @@ class AptsController < ApplicationController
     score > 10 ? score = 10 : score = score
     score
   end
+
+
 
   def calculate_weights(user)
     weights = {}
@@ -102,7 +104,7 @@ class AptsController < ApplicationController
   end
 
   def calculate_score(apartment, weights)
-    (school_score(apartment.apt_schools.first.a_schools) * weights[:schools]) + (commute_score(apartment.apt_commutes.first.duration.to_i) * weights[:commute]) + (crime_score(apartment.apt_crimes.first.felonies) * weights[:safety]) + (amenities_score * weights[:amenities])
+    (school_score(apartment.apt_schools.first.a_schools) * weights[:schools]) + (commute_score(apartment.apt_commutes.first.duration.to_i) * weights[:commute]) + (crime_score(apartment.apt_crimes.first.felonies) * weights[:safety]) + (amenities_score(apartment) * weights[:amenities])
   end
 
 end

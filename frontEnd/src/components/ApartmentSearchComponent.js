@@ -16,16 +16,16 @@ class ApartmentSearchComponent extends Component {
   }
 
   handleStreetChange(event){
-    this.setState({street: event.target.value})
+    this.setState({street: event.target.value.replace('.', '')})
   }
   handleCityChange(event){
-    this.setState({city: event.target.value})
+    this.setState({city: event.target.value.replace('.', '')})
   }
   handleStateChange(event){
-    this.setState({state: event.target.value})
+    this.setState({state: event.target.value.replace('.', '')})
   }
   handleZipChange(event){
-    this.setState({zip: event.target.value})
+    this.setState({zip: event.target.value.replace('.', '')})
   }
 
   handleSubmit(event) {

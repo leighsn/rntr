@@ -3,6 +3,7 @@ import { savePreferences } from '../actions/action.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Autocomplete from 'react-google-autocomplete';
+import auth from '../lib/auth'
 
 class PreferencesComponent extends React.Component{
   constructor(props){
@@ -14,9 +15,6 @@ class PreferencesComponent extends React.Component{
 
   }
 
-  // handleCommuteChange(event){
-  //   this.setState({commute_weight: event.target.value})
-  // }
 
   handleSubmit(event){
     event.preventDefault()
@@ -24,18 +22,16 @@ class PreferencesComponent extends React.Component{
   }
 
   handleChange(event){
-<<<<<<< HEAD
 
-    // debugger
-=======
->>>>>>> e0fa5cc4c6117e36837a9b71bc4ea6651dcb45d2
     let newStateAttr = {}
     newStateAttr[event.target.id] = parseInt(event.target.value)
 
     this.setState(newStateAttr)
   }
 
-  handleDestinationChange(event){
+
+
+  handleCategoryChange(event){
     let newStateAttr = {}
     newStateAttr[event.target.id] = event.target.value
     this.setState(newStateAttr)
@@ -51,11 +47,11 @@ class PreferencesComponent extends React.Component{
 
           <label id="destination">Destination:</label>
           <Autocomplete
-            onChange={this.handleDestinationChange.bind(this)}
+
             id="destination"
             style={{width: '30%'}}
             onPlaceSelected={(place) => {
-              this.setState({"destination": place})
+              this.setState({"destination": place.formatted_address})
               console.log(place);
             }}
             types={['address']}
@@ -91,23 +87,9 @@ class PreferencesComponent extends React.Component{
                 })}
             </select></p>
 
-          
 
-          <p><label id="amenities">Amenities:</label></p>
 
-            <label id="category_1"> Category 1:</label>
-            <input type="text" id="category_1" onChange={this.handleChange.bind(this)} /> 
-         
-            <label id="category_2"> Category 2:</label>
-            <input type="text" id="category_2" onChange={this.handleChange.bind(this)} /> 
-         
-            <label id="category_3"> Category 3:</label>
-            <input type="text" id="category_3" onChange={this.handleChange.bind(this)} /> 
-          
-         
-
-          <label id="amenities">Amenities: </label>
-
+          <p><label id="amenities">Amenities: </label>
             <select id="amenities" onChange={this.handleChange.bind(this)}>
               <option value='-'>-</option>
                 {
@@ -115,7 +97,19 @@ class PreferencesComponent extends React.Component{
                   return <option value={opt}>{opt}</option>
                 })}
             </select>
-
+          </p>
+            <p>
+            <label id="category_1">Amenity Category 1:</label>
+            <input type="text" id="category_1" onChange={this.handleCategoryChange.bind(this)} />
+            </p>
+            <p>
+            <label id="category_2">Amenity Category 2:</label>
+            <input type="text" id="category_2" onChange={this.handleCategoryChange.bind(this)} />
+            </p>
+            <p>
+            <label id="category_3">Amenity Category 3:</label>
+            <input type="text" id="category_3" onChange={this.handleCategoryChange.bind(this)} />
+            </p>
           <p><input type="submit"/></p>
         </form>
       </div>
@@ -131,4 +125,4 @@ function mapStateToProps(state) {
   return state
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PreferencesComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(auth(PreferencesComponent))

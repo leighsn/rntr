@@ -36,7 +36,9 @@ class AptsController < ApplicationController
            f_schools: apt_school.f_schools,
          }
        },
-       apartment_score: score
+       apartment_score: score.round,
+       apartment_id: apartment.id,
+       apartment_address: apartment.address
      }
   end
 

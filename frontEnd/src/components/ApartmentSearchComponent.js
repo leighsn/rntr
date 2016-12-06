@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { aptSearch } from '../actions/action'
+import { browserHistory } from 'react-router'
 
 class ApartmentSearchComponent extends Component {
 
@@ -25,8 +26,14 @@ class ApartmentSearchComponent extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-
-    this.props.aptSearch(this.state, this.props.user.userID)
+    if(!!this.props.user.destination)
+    {
+      this.props.aptSearch(this.state, this.props.user.userID)
+    }
+    else {
+      alert("Can't search without preferences!")
+      browserHistory.push('preferences')
+    }
   }
 
 
@@ -37,23 +44,14 @@ class ApartmentSearchComponent extends Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Street:</label>
           <input type='text' id='street' onChange={this.handleStreetChange.bind(this)} /><br/>
-
           <label>City:</label>
           <input type='text' id='city' onChange={this.handleCityChange.bind(this)} /><br/>
-
           <label>State:</label>
           <input type='text' id='state' onChange={this.handleStateChange.bind(this)} /><br/>
-
           <label>Zip:</label>
           <input type='text' id='zip' onChange={this.handleZipChange.bind(this)} /><br/>
-
           <input type='submit' value='Search' />
         </form>
-
-        <div>
-      
-        </div>
-
         </div>
     )
   }

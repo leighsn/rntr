@@ -16,9 +16,10 @@ const signUp = function(email, password){
       if(!!data.error){
         alert(data.error)
       } else {
-        browserHistory.push('/show-test') //sets url
+         //sets url
         localStorage.setItem('token', data.jwt)
         dispatch({type: 'LOG_IN', payload: data})
+        browserHistory.push('preferences')
       }
     })
   }
@@ -51,6 +52,7 @@ const aptSearch = function(address, userID){
       dataType:"json"
     }).done(function(data){
       dispatch({type: 'SHOW_APT', payload: data})
+      browserHistory.push('results')
     })
   }
 }
@@ -67,9 +69,9 @@ const logIn = function(email, password){
       if(!!data.error){
       alert(data.error)
     } else {
-      browserHistory.push('/show-test')
       localStorage.setItem('token', data.jwt)
       dispatch({type: 'LOG_IN', payload: data})
+      browserHistory.push('search')
     }
     })
   }

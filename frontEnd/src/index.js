@@ -10,7 +10,7 @@ import { Router, hashHistory, browserHistory } from 'react-router'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory} routes={Routes} />
+    <Router history={browserHistory} routes={Routes} />
   </Provider>,
   document.getElementById('root')
 );

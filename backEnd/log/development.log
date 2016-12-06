@@ -69,18 +69,18 @@ ORDER BY c.conname
 [0m
 Started POST "/users" for ::1 at 2016-12-01 14:27:02 -0500
   [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  
+
 SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
   has_many: :destinations
            ^):
-  
+
 app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
 Started POST "/users" for ::1 at 2016-12-01 14:29:06 -0500
-  
+
 SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
   has_many: :destinations
            ^):
-  
+
 app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
 Started POST "/users" for ::1 at 2016-12-01 14:29:51 -0500
 Processing by UsersController#create as HTML
@@ -109,9 +109,9 @@ Processing by UsersController#create as HTML
 Completed 400 Bad Request in 0ms (ActiveRecord: 4.2ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: user):
-  
+
 app/controllers/users_controller.rb:29:in `user_params'
 app/controllers/users_controller.rb:11:in `create'
 Started POST "/users" for ::1 at 2016-12-01 14:32:30 -0500
@@ -142,14 +142,14 @@ Processing by UsersController#create as HTML
 Completed 500 Internal Server Error in 102ms (ActiveRecord: 7.6ms)
 
 
-  
+
 SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: syntax error, unexpected ',', expecting ')'
    JWT.encode (payload, Rails.application.secrets[:s...
                        ^
 /Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: dynamic constant assignment
 /Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:5: syntax error, unexpected ')', expecting '='
 /Users/craigiturbe/Development/rntr/backEnd/lib/auth.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
-  
+
 lib/auth.rb:5: syntax error, unexpected ',', expecting ')'
 lib/auth.rb:5: dynamic constant assignment
 lib/auth.rb:5: syntax error, unexpected ')', expecting '='
@@ -179,9 +179,9 @@ Completed 200 OK in 140ms (Views: 0.2ms | ActiveRecord: 10.0ms)
 
 Started POST "/users" for ::1 at 2016-12-01 16:06:50 -0500
   [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  
+
 ActionController::RoutingError (undefined method `has_many' for UsersController:Class):
-  
+
 app/controllers/users_controller.rb:2:in `<class:UsersController>'
 app/controllers/users_controller.rb:1:in `<top (required)>'
 Started POST "/users" for ::1 at 2016-12-01 16:07:40 -0500
@@ -195,9 +195,9 @@ Completed 200 OK in 151ms (Views: 0.2ms | ActiveRecord: 15.3ms)
 
 
 Started POST "/sessions" for ::1 at 2016-12-01 16:07:50 -0500
-  
+
 ArgumentError (Before process_action callback :authenticate_user has not been defined):
-  
+
 app/controllers/sessions_controller.rb:2:in `<class:SessionsController>'
 app/controllers/sessions_controller.rb:1:in `<top (required)>'
 Started POST "/sessions" for ::1 at 2016-12-01 16:08:46 -0500
@@ -206,9 +206,9 @@ Processing by SessionsController#create as HTML
 Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: auth):
-  
+
 app/controllers/sessions_controller.rb:15:in `auth_params'
 app/controllers/sessions_controller.rb:4:in `create'
 Started POST "/sessions" for ::1 at 2016-12-01 16:09:25 -0500
@@ -233,10 +233,10 @@ Completed 200 OK in 81ms (Views: 0.1ms | ActiveRecord: 0.4ms)
 
 
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:14:17 -0500
-  
+
 ActiveRecord::NoDatabaseError (FATAL:  database "rntr_development" does not exist
 ):
-  
+
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
@@ -327,9 +327,9 @@ ORDER BY c.conname
 [0m
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:16:30 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  
+
 ActionController::RoutingError (uninitialized constant DistancesController):
-  
+
 activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
 activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
 activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
@@ -375,9 +375,9 @@ puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:18:57 -0500
-  
+
 ActionController::RoutingError (No route matches [POST] "/distances"):
-  
+
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
@@ -405,9 +405,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (uninitialized constant DistancesController::HTTPARTY):
-  
+
 app/controllers/distances_controller.rb:6:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:25:11 -0500
 Processing by DistancesController#create as HTML
@@ -415,9 +415,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (uninitialized constant DistancesController::HTTPARTY):
-  
+
 app/controllers/distances_controller.rb:6:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:28:01 -0500
 Processing by DistancesController#create as HTML
@@ -425,17 +425,17 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (uninitialized constant DistancesController::HTTPARTY):
-  
+
 app/controllers/distances_controller.rb:6:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:36:00 -0500
-  
+
 SyntaxError (/Users/KrissaSantos/Development/app_projects/rntr/backEnd/app/adapters/distance_adapter.rb:8: syntax error, unexpected tSYMBEG, expecting ')'
   def get_distance(:origin, :destination)
                     ^
 /Users/KrissaSantos/Development/app_projects/rntr/backEnd/app/adapters/distance_adapter.rb:14: syntax error, unexpected keyword_end, expecting end-of-input):
-  
+
 app/adapters/distance_adapter.rb:8: syntax error, unexpected tSYMBEG, expecting ')'
 app/adapters/distance_adapter.rb:14: syntax error, unexpected keyword_end, expecting end-of-input
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:37:46 -0500
@@ -444,12 +444,12 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `get' for DistancesController:Class
 Did you mean?  gets
                get_distance
                gem):
-  
+
 app/adapters/distance_adapter.rb:9:in `get_distance'
 app/controllers/distances_controller.rb:9:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:41:53 -0500
@@ -458,9 +458,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `get_distance' for DistanceAdapter:Module):
-  
+
 app/controllers/distances_controller.rb:8:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:42:02 -0500
 Processing by DistancesController#create as HTML
@@ -468,9 +468,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `get_distance' for DistanceAdapter:Module):
-  
+
 app/controllers/distances_controller.rb:8:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:42:21 -0500
 Processing by DistancesController#create as HTML
@@ -478,9 +478,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `get_distance' for DistanceAdapter:Class):
-  
+
 app/controllers/distances_controller.rb:8:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 18:42:46 -0500
 Processing by DistancesController#create as HTML
@@ -554,9 +554,8 @@ Processing by DistancesController#create as HTML
 Completed 200 OK in 244ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
-<<<<<<< HEAD
 Started POST "/schools" for ::1 at 2016-12-02 10:18:28 -0500
-  
+
 ActiveRecord::PendingMigrationError (
 
 Migrations are pending. To resolve this issue, run:
@@ -564,11 +563,9 @@ Migrations are pending. To resolve this issue, run:
 	bin/rails db:migrate RAILS_ENV=development
 
 ):
-  
+
 activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
 activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
-=======
-<<<<<<< HEAD
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:16 -0500
   [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by DistancesController#create as HTML
@@ -576,9 +573,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 415ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `[]' for nil:NilClass):
-  
+
 app/adapters/distance_adapter.rb:10:in `get_distance'
 app/controllers/distances_controller.rb:8:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:20 -0500
@@ -587,9 +584,9 @@ Processing by DistancesController#create as HTML
 Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `[]' for nil:NilClass):
-  
+
 app/adapters/distance_adapter.rb:10:in `get_distance'
 app/controllers/distances_controller.rb:8:in `create'
 Started POST "/distances" for 127.0.0.1 at 2016-12-01 20:31:34 -0500
@@ -629,12 +626,12 @@ Completed 200 OK in 313ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 
 
 Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:57:58 -0500
-  
+
 PG::ConnectionBad (could not connect to server: No such file or directory
 	Is the server running locally and accepting
 	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
 ):
-  
+
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
@@ -661,6 +658,14 @@ actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:03:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
@@ -681,7 +686,6 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-<<<<<<< HEAD
   [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
   [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7437883753703932935);[0m
@@ -733,9 +737,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:8:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:19:40 -0500
@@ -744,9 +748,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:8:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:20:18 -0500
@@ -755,9 +759,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:8:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:21:29 -0500
@@ -766,9 +770,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:8:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:21:44 -0500
@@ -777,9 +781,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:8:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:22:24 -0500
@@ -788,9 +792,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 49890ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/adapters/school_adapter.rb:16:in `get_lat_lon'
 app/controllers/schools_controller.rb:9:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:24:32 -0500
@@ -866,9 +870,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 15571ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SystemExit (exit):
-  
+
 app/controllers/schools_controller.rb:9:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:34:08 -0500
 Processing by SchoolsController#create as HTML
@@ -894,9 +898,9 @@ Processing by SchoolsController#create as HTML
 Completed 500 Internal Server Error in 1120ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `console' for #<SchoolsController:0x007f99da703980>):
-  
+
 app/controllers/schools_controller.rb:9:in `create'
 Started POST "/schools" for ::1 at 2016-12-02 10:47:55 -0500
 Processing by SchoolsController#create as HTML
@@ -976,14 +980,14 @@ Processing by SchoolsController#create as HTML
 Completed 200 OK in 844ms (Views: 0.7ms | ActiveRecord: 0.0ms)
 
 
-=======
+
 Started POST "/distances" for 127.0.0.1 at 2016-12-02 09:59:37 -0500
-  
+
 PG::ConnectionBad (could not connect to server: No such file or directory
 	Is the server running locally and accepting
 	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
 ):
-  
+
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
 activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
@@ -1009,6 +1013,13 @@ actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:03:08 -0500
+
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
@@ -1047,7 +1058,7 @@ Started POST "/distances" for 127.0.0.1 at 2016-12-02 10:27:55 -0500
 Processing by DistancesController#create as HTML
   Parameters: {"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}, "distance"=>{"route"=>{"origin"=>"Times Square", "destination"=>"Bryant Park"}}}
 Completed 200 OK in 452ms (Views: 0.8ms | ActiveRecord: 0.0ms)
-=======
+
 Started POST "/distances" for ::1 at 2016-12-02 09:40:16 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by DistancesController#create as HTML
@@ -1056,14 +1067,14 @@ Completed 200 OK in 893ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/crimes/[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]?{%22address%22:%22[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]+[object%20HTMLInputElement]%22}" for ::1 at 2016-12-02 15:09:03 -0500
-  
+
 SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
-  
+
 app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
 Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:10:06 -0500
-  
+
 SyntaxError (/Users/craigiturbe/Development/rntr/backEnd/app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'):
-  
+
 app/controllers/crimes_controller.rb:9: syntax error, unexpected keyword_end, expecting '}'
 Started GET "/crimes/27%20Crooke%20Ave+Brooklyn+NY+11226?{%22address%22:%2227%20Crooke%20Ave+Brooklyn+NY+11226%22}" for ::1 at 2016-12-02 15:11:18 -0500
 Processing by CrimesController#show as HTML
@@ -1071,9 +1082,9 @@ Processing by CrimesController#show as HTML
 Completed 500 Internal Server Error in 70913ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `split' for nil:NilClass):
-  
+
 app/adapters/crime_adapter.rb:19:in `toLatLong'
 app/adapters/crime_adapter.rb:6:in `get_crime'
 app/controllers/crimes_controller.rb:7:in `show'
@@ -1199,14 +1210,14 @@ Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
 Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
 
 
-  
-  
+
+
 NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
 Did you mean?  get_autocompletes):
 NoMethodError (undefined method `get_autocomplete' for GetautocompletesAdapter:Class
 Did you mean?  get_autocompletes):
-  
-  
+
+
 app/controllers/getautocompletes_controller.rb:8:in `show'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/t?{%22value%22:%22t%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
@@ -1215,15 +1226,21 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
-  
+
 app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 16:19:50 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
-  
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:04:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+
+
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1251,9 +1268,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
-  
+
 app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/ti?{%22value%22:%22ti%22}" for 127.0.0.1 at 2016-12-02 16:19:51 -0500
@@ -1262,9 +1279,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
-  
+
 app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/tim?{%22value%22:%22tim%22}" for 127.0.0.1 at 2016-12-02 16:19:52 -0500
@@ -1273,9 +1290,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `key' for GetautocompletesAdapter:Class):
-  
+
 app/adapters/getautocompletes_adapter.rb:8:in `get_autocompletes'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 16:20:58 -0500
@@ -1308,9 +1325,9 @@ Completed 200 OK in 19246ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 Completed 500 Internal Server Error in 678730ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SystemExit (exit):
-  
+
 app/adapters/getautocompletes_adapter.rb:12:in `get_autocompletes'
 app/controllers/getautocompletes_controller.rb:8:in `show'
 Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:16:11 -0500
@@ -1319,9 +1336,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 823ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `+' for nil:NilClass):
-  
+
 app/adapters/getautocompletes_adapter.rb:11:in `block in get_autocompletes'
 app/adapters/getautocompletes_adapter.rb:10:in `map'
 app/adapters/getautocompletes_adapter.rb:10:in `get_autocompletes'
@@ -1332,9 +1349,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 111301ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `+' for nil:NilClass):
-  
+
 app/adapters/getautocompletes_adapter.rb:12:in `block in get_autocompletes'
 app/adapters/getautocompletes_adapter.rb:11:in `map'
 app/adapters/getautocompletes_adapter.rb:11:in `get_autocompletes'
@@ -1357,9 +1374,9 @@ Processing by GetautocompletesController#show as HTML
 Completed 500 Internal Server Error in 238491ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
-  
+
 AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
-  
+
 app/controllers/getautocompletes_controller.rb:10:in `show'
 Started GET "/getautocompletes/b?{%22value%22:%22b%22}" for 127.0.0.1 at 2016-12-02 17:26:06 -0500
 Processing by GetautocompletesController#show as HTML
@@ -1368,9 +1385,15 @@ Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/getautocompletes/?{%22value%22:%22%22}" for 127.0.0.1 at 2016-12-02 17:31:01 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
-  
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:05:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/amenities"):
+
+
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1392,7 +1415,6 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
->>>>>>> merger
 Started GET "/apts/27%20Crooke%20Ave%20Brooklyn%20New%20York%2011226" for ::1 at 2016-12-03 16:29:48 -0500
   [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by AptsController#show as HTML
@@ -1487,13 +1509,13 @@ Completed 500 Internal Server Error in 32218ms (ActiveRecord: 3.4ms)
 Processing by SessionsController#create as HTML
 Processing by SessionsController#create as HTML
   Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
-  
+
   Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
   Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
 SystemExit (exit):
   [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
   [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
-  
+
   [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
 app/controllers/users_controller.rb:25:in `update'
 Completed 200 OK in 1373ms (Views: 1.8ms | ActiveRecord: 581.4ms)
@@ -1566,9 +1588,9 @@ ORDER BY c.conname
 Completed 500 Internal Server Error in 367245ms (ActiveRecord: 13.0ms)
 
 
-  
+
 SystemExit (exit):
-  
+
 app/controllers/users_controller.rb:27:in `update'
 Started PATCH "/users/4" for ::1 at 2016-12-04 15:55:14 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -1582,9 +1604,9 @@ Processing by UsersController#update as HTML
 Completed 500 Internal Server Error in 3337ms (ActiveRecord: 10.2ms)
 
 
-  
+
 SystemExit (exit):
-  
+
 app/controllers/users_controller.rb:27:in `update'
 Started PATCH "/users/4" for ::1 at 2016-12-04 15:55:34 -0500
   [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -1604,9 +1626,9 @@ Processing by UsersController#update as HTML
 Completed 404 Not Found in 5ms (ActiveRecord: 6.8ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
-  
+
 app/controllers/users_controller.rb:24:in `update'
 Started POST "/sessions" for ::1 at 2016-12-04 16:03:27 -0500
 Processing by SessionsController#create as HTML
@@ -1781,6 +1803,7 @@ Processing by GetautocompletesController#show as HTML
 Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started POST "/users" for 127.0.0.1 at 2016-12-05 11:34:34 -0500
   [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
@@ -1884,6 +1907,403 @@ actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+=======
+<<<<<<< HEAD
+Started POST "/sessions" for ::1 at 2016-12-05 09:54:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 8.5ms)
+
+
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 09:55:24 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"5 broadway", "commute"=>"1", "schools"=>"1", "amenities"=>"2", "safety"=>"1"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 317296ms (ActiveRecord: 24.7ms)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+
+app/controllers/users_controller.rb:27:in `update'
+Started POST "/sessions" for ::1 at 2016-12-05 10:00:42 -0500
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 10:00:42 -0500
+Processing by UsersController#update as HTML
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 10:00:42 -0500
+  Parameters: {"prefState"=>{"destination"=>"1", "commute"=>"1", "schools"=>"1", "amenities"=>"1", "safety"=>"1"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"5 broadway", "commute"=>"1", "schools"=>"1", "amenities"=>"2", "safety"=>"1"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (1610.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3382ms (ActiveRecord: 1610.0ms)
+
+
+
+  [1m[36mUser Load (50.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+Completed 404 Not Found in 1605ms (ActiveRecord: 50.3ms)
+
+
+
+
+app/controllers/users_controller.rb:27:in `update'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+
+app/controllers/users_controller.rb:27:in `update'
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 106ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 10:01:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:02:08 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"123", "commute"=>"1", "schools"=>"1", "amenities"=>"1", "safety"=>"2"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms)
+
+
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+
+app/controllers/users_controller.rb:28:in `update'
+Started POST "/sessions" for ::1 at 2016-12-05 10:10:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:10:54 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"hello", "commute"=>2, "schools"=>2, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+
+app/controllers/users_controller.rb:28:in `update'
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:13:11 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"hello", "commute"=>2, "schools"=>2, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 10:14:14 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:14:18 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"hello", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (68.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 623168ms (Views: 0.3ms | ActiveRecord: 78.5ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 10:24:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:24:53 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"hello", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:25:12 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"hello", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Exists (39.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "commute" = $1, "amenities" = $2, "schools" = $3, "safety" = $4, "updated_at" = $5, "destination" = $6 WHERE "users"."id" = $7[0m  [["commute", 1], ["amenities", 1], ["schools", 1], ["safety", 1], ["updated_at", 2016-12-05 15:25:12 UTC], ["destination", "hello"], ["id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 43081ms (Views: 0.5ms | ActiveRecord: 50.1ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 10:27:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 10:29:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:30:53 -0500
+Completed   in 389066ms (ActiveRecord: 2.7ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 10:31:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"5 broadway", "commute"=>5, "schools"=>2, "amenities"=>10, "safety"=>9}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "destination" = $1, "commute" = $2, "schools" = $3, "amenities" = $4, "safety" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["destination", "5 broadway"], ["commute", 5], ["schools", 2], ["amenities", 10], ["safety", 9], ["updated_at", 2016-12-05 15:31:49 UTC], ["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 10.7ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/getautocompletes/368%20West%20117th%20Street%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%22368%20West%20117th%20Street,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:14 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"368 West 117th Street, New York, NY, United States\"}"=>nil, "id"=>"368 West 117th Street, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 586ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%225%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:18 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 Broadway, New York, NY, United States\"}"=>nil, "id"=>"5 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:19 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 385ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:35 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 145ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:36 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"368 West 117th Street, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 120ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%22%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:46 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\" Broadway, New York, NY, United States\"}"=>nil, "id"=>" Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/3%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%223%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:46 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"3 Broadway, New York, NY, United States\"}"=>nil, "id"=>"3 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 133ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/30%20Broadway%2C%20New%20York%2C%20NY%2C%20United%20States?{%22value%22:%2230%20Broadway,%20New%20York,%20NY,%20United%20States%22}" for ::1 at 2016-12-05 12:08:47 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"30 Broadway, New York, NY, United States\"}"=>nil, "id"=>"30 Broadway, New York, NY, United States", "getautocomplete"=>{}}
+Completed 200 OK in 132ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:47 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 340ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:08:48 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:09:06 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}, "distance"=>{"route"=>{"origin"=>"30 Broadway, New York, NY, United States", "destination"=>"5 Broadway, New York, NY, United States"}}}
+Completed 200 OK in 115ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 12:10:54 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "destination" = $1, "commute" = $2, "schools" = $3, "amenities" = $4, "safety" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["destination", ""], ["commute", 1], ["schools", 1], ["amenities", 1], ["safety", 1], ["updated_at", 2016-12-05 17:10:55 UTC], ["id", 2]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:10:59 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"", "destination"=>""}, "distance"=>{"route"=>{"origin"=>"", "destination"=>""}}}
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+
+app/adapters/distance_adapter.rb:11:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started GET "/getautocompletes/5?{%22value%22:%225%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5\"}"=>nil, "id"=>"5", "getautocomplete"=>{}}
+Started GET "/getautocompletes/50?{%22value%22:%2250%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"50\"}"=>nil, "id"=>"50", "getautocomplete"=>{}}
+Completed 200 OK in 171ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500?{%22value%22:%22500%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500\"}"=>nil, "id"=>"500", "getautocomplete"=>{}}
+Completed 200 OK in 162ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20?{%22value%22:%22500%20%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 \"}"=>nil, "id"=>"500 ", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20b?{%22value%22:%22500%20b%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 b\"}"=>nil, "id"=>"500 b", "getautocomplete"=>{}}
+Completed 200 OK in 146ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 203ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bo?{%22value%22:%22500%20bo%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bo\"}"=>nil, "id"=>"500 bo", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20bor?{%22value%22:%22500%20bor%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bor\"}"=>nil, "id"=>"500 bor", "getautocomplete"=>{}}
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bora?{%22value%22:%22500%20bora%22}" for ::1 at 2016-12-05 12:11:04 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bora\"}"=>nil, "id"=>"500 bora", "getautocomplete"=>{}}
+Completed 200 OK in 211ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 151ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 173ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bor?{%22value%22:%22500%20bor%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bor\"}"=>nil, "id"=>"500 bor", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20bo?{%22value%22:%22500%20bo%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bo\"}"=>nil, "id"=>"500 bo", "getautocomplete"=>{}}
+Completed 200 OK in 212ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20b?{%22value%22:%22500%20b%22}" for ::1 at 2016-12-05 12:11:05 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 b\"}"=>nil, "id"=>"500 b", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20br?{%22value%22:%22500%20br%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 br\"}"=>nil, "id"=>"500 br", "getautocomplete"=>{}}
+Completed 200 OK in 144ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20bro?{%22value%22:%22500%20bro%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 bro\"}"=>nil, "id"=>"500 bro", "getautocomplete"=>{}}
+Completed 200 OK in 151ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broa?{%22value%22:%22500%20broa%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broa\"}"=>nil, "id"=>"500 broa", "getautocomplete"=>{}}
+Started GET "/getautocompletes/500%20broad?{%22value%22:%22500%20broad%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broad\"}"=>nil, "id"=>"500 broad", "getautocomplete"=>{}}
+Completed 200 OK in 193ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 228ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadw?{%22value%22:%22500%20broadw%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadw\"}"=>nil, "id"=>"500 broadw", "getautocomplete"=>{}}
+Completed 200 OK in 203ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadwa?{%22value%22:%22500%20broadwa%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadwa\"}"=>nil, "id"=>"500 broadwa", "getautocomplete"=>{}}
+Completed 200 OK in 179ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/500%20broadway?{%22value%22:%22500%20broadway%22}" for ::1 at 2016-12-05 12:11:06 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"500 broadway\"}"=>nil, "id"=>"500 broadway", "getautocomplete"=>{}}
+Completed 200 OK in 171ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 185ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/1?{%22value%22:%221%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"1\"}"=>nil, "id"=>"1", "getautocomplete"=>{}}
+Completed 200 OK in 162ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/?{%22value%22:%22%22}" for ::1 at 2016-12-05 12:11:07 -0500
+
+ActionController::RoutingError (No route matches [GET] "/getautocompletes"):
+
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+>>>>>>> 0de55af4e2befad1add164d340eb925914a00171
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
@@ -1904,6 +2324,7 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/users" for 127.0.0.1 at 2016-12-05 11:35:39 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
@@ -1925,6 +2346,267 @@ actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+=======
+Started GET "/getautocompletes/5?{%22value%22:%225%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5\"}"=>nil, "id"=>"5", "getautocomplete"=>{}}
+Completed 200 OK in 128ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20?{%22value%22:%225%20%22}" for ::1 at 2016-12-05 12:11:07 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 \"}"=>nil, "id"=>"5 ", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20b?{%22value%22:%225%20b%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 b\"}"=>nil, "id"=>"5 b", "getautocomplete"=>{}}
+Completed 200 OK in 177ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20br?{%22value%22:%225%20br%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 br\"}"=>nil, "id"=>"5 br", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20bro?{%22value%22:%225%20bro%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 bro\"}"=>nil, "id"=>"5 bro", "getautocomplete"=>{}}
+Completed 200 OK in 246ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 157ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broa?{%22value%22:%225%20broa%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broa\"}"=>nil, "id"=>"5 broa", "getautocomplete"=>{}}
+Completed 200 OK in 167ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broad?{%22value%22:%225%20broad%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broad\"}"=>nil, "id"=>"5 broad", "getautocomplete"=>{}}
+Completed 200 OK in 211ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broadw?{%22value%22:%225%20broadw%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadw\"}"=>nil, "id"=>"5 broadw", "getautocomplete"=>{}}
+Completed 200 OK in 183ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/5%20broadwa?{%22value%22:%225%20broadwa%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadwa\"}"=>nil, "id"=>"5 broadwa", "getautocomplete"=>{}}
+Started GET "/getautocompletes/5%20broadway?{%22value%22:%225%20broadway%22}" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"5 broadway\"}"=>nil, "id"=>"5 broadway", "getautocomplete"=>{}}
+Completed 200 OK in 180ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 178ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:08 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}, "distance"=>{"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}}}
+Completed 200 OK in 227ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 397ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:10 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}, "distance"=>{"route"=>{"origin"=>"500 broadway", "destination"=>"5 broadway"}}}
+Completed 200 OK in 137ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 12:11:27 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Started GET "/getautocompletes/as?{%22value%22:%22as%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"as\"}"=>nil, "id"=>"as", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asd?{%22value%22:%22asd%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asd\"}"=>nil, "id"=>"asd", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdf?{%22value%22:%22asdf%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdf\"}"=>nil, "id"=>"asdf", "getautocomplete"=>{}}
+Completed 200 OK in 258ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 199ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 179ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 192ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Started GET "/getautocompletes/as?{%22value%22:%22as%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"as\"}"=>nil, "id"=>"as", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asd?{%22value%22:%22asd%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asd\"}"=>nil, "id"=>"asd", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdf?{%22value%22:%22asdf%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdf\"}"=>nil, "id"=>"asdf", "getautocomplete"=>{}}
+Completed 200 OK in 151ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 210ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfa?{%22value%22:%22asdfa%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfa\"}"=>nil, "id"=>"asdfa", "getautocomplete"=>{}}
+Completed 200 OK in 214ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 150ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfad?{%22value%22:%22asdfad%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfad\"}"=>nil, "id"=>"asdfad", "getautocomplete"=>{}}
+Started GET "/getautocompletes/asdfads?{%22value%22:%22asdfads%22}" for ::1 at 2016-12-05 12:11:28 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfads\"}"=>nil, "id"=>"asdfads", "getautocomplete"=>{}}
+Completed 200 OK in 155ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/getautocompletes/asdfadsf?{%22value%22:%22asdfadsf%22}" for ::1 at 2016-12-05 12:11:29 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"asdfadsf\"}"=>nil, "id"=>"asdfadsf", "getautocomplete"=>{}}
+Completed 200 OK in 141ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 187ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 207ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/distances" for ::1 at 2016-12-05 12:11:29 -0500
+Processing by DistancesController#create as HTML
+  Parameters: {"route"=>{"origin"=>"asdf", "destination"=>"asdfadsf"}, "distance"=>{"route"=>{"origin"=>"asdf", "destination"=>"asdfadsf"}}}
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+
+app/adapters/distance_adapter.rb:11:in `get_distance'
+app/controllers/distances_controller.rb:8:in `create'
+Started PATCH "/users/undefined" for ::1 at 2016-12-05 12:11:33 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"undefined", "user"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-05 12:11:37 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"", "commute"=>1, "schools"=>1, "amenities"=>1, "safety"=>1}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "nas1@nick.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/getautocompletes/a?{%22value%22:%22a%22}" for ::1 at 2016-12-05 13:01:57 -0500
+Processing by GetautocompletesController#show as HTML
+  Parameters: {"{\"value\":\"a\"}"=>nil, "id"=>"a", "getautocomplete"=>{}}
+Completed 200 OK in 214ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:06:44 -0500
+
+SyntaxError (/Users/jsegarra3/Development/code/RNTR/rntr/backEnd/app/adapters/yelp_adapter.rb:17: syntax error, unexpected tIDENTIFIER, expecting '}'
+...                            lon:result.fetch("coordinate").f...
+...                               ^
+/Users/jsegarra3/Development/code/RNTR/rntr/backEnd/app/adapters/yelp_adapter.rb:18: syntax error, unexpected '}', expecting keyword_end):
+
+app/adapters/yelp_adapter.rb:17: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/adapters/yelp_adapter.rb:18: syntax error, unexpected '}', expecting keyword_end
+Started POST "/amenities" for ::1 at 2016-12-02 15:07:19 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 409ms (ActiveRecord: 0.0ms)
+
+
+
+Yelp::Error::InvalidSignature (Signature was invalid):
+
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:07:39 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 1189ms (ActiveRecord: 0.0ms)
+
+
+
+Yelp::Error::InvalidSignature (Signature was invalid):
+
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:08:25 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+
+Yelp::Error::InvalidSignature (Signature was invalid):
+
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:08:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms)
+
+
+
+Yelp::Error::InvalidSignature (Signature was invalid):
+
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-02 15:15:10 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-02 15:16:33 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"11357"}, "amenity"=>{"amenities"=>{"search"=>"11357"}}}
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 0.0ms)
+
+
+
+Yelp::Error::InvalidSignature (Signature was invalid):
+
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started GET "/ec36991c626d244f2c41.hot-update.json" for ::1 at 2016-12-05 13:31:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ec36991c626d244f2c41.hot-update.json"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+>>>>>>> 0de55af4e2befad1add164d340eb925914a00171
 actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
@@ -1945,6 +2627,7 @@ puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.2) lib/puma/server.rb:415:in `process_client'
 puma (3.6.2) lib/puma/server.rb:275:in `block in run'
 puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+<<<<<<< HEAD
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7437883753703932935);[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to AddDestinationToUsers (20161204201508)
@@ -2167,3 +2850,293 @@ Processing by UsersController#update as HTML
 Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 1.4ms)
 
 
+=======
+Started GET "/" for ::1 at 2016-12-05 13:31:54 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/nick-scaglione/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nick-scaglione/.rvm/gems/ruby-2.3.1/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (12.0ms)
+Completed 200 OK in 35ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:34 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:35 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/amenities" for ::1 at 2016-12-05 13:32:38 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+Started POST "/sessions" for ::1 at 2016-12-05 13:33:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nas1@nick.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nas1@nick.com"], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 0.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET,%205B+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET,%205B+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:41 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET, 5B NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET, 5B+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 2154ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:48 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 1062ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:49 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 358ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:54 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 448ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:55 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 434ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:33:56 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 423ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:10 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 496ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20w%20117%20st+NEW%20YORK+NY+10026?{%22address%22:%22368%20w%20117%20st+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:17 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 w 117 st NEW YORK NY 10026\"}"=>nil, "id"=>"368 w 117 st+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 1299ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20w%20117%20st+NEW%20YORK+NY+10026?{%22address%22:%22368%20w%20117%20st+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:19 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 w 117 st NEW YORK NY 10026\"}"=>nil, "id"=>"368 w 117 st+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 425ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:43 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 836ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/crimes/368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026?{%22address%22:%22368%20WEST%20117TH%20STREET+NEW%20YORK+NY+10026%22}" for ::1 at 2016-12-05 13:34:44 -0500
+Processing by CrimesController#show as HTML
+  Parameters: {"{\"address\":\"368 WEST 117TH STREET NEW YORK NY 10026\"}"=>nil, "id"=>"368 WEST 117TH STREET+NEW YORK+NY+10026", "crime"=>{}}
+Completed 200 OK in 385ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/amenities" for ::1 at 2016-12-05 13:34:57 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"amenities"=>{"search"=>"10026"}, "amenity"=>{"amenities"=>{"search"=>"10026"}}}
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms)
+
+
+  
+Yelp::Error::InvalidSignature (Signature was invalid):
+  
+app/adapters/yelp_adapter.rb:14:in `search'
+app/controllers/amenities_controller.rb:7:in `create'
+=======
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:35:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 115526ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226" for ::1 at 2016-12-05 11:37:41 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 44366ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:38:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 149ms (Views: 0.2ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?4" for ::1 at 2016-12-05 11:39:12 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"4"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:40:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 64226ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:40:20 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 147641ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:42:55 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 22563ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:43:17 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{}" for ::1 at 2016-12-05 11:44:43 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Started POST "/sessions" for ::1 at 2016-12-05 11:44:46 -0500
+Processing by SessionsController#create as HTML
+  [1m[36mUser Load (2334.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 2483ms (Views: 0.2ms | ActiveRecord: 2334.2ms)
+
+
+  [1m[36mUser Load (140.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 227ms (Views: 0.2ms | ActiveRecord: 140.7ms)
+
+
+Completed 200 OK in 89611ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3687ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user_id%22:4}" for ::1 at 2016-12-05 11:46:18 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user_id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 10312ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:46:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?4" for ::1 at 2016-12-05 11:46:39 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"4"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 28992ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:47:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22id%22:4}" for ::1 at 2016-12-05 11:47:39 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"id\":4}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 150327ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:50:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226?{%22user%22:{%22id%22:4}}" for ::1 at 2016-12-05 11:50:33 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"{\"user\":{\"id\":4}}"=>nil, "id"=>"40th Street Brooklyn New York 11226", "apt"=>{}}
+Completed 200 OK in 290544ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-05 11:55:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hihi@hello", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hihi@hello"], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:55:33 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}
+Completed 500 Internal Server Error in 5830ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/adapters/school_adapter.rb:12:in `fetch'
+app/adapters/school_adapter.rb:12:in `block in filter_schools'
+app/adapters/school_adapter.rb:12:in `filter_schools'
+app/adapters/school_adapter.rb:19:in `get_good_schools'
+app/controllers/apts_controller.rb:14:in `show'
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:55:45 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}
+Completed 500 Internal Server Error in 153622ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/adapters/school_adapter.rb:12:in `fetch'
+app/adapters/school_adapter.rb:12:in `block in filter_schools'
+app/adapters/school_adapter.rb:12:in `filter_schools'
+app/adapters/school_adapter.rb:19:in `get_good_schools'
+app/controllers/apts_controller.rb:14:in `show'
+Started GET "/apts/40th%20Street%20Brooklyn%20New%20York%2011226&4" for ::1 at 2016-12-05 11:58:28 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"40th Street Brooklyn New York 11226&4", "apt"=>{}}
+>>>>>>> score
+>>>>>>> 0de55af4e2befad1add164d340eb925914a00171

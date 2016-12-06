@@ -1,4 +1,4 @@
-var $ = require("jquery");
+import $ from 'jquery'
 import { browserHistory } from 'react-router'
 
 const signUp = function(email, password){
@@ -16,10 +16,10 @@ const signUp = function(email, password){
       if(!!data.error){
         alert(data.error)
       } else {
-      browserHistory.push('/show-test') //sets url
-      localStorage.setItem('token', data.jwt)
-      dispatch({type: 'LOG_IN', payload: data})
-    }
+        browserHistory.push('/show-test') //sets url
+        localStorage.setItem('token', data.jwt)
+        dispatch({type: 'LOG_IN', payload: data})
+      }
     })
   }
 }
@@ -44,7 +44,6 @@ const getDistance = function(origin, destination){
   }
 }
 
-
 const getCrime = function(address){
   return function(dispatch){
     $.ajax({
@@ -61,6 +60,7 @@ const getCrime = function(address){
 
 
 
+
 // const getAmenities = function(categories){
 //   return function(dispatch){
 //     $.ajax({
@@ -73,8 +73,10 @@ const getCrime = function(address){
 // }
 
 
-const aptSearch = function(address){
-  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
+  // let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
+
+const aptSearch = function(address, userID){
+  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,
@@ -86,8 +88,6 @@ const aptSearch = function(address){
     })
   }
 }
-
-
 
 const logIn = function(email, password){
   return function(dispatch){
@@ -109,8 +109,6 @@ const logIn = function(email, password){
   }
 }
 
-
-
 const getAutocompletes = function(value){
   return function(dispatch){
     $.ajax({
@@ -120,12 +118,11 @@ const getAutocompletes = function(value){
       contentType: "application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-        
+
       dispatch({type: 'CHANGE_AUTOCOMPLETE', payload: data})
     })
   }
 }
-
 
 const getSchools = function(zipcode, grade){
   return function(dispatch){
@@ -142,16 +139,12 @@ const getSchools = function(zipcode, grade){
   }
 }
 
-
-
-const savePreferences = function(userState,prefState){
-  debugger
-  // prefState[userID] = userState.userID
+const savePreferences = function(userState, prefState){
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
       type: 'PATCH',
-      data: JSON.stringify(prefState),
+      data: JSON.stringify({prefState: prefState, token: localStorage.token}),
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
@@ -161,4 +154,19 @@ const savePreferences = function(userState,prefState){
   }
 }
 
-export {signUp, logIn, getDistance, getAutocompletes,getCrime, aptSearch, savePreferences} //
+
+const getAmenities = function(search, location){
+  return function(dispatch){
+    $.ajax({
+      url: 'http://localhost:3000/amenities',
+      type: 'POST',
+      data: JSON.stringify({amenities: {search: search, location: location}}),
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'GET_AMENITIES', payload: data})
+    })
+  }
+}
+
+export { signUp, logIn, getDistance, getAutocompletes, getAmenities, getCrime, aptSearch, savePreferences }

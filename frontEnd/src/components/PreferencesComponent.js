@@ -2,13 +2,16 @@ import React from 'react'
 import { savePreferences } from '../actions/action.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-
+import Autocomplete from 'react-google-autocomplete';
 
 class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
+
       this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1, category_1: "", category_2: "", category_3: ""}
+
+      this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
   }
 
   // handleCommuteChange(event){
@@ -17,12 +20,19 @@ class PreferencesComponent extends React.Component{
 
   handleSubmit(event){
     event.preventDefault()
-    debugger
     this.props.savePreferences(this.props.user, this.state)
   }
 
   handleChange(event){
-    
+
+    // debugger
+    let newStateAttr = {}
+    newStateAttr[event.target.id] = parseInt(event.target.value)
+
+    this.setState(newStateAttr)
+  }
+
+  handleDestinationChange(event){
     let newStateAttr = {}
     newStateAttr[event.target.id] = event.target.value
     this.setState(newStateAttr)
@@ -32,60 +42,54 @@ class PreferencesComponent extends React.Component{
 
   render(){
     return(
+
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
-          <p><label id="destination">Destination:</label>
-          <input type="text" id="destination" onChange={this.handleChange.bind(this)}/></p>
+          <label id="destination">Destination:</label>
+          <Autocomplete
+            onChange={this.handleDestinationChange.bind(this)}
+            id="destination"
+            style={{width: '30%'}}
+            onPlaceSelected={(place) => {
+              console.log(place);
+            }}
+            types={['address']}
+            componentRestrictions={{country: "us"}}
+          />
 
-          <p><label id="commute">Commute:</label>
+
+          <p><label id="commute">Commute: </label>
+
           <select id="commute" onChange={this.handleChange.bind(this)}>
-              <option value='-'>-</option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
+            <option value='-'>-</option>
+              {
+                this.options.map(opt => {
+                return <option value={opt}>{opt}</option>
+              })}
           </select></p>
 
-          <p><label id="schools">Schools:</label>
+          <p><label id="schools">Schools: </label>
             <select id="schools" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
             </select></p>
 
-          <p><label id="safety">Safety:</label>
+          <p><label id="safety">Safety: </label>
             <select id="safety" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
             </select></p>
 
           
 
-          <p><label id="amenities">Amenities:</label>
+          <p><label id="amenities">Amenities:</label></p>
 
             <label id="category_1"> Category 1:</label>
             <input type="text" id="category_1" onChange={this.handleChange.bind(this)} /> 
@@ -97,19 +101,16 @@ class PreferencesComponent extends React.Component{
             <input type="text" id="category_3" onChange={this.handleChange.bind(this)} /> 
           
          
+
+          <label id="amenities">Amenities: </label>
+
             <select id="amenities" onChange={this.handleChange.bind(this)}>
-                <option value='-'>-</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-                <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
-                <option value='9'>9</option>
-                <option value='10'>10</option>
-            </select></p>
+              <option value='-'>-</option>
+                {
+                  this.options.map(opt => {
+                  return <option value={opt}>{opt}</option>
+                })}
+            </select>
 
           <p><input type="submit"/></p>
         </form>

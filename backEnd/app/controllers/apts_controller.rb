@@ -16,6 +16,9 @@ class AptsController < ApplicationController
      apt_commute = DistanceAdapter.get_distance(apartment)
     #  origin: apartment.address, destination: apartment.user.destination)
      apt_school = SchoolAdapter.get_all_grades(apartment)
+     apt_amenities1 = YelpAdapter.get_amenities(search: user.category_1, apartment: apartment)
+     apt_amenities2 = YelpAdapter.get_amenities(search: user.category_2, apartment: apartment)
+     apt_amenities3 = YelpAdapter.get_amenities(search: user.category_3, apartment: apartment)
 
      weights = calculate_weights(user)
      score = calculate_score(apartment, weights)
@@ -34,6 +37,11 @@ class AptsController < ApplicationController
            c_schools: apt_school.c_schools,
            d_schools: apt_school.d_schools,
            f_schools: apt_school.f_schools,
+         },
+         amenities_data: {
+           category_1: apt_amenities1,
+           category_2: apt_amenities2,
+           category_3: apt_amenities3
          }
        },
        apartment_score: score.round,

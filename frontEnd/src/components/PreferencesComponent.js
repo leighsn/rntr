@@ -22,7 +22,6 @@ class PreferencesComponent extends React.Component{
   }
 
   handleChange(event){
-
     let newStateAttr = {}
     newStateAttr[event.target.id] = parseInt(event.target.value)
 
@@ -86,6 +85,17 @@ class PreferencesComponent extends React.Component{
                   return <option value={opt}>{opt}</option>
                 })}
             </select></p>
+
+          <p><label id="amenities">Amenities:</label></p>
+
+            <label id="category_1"> Category 1:</label>
+            <input type="text" id="category_1" onChange={this.handleChange.bind(this)} />
+
+            <label id="category_2"> Category 2:</label>
+            <input type="text" id="category_2" onChange={this.handleChange.bind(this)} />
+
+            <label id="category_3"> Category 3:</label>
+            <input type="text" id="category_3" onChange={this.handleChange.bind(this)} />
 
 
 

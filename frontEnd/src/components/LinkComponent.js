@@ -4,11 +4,12 @@ import { Link } from 'react-router'
 const LinkComponent = () => {
   return (
     <div>
-      <Link to="/search">Search</Link><span>             </span>
-      <Link to="/preferences">Preferences</Link><span>             </span>
-      <Link to="/sign-up">Sign Up</Link><span>             </span>
-      <Link to="/log-in">Log In</Link>
-
+      <ul id='nav'>
+      <li><Link to="/search">Search</Link></li>
+      <li><Link to="/preferences">Preferences</Link></li>
+      <li><Link to="/sign-up">Sign Up</Link></li>
+      <li><Link to="/log-in">Log In</Link></li>
+      </ul>
     </div>
   )
 }

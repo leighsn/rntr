@@ -3,5 +3,24 @@ body {
   background-size: cover;
   background-repeat: no-repeat;;
   background-position: center;
-  color:white;
 }
+
+#nav {
+	width: 100%;
+	float: left;
+	margin: 0 0 3em 0;
+	padding: 0;
+	list-style: none;
+ }
+#nav li {
+	float: left; }
+#nav li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+#nav li a:hover {
+	color: grey;
+	background-color: #fff; }

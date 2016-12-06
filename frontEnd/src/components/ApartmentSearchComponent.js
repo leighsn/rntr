@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { aptSearch } from '../actions/action'
 import { browserHistory } from 'react-router'
+var Loading = require('react-loading')
 
 class ApartmentSearchComponent extends Component {
 
@@ -40,6 +41,7 @@ class ApartmentSearchComponent extends Component {
   render() {
     return (
       <div>
+       <Loading type='balls' color='#e3e3e3' />
         <br/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Street:</label>

@@ -1,11 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { showLoading, hideLoading } from 'react-redux-loading-bar'
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import { Gauge, Donut } from 'brexis.gauge.js';
 
 class ResultsComponent extends Component {
   constructor(props){
     super(props)
+  }
+  componentDidMount(){
+    this.gauge().bind(this)
+  }
+
+  gauge(){
+    let opts = {
+      lines: 12, // The number of lines to draw
+      angle: 0.35, // The length of each line
+      lineWidth: 0.1, // The line thickness
+      pointer: {
+        length: 0.9, // The radius of the inner circle
+        strokeWidth: 0.035, // The rotation offset
+        color: '#000000' // Fill color
+      },
+      limitMax: 'true',   // If true, the pointer will not go past the end of the gauge
+      colorStart: '#6F6EA0',   // Colors
+      colorStop: '#C0C0DB',    // just experiment with them
+      strokeColor: '#EEEEEE',   // to see which ones work best for you
+      generateGradient: true
+    };
+    let target = document.getElementById('gauge'); // your canvas element
+    let gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+    gauge.set(this.props.apartment.apartment_score); // set actual value
+    gauge.maxValue = 10; // set max gauge value
+    gauge.animationSpeed = 32;
+    gauge.setTextField(`${this.props.apartment.apartment_score}`)
   }
 
   render() {
@@ -14,7 +42,7 @@ class ResultsComponent extends Component {
       <div>
       <h4> Report for: {this.props.apartment.apartment_address}</h4>
 
-      <h2>Score: {this.props.apartment.apartment_score}</h2>
+      <h2>Score: {this.props.apartment.apartment_score} <canvas id='gauge'></canvas></h2>
 
       <p>You rated ease of commute as {this.props.user.commute} out of 10</p>
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>

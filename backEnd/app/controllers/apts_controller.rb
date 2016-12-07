@@ -8,9 +8,8 @@ class AptsController < ApplicationController
 
   def show
      data = params["id"].split("&")
-     apartment = Apartment.create(address: data[0], user_id: data[1])
-
-     user = User.find(data[1])
+     apartment = Apartment.create(address: data[0], zip: data[1], user_id: data[2])
+     user = User.find(data[2])
     #  crime_data = CrimeAdapter.get_crime(address)
      apt_crime = CrimeAdapter.get_crime(apartment)
      apt_commute = DistanceAdapter.get_distance(apartment)

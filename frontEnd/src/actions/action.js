@@ -1,7 +1,6 @@
 import $ from 'jquery'
 import { browserHistory } from 'react-router'
 
-
 const signUp = function(email, password){
   //dispatch({type: CREATING_USER})
   return function(dispatch){
@@ -26,11 +25,8 @@ const signUp = function(email, password){
   }
 }
 
-
-
-
 const aptSearch = function(address, userID){
-  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
+  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join('&') + `&${userID}`
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,
@@ -74,7 +70,6 @@ const logOut = function (event){
 
 const savePreferences = function(userState, prefState){
   return function(dispatch){
-  
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
       type: 'PATCH',
@@ -82,7 +77,6 @@ const savePreferences = function(userState, prefState){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-    
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
     })
   }

@@ -24,7 +24,7 @@ function apartment(state={}, action) {
       return state;
   }
 }
-<<<<<<< HEAD
+
 
 function savedSearches(state=[], action) {
   switch(action.type) {
@@ -33,7 +33,5 @@ function savedSearches(state=[], action) {
   }
 }
 const rootReducer = combineReducers({user, apartment, savedSearches})
-=======
-const rootReducer = combineReducers({user, apartment})
->>>>>>> master
+
 export default rootReducer

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 class ResultsComponent extends Component {
   constructor(props){
@@ -8,7 +9,7 @@ class ResultsComponent extends Component {
   }
 
   render() {
-    
+
     return (
       <div>
       <h4> Report for: {this.props.apartment.apartment_address}</h4>

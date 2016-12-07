@@ -28,3 +28,11 @@ body {
 #nav li a:hover {
 	color: grey;
 	background-color: #fff; }
+
+.logo {
+    text-decoration:none;
+    color: white;
+  }
+  .logo Link:hover {
+  	color: grey;
+  	background-color: #fff; }

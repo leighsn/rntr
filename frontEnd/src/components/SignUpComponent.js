@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { signUp } from '../actions/action.js'
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router'
+
 
 
 const SignUpComponent = (props) => {
@@ -13,8 +15,14 @@ const SignUpComponent = (props) => {
   }
 
 
+  function handleCreateAccountLink(event){
+    event.preventDefault()
+    browserHistory.push('log-in')
+  }
+
   return (
     <div id='padding'>
+    <center>
       <form onSubmit={handleSubmit.bind(this)}>
         <label>Email:</label>
         <input type='email' id='email' /><br/>
@@ -25,8 +33,11 @@ const SignUpComponent = (props) => {
         <label>Confirm Password:</label>
         <input type='password' id='confirm' /><br/>
 
-        <input type='submit' />
+        <input type='submit' value='Create an Account' />
+        <p>or <a href="javascript:" onClick={handleCreateAccountLink.bind(this)}>Log In</a></p>
+
       </form>
+      </center>
     </div>
   )
 }

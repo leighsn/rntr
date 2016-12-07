@@ -10,10 +10,14 @@ body {
 
 }
 
+#hr{
+    padding: 2px;
+    margin: 0px;    
+  }
 
 
 #padding{
-  padding: 1em 1em;
+  padding: 4em 1em;
 }
 
 

@@ -82,6 +82,7 @@ const savePreferences = function(userState, prefState){
       dataType:"json"
     }).done(function(data){
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
+      browserHistory.push('search')
     })
   }
 }

@@ -2160,3 +2160,52 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 81ms (Views: 2.3ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/sessions" for ::1 at 2016-12-07 16:50:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 80ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/36" for ::1 at 2016-12-07 16:50:54 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"36", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 36], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 36], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 36], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 36]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 36]]
+Completed 200 OK in 85ms (Views: 0.5ms | ActiveRecord: 19.9ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-07 16:51:04 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"335 Bedford Ave, Brooklyn, NY 11211, USA", "commute"=>6, "schools"=>1, "amenities"=>1, "safety"=>1, "category_1"=>"b", "category_2"=>"a", "category_3"=>"c"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "a@a"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-07 16:51:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 81ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-12-07 16:51:44 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"335 Bedford Ave, Brooklyn, NY 11211, USA", "commute"=>6, "schools"=>1, "amenities"=>1, "safety"=>1, "category_1"=>"b", "category_2"=>"a", "category_3"=>"c"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.4xcS8AfZhCMFgzwWVMKusWrphs9dHaGJnMwmKVpDFKc", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "a@a"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+

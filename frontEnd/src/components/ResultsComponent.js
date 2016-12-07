@@ -8,7 +8,7 @@ class ResultsComponent extends Component {
   }
 
   render() {
-    
+
     return (
       <div>
       <h4> Report for: {this.props.apartment.apartment_address}</h4>
@@ -28,9 +28,9 @@ class ResultsComponent extends Component {
       <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
       </ul>
       <p>You rated the importance of amenities as {this.props.user.ammenities} out of 10</p>
-      <p>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term"{this.props.apartment.data.amenities_data.category_1.name}"</p>
-      <p>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term"{this.props.apartment.data.amenities_data.category_2.name}"</p>
-      <p>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term"{this.props.apartment.data.amenities_data.category_3.name}"</p>
+      <p>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term " {this.props.apartment.data.amenities_data.category_1.name}"</p>
+      <p>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term " {this.props.apartment.data.amenities_data.category_2.name}"</p>
+      <p>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term " {this.props.apartment.data.amenities_data.category_3.name}"</p>
       </div>
     )
   }

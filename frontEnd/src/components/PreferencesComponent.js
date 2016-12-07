@@ -8,13 +8,10 @@ import auth from '../lib/auth'
 class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
-
       this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1, category_1: "", category_2: "", category_3: ""}
 
       this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
   }
-
 
   handleSubmit(event){
     event.preventDefault()
@@ -28,15 +25,11 @@ class PreferencesComponent extends React.Component{
     this.setState(newStateAttr)
   }
 
-
-
   handleCategoryChange(event){
     let newStateAttr = {}
     newStateAttr[event.target.id] = event.target.value
     this.setState(newStateAttr)
   }
-
-
 
   render(){
     return(
@@ -46,11 +39,11 @@ class PreferencesComponent extends React.Component{
 
           <label id="destination">Destination:</label>
           <Autocomplete
-
             id="destination"
             style={{width: '30%'}}
             onPlaceSelected={(place) => {
               this.setState({"destination": place.formatted_address})
+              this.setState({"zip": place.address_components[7].long_name})
               console.log(place);
             }}
             types={['address']}

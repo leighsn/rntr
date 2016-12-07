@@ -18,7 +18,7 @@ const signUp = function(email, password){
       } else {
          //sets url
         localStorage.setItem('token', data.jwt)
-        dispatch({type: 'LOG_IN', payload: data})
+        dispatch({type: 'SIGN_UP', payload: data})
         browserHistory.push('preferences')
       }
     })

@@ -10,6 +10,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  # def destroy
+  #     jwt = null
+  #     render json: {jwt: jwt}
+  # end
+
 
    private
     def auth_params

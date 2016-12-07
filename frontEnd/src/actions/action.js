@@ -64,6 +64,14 @@ const logIn = function(email, password){
   }
 }
 
+const logOut = function (event){
+  event.preventDefault()
+  localStorage.removeItem('token')
+  {type: 'LOG_OUT'}
+  browserHistory.push('log-in')
+
+}
+
 const savePreferences = function(userState, prefState){
   return function(dispatch){
   
@@ -81,4 +89,4 @@ const savePreferences = function(userState, prefState){
 }
 
 
-export { signUp, logIn, aptSearch, savePreferences }
+export { signUp, logIn, aptSearch, savePreferences, logOut }

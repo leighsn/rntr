@@ -7,6 +7,8 @@ function user(state={}, action) {
     case 'UPDATE_PREFERENCES':
     console.log(action.payload)
       return Object.assign({}, state,{userID: action.payload.user_id, destination: action.payload.destination, commute: action.payload.commute, schools: action.payload.schools, safety: action.payload.safety, amenities: action.payload.amenities})
+    case 'LOG_OUT':
+      return {};
     default:
       return state;
   }
@@ -16,6 +18,8 @@ function apartment(state={}, action) {
   switch(action.type) {
     case 'SHOW_APT':
       return action.payload
+    case 'LOG_OUT':
+      return {};
     default:
       return state;
   }

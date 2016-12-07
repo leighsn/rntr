@@ -3,6 +3,7 @@ import { Route } from 'react-router'
 import SignUpComponent from './components/SignUpComponent'
 import PreferencesComponent from './components/PreferencesComponent'
 import LogInComponent from './components/LogInComponent'
+
 import ApartmentSearchComponent from './components/ApartmentSearchComponent'
 import ResultsComponent from './components/ResultsComponent'
 
@@ -18,3 +19,4 @@ const Routes = (
 )
 
 module.exports = Routes
+

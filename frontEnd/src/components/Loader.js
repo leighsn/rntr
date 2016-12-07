@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 const Loader = (props) => {
 
   return (
-    <div className='loading-pulse' id='load' />
+    <div>
+    <img src='http://www.aquiedestaque.com.br/imagem/loading.gif' />
+    </div>
   )
 
 }

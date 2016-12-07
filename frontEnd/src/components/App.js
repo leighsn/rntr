@@ -11,11 +11,12 @@ import LinkComponent from './LinkComponent'
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <h1><Link to='/' id='logo'>RNTR</Link></h1>
+        <div className="container">
         <LinkComponent />
         {this.props.children}
-        <div className="modal"></div>
+      </div>
       </div>
     );
   }

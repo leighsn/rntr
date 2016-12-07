@@ -45,7 +45,7 @@ const signUp = function(email, password){
 
 const aptSearch = function(address, userID){
   let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
-  // browserHistory.push('loading')
+  browserHistory.push('loading')
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,

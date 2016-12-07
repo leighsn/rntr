@@ -28,6 +28,10 @@ function apartment(state={}, action) {
 
 function savedSearches(state=[], action) {
   switch(action.type) {
+    case 'SHOW_APT':
+    return [...state, action.payload]
+    case 'LOG_IN':
+    return action.payload.apartments
     default:
       return state;
   }

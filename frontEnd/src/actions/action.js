@@ -27,13 +27,14 @@ const signUp = function(email, password){
 
 const aptSearch = function(address, userID){
 
-  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join('&') + `&${userID}`
+  // let urlAddress = Object.keys(address).map((key) => {return address[key]}).join('&') + `&${userID}`
   browserHistory.push('loading')
 
   return function(dispatch){
     $.ajax({
-      url: `http://localhost:3000/apts/${urlAddress}`,
-      type: 'GET',
+      url: `http://localhost:3000/apts`,
+      type: 'POST',
+      data: JSON.stringify({address: address, user_id: userID}),
       contentType: "application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
@@ -85,9 +86,20 @@ const savePreferences = function(userState, prefState){
   }
 }
 
-const showSearches = function(userID){
-
+const showApartment = function(id){
+  return function(dispatch){
+    $.ajax({
+      url:`http://localhost:3000/apts/${id}`,
+      type: 'GET',
+      contentType:"application/json; charset=utf-8",
+      dataType:"json"
+    }).done(function(data){
+      dispatch({type: 'SHOW_APT', payload: data})
+      browserHistory.push('results')
+    })
+  }
 }
 
 
-export { signUp, logIn, aptSearch, savePreferences, showSearches, logOut }
+
+export { signUp, logIn, aptSearch, savePreferences, showApartment, logOut }

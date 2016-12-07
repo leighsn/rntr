@@ -3,7 +3,7 @@ import { Route } from 'react-router'
 import SignUpComponent from './components/SignUpComponent'
 import PreferencesComponent from './components/PreferencesComponent'
 import LogInComponent from './components/LogInComponent'
-
+import SavedSearchesComponent from './components/SavedSearchesComponent'
 import ApartmentSearchComponent from './components/ApartmentSearchComponent'
 import ResultsComponent from './components/ResultsComponent'
 import Loader from './components/Loader'
@@ -17,8 +17,8 @@ const Routes = (
     <Route path="log-in" component={LogInComponent}/>
     <Route path="results" component={ResultsComponent}/>
     <Route path="loading" component={Loader}/>
+    <Route path="saved" component={SavedSearchesComponent} />
   </Route>
 )
 
 module.exports = Routes
-

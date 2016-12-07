@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router'
 
 
 class ResultsComponent extends Component {
   constructor(props){
     super(props)
+  }
+
+  componentWillMount(){
+    if(!this.props.apartment.apartment_score){
+      browserHistory.push('/')
+    }
+  }
+
+  componentWillReceiveProps(){
+    if(!this.props.apartment.apartment_score){
+      browserHistory.push('/')
+    }
   }
 
   render() {

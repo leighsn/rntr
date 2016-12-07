@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
-import { Gauge, Donut } from 'brexis.gauge.js';
+import { Gauge, Donut, TextRenderer } from 'brexis.gauge.js';
 
 class ResultsComponent extends Component {
   constructor(props){
@@ -14,7 +14,7 @@ class ResultsComponent extends Component {
 
   gauge(){
     let opts = {
-      lines: 12, // The number of lines to draw
+      lines: 10, // The number of lines to draw
       angle: 0.35, // The length of each line
       lineWidth: 0.1, // The line thickness
       pointer: {
@@ -28,12 +28,13 @@ class ResultsComponent extends Component {
       strokeColor: '#EEEEEE',   // to see which ones work best for you
       generateGradient: true
     };
+    let score = this.props.apartment.apartment_score;
     let target = document.getElementById('gauge'); // your canvas element
     let gauge = new Donut(target).setOptions(opts); // create sexy gauge!
-    gauge.set(this.props.apartment.apartment_score); // set actual value
+    gauge.set(score); // set actual value
     gauge.maxValue = 10; // set max gauge value
     gauge.animationSpeed = 32;
-    gauge.setTextField(`${this.props.apartment.apartment_score}`)
+    gauge.setTextField(score);
   }
 
   render() {

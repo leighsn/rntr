@@ -8,9 +8,18 @@ import auth from '../lib/auth'
 class PreferencesComponent extends React.Component{
   constructor(props){
     super(props)
-      this.state = {destination: "",commute: 1, schools: 1, amenities: 1, safety: 1, category_1: "", category_2: "", category_3: ""}
+    this.state = {
+      destination: this.props.user.destination,
+      commute: this.props.user.commute || 1,
+      schools: this.props.user.schools || 1,
+      amenities: this.props.user.amenities || 1,
+      safety: this.props.user.safety || 1,
+      category_1: this.props.user.category_1 || "",
+      category_2: this.props.user.category_2 || "",
+      category_3: this.props.user.category_3 || ""
+    }
 
-      this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   }
 
   handleSubmit(event){
@@ -39,6 +48,7 @@ class PreferencesComponent extends React.Component{
 
           <label id="destination">Destination:</label>
           <Autocomplete
+            defaultValue={this.state.destination}
             id="destination"
             style={{width: '30%'}}
             onPlaceSelected={(place) => {
@@ -53,8 +63,8 @@ class PreferencesComponent extends React.Component{
 
           <p><label id="commute">Commute: </label>
 
-          <select id="commute" onChange={this.handleChange.bind(this)}>
-            <option value='-'>-</option>
+          <select id="commute" defaultValue={this.state.commute} onChange={this.handleChange.bind(this)}>
+            <option>-</option>
               {
                 this.options.map(opt => {
                 return <option value={opt}>{opt}</option>
@@ -62,7 +72,7 @@ class PreferencesComponent extends React.Component{
           </select></p>
 
           <p><label id="schools">Schools: </label>
-            <select id="schools" onChange={this.handleChange.bind(this)}>
+            <select id="schools" defaultValue={this.state.schools} onChange={this.handleChange.bind(this)}>
               <option value='-'>-</option>
                 {
                   this.options.map(opt => {
@@ -71,16 +81,16 @@ class PreferencesComponent extends React.Component{
             </select></p>
 
           <p><label id="safety">Safety: </label>
-            <select id="safety" onChange={this.handleChange.bind(this)}>
+            <select id="safety" defaultValue={this.state.safety} onChange={this.handleChange.bind(this)}>
               <option value='-'>-</option>
                 {
                   this.options.map(opt => {
-                  return <option value={opt}>{opt}</option>
+                  return <option defaultValue={opt}>{opt}</option>
                 })}
             </select></p>
 
           <p><label id="amenities">Amenities: </label>
-            <select id="amenities" onChange={this.handleChange.bind(this)}>
+            <select id="amenities" defaultValue={this.state.amenities} onChange={this.handleChange.bind(this)}>
               <option value='-'>-</option>
                 {
                   this.options.map(opt => {
@@ -90,15 +100,15 @@ class PreferencesComponent extends React.Component{
           </p>
             <p>
             <label id="category_1">Amenity Category 1:</label>
-            <input type="text" id="category_1" onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_1" defaultValue={this.state.category_1} onChange={this.handleCategoryChange.bind(this)} />
             </p>
             <p>
             <label id="category_2">Amenity Category 2:</label>
-            <input type="text" id="category_2" onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_2" defaultValue={this.state.category_2} onChange={this.handleCategoryChange.bind(this)} />
             </p>
             <p>
             <label id="category_3">Amenity Category 3:</label>
-            <input type="text" id="category_3" onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_3" defaultValue={this.state.category_3} onChange={this.handleCategoryChange.bind(this)} />
             </p>
           <p><input type="submit"/></p>
         </form>

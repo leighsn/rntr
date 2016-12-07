@@ -100,15 +100,15 @@ class PreferencesComponent extends React.Component{
           </p>
             <p>
             <label id="category_1">Amenity Category 1:</label>
-            <input type="text" id="category_1" defaultValue={this.state.category_1} onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_1" value={this.state.category_1} onChange={this.handleCategoryChange.bind(this)} />
             </p>
             <p>
             <label id="category_2">Amenity Category 2:</label>
-            <input type="text" id="category_2" defaultValue={this.state.category_2} onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_2" value={this.state.category_2} onChange={this.handleCategoryChange.bind(this)} />
             </p>
             <p>
             <label id="category_3">Amenity Category 3:</label>
-            <input type="text" id="category_3" defaultValue={this.state.category_3} onChange={this.handleCategoryChange.bind(this)} />
+            <input type="text" id="category_3" value={this.state.category_3} onChange={this.handleCategoryChange.bind(this)} />
             </p>
           <p><input type="submit"/></p>
         </form>

@@ -8,7 +8,7 @@ const LinkComponent = () => {
 
 
   if (localStorage.getItem('token')){ 
-    navbar=<ul id='nav'><li><Link to='/search'>Search</Link></li><li><Link to='/preferences'>Preferences</Link></li><a href='javascript:' onClick={logOut}>Log Out</a></ul>
+    navbar=<ul id='nav'><li><Link to='/search'>Search</Link></li><li><Link to='/preferences'>Preferences</Link></li><li><a href='javascript:' onClick={logOut}>Log Out</a></li></ul>
   
   }
   else {

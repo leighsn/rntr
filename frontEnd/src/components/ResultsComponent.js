@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { showLoading, hideLoading } from 'react-redux-loading-bar'
+
 
 class ResultsComponent extends Component {
   constructor(props){

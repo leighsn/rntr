@@ -2649,3 +2649,157 @@ NoMethodError (undefined method `split' for nil:NilClass):
 app/adapters/crime_adapter.rb:27:in `toLatLong'
 app/adapters/crime_adapter.rb:6:in `get_crime'
 app/controllers/apts_controller.rb:48:in `create'
+Started POST "/users" for ::1 at 2016-12-07 17:26:03 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:26:11 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:26:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@bc", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@bc"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:26:59 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@bc", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@bc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 5.8ms)
+
+
+  
+NoMethodError (undefined method `to_sym' for 0:Fixnum
+Did you mean?  to_s):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/sessions" for ::1 at 2016-12-07 17:27:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-07 17:27:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:27:29 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 5.5ms)
+
+
+  
+NoMethodError (undefined method `to_sym' for 0:Fixnum
+Did you mean?  to_s):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2016-12-07 17:27:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 259127ms (ActiveRecord: 5.6ms)
+
+
+  
+NoMethodError (undefined method `to_sym' for 0:Fixnum
+Did you mean?  to_s):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2016-12-07 17:32:10 -0500
+  
+SyntaxError (/Users/nick-scaglione/Development/flatiron-0916/rntr/backEnd/app/controllers/users_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting keyword_end
+/Users/nick-scaglione/Development/flatiron-0916/rntr/backEnd/app/controllers/users_controller.rb:21: syntax error, unexpected tSTRING_DEND, expecting '}'
+/Users/nick-scaglione/Development/flatiron-0916/rntr/backEnd/app/controllers/users_controller.rb:31: syntax error, unexpected tSTRING_DEND, expecting '}'
+/Users/nick-scaglione/Development/flatiron-0916/rntr/backEnd/app/controllers/users_controller.rb:38: syntax error, unexpected tSTRING_DEND, expecting '}'
+/Users/nick-scaglione/Development/flatiron-0916/rntr/backEnd/app/controllers/users_controller.rb:49: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:20: syntax error, unexpected tSTRING_DEND, expecting keyword_end
+app/controllers/users_controller.rb:21: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/users_controller.rb:31: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/users_controller.rb:38: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/users_controller.rb:49: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/users" for ::1 at 2016-12-07 17:32:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:32:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-07 17:33:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-07 17:34:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+Completed 200 OK in 106ms (Views: 0.4ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-07 17:34:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:34:40 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-07 17:34:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"asdf@a", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf@a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "asdf@a"], ["password_digest", "$2a$10$qzfZVN4sQdk8MmnZTzrd3OGW/NQ0skp8ltvERtAKZde2wgkmhvVD2"], ["created_at", 2016-12-07 22:34:51 UTC], ["updated_at", 2016-12-07 22:34:51 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 105ms (Views: 0.8ms | ActiveRecord: 3.2ms)
+
+

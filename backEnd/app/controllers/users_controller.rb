@@ -17,7 +17,8 @@ class UsersController < ApplicationController
      render json: {jwt: jwt, user_id: user.id, user_email: user.email}
 
    else
-     render json: {error: 'email is not unique'}
+     error_message = user.errors.messages.map {|key, value| key.to_s + ": " + value.join(', ')}.join(', ')
+     render json: {error: error_message}
    end
 
  end

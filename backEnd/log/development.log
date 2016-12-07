@@ -373,3 +373,131 @@ NoMethodError (undefined method `[]' for nil:NilClass):
 app/adapters/crime_adapter.rb:29:in `toLatLong'
 app/adapters/crime_adapter.rb:6:in `get_crime'
 app/controllers/apts_controller.rb:15:in `show'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 11:41:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 1.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 11:42:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-07 11:46:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"hello@bye.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bye.com"], ["LIMIT", 1]]
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hello@bye.com"], ["password_digest", "$2a$10$VuoiBGjwhJ4obSgs2d1b6.6DS1IwX72nhA12L7gTOtacjmBpG5Gfu"], ["created_at", 2016-12-07 16:46:36 UTC], ["updated_at", 2016-12-07 16:46:36 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 149ms (Views: 0.4ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 11:53:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/1051%2078th%20Street%20Brooklyn%20New%20York%2011228&1" for 127.0.0.1 at 2016-12-07 11:53:49 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1051 78th Street Brooklyn New York 11228&1", "apt"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 1], ["address", "1051 78th Street Brooklyn New York 11228"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 6], ["felonies", 13], ["misdemeanors", 23], ["violations", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 6], ["duration", "2410"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 6], ["a_schools", 3], ["b_schools", 3], ["c_schools", 0], ["d_schools", 0], ["f_schools", 0]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 6], ["count", 1], ["name", "Coffee"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 6], ["count", 3], ["name", "Dry Clean"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 6], ["count", 1], ["name", "Grocery"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.6ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 ORDER BY "apt_schools"."id" ASC LIMIT $2[0m  [["apartment_id", 6], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 ORDER BY "apt_commutes"."id" ASC LIMIT $2[0m  [["apartment_id", 6], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.7ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 ORDER BY "apt_crimes"."id" ASC LIMIT $2[0m  [["apartment_id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 6]]
+Completed 200 OK in 7273ms (Views: 0.7ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-07 11:54:17 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/KrissaSantos/.rvm/gems/ruby-2.3.1@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/KrissaSantos/.rvm/gems/ruby-2.3.1@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2016-12-07 11:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2016-12-07 11:54:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'

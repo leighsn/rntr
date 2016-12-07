@@ -13,9 +13,9 @@ class YelpAdapter
   # end
 
   def self.search(search:, location:)
-    # self.client.search(location, {term: search, radius_filter: 500})
+    # self.client.search(location, {term: search, radius_filter: 250})
     HTTParty.get('https://api.yelp.com/v3/businesses/search',
-    :query => {term: search, location: location, radius: 500},
+    :query => {term: search, location: location, radius: 250},
     :headers => {"Authorization" => "Bearer bV0sWEjlBh-8WQLGPoabhLNvnJf3GyCll4AfLxxLwWgcos9jN9qUhxaa-I8kK7CdVJVD0tZ4wii3VQzs0j238ROREOaaB3rEHptA2ASpHajV-UQCsa--jviFj-xGWHYx"})
   end
 

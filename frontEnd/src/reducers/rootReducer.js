@@ -31,7 +31,6 @@ function apartment(state={}, action) {
 function savedSearches(state=[], action) {
   switch(action.type) {
     case 'SHOW_SEARCH':
-      debugger
       return [...state, action.payload]
     case 'LOG_IN':
       return action.payload.apartments

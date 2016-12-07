@@ -16,7 +16,7 @@ const LogInComponent = (props) => {
     <div>
       <form onSubmit={handleSubmit.bind(this)}>
         <label>Email:</label>
-        <input type='email' id='email' /><br/>
+        <input type='email'/><br/>
 
         <label>Password:</label>
         <input type='password' id='password' /><br/>

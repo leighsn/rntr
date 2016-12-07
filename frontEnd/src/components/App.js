@@ -10,14 +10,10 @@ import LinkComponent from './LinkComponent'
 class App extends Component {
   render() {
     return (
-      <div class="container">
-        <row>
-        <div class="one columns">
+      <div className="container">
         <h1>RNTR</h1>
-        </div>
-        <LinkComponent class="ten columns" />
+        <LinkComponent />
         {this.props.children}
-        </row>
       </div>
     );
   }

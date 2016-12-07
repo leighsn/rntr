@@ -45,7 +45,6 @@ class ApartmentSearchComponent extends Component {
   render() {
     return (
       <div>
-        <LoadingBar />
         <br/>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Street:</label>

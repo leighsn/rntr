@@ -9,8 +9,8 @@
 
 class Apartment < ApplicationRecord
   belongs_to :user
-  has_many :apt_schools
-  has_many :apt_commutes
-  has_many :apt_crimes
+  has_one :apt_school
+  has_one :apt_commute
+  has_one :apt_crime
   has_many :apt_amenities
 end

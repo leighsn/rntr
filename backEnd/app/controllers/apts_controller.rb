@@ -7,9 +7,42 @@ require 'byebug'
 class AptsController < ApplicationController
 
   def show
-     data = params["id"].split("&")
-     apartment = Apartment.create(address: data[0], zip: data[1], user_id: data[2])
-     user = User.find(data[2])
+    apartment = Apartment.find(params["id"])
+    weights = calculate_weights(apartment.user)
+    score = calculate_score(apartment, weights)
+
+    render json: {
+      data: {
+        crime_data: {
+          felonies: apartment.apt_crime.felonies,
+          misdemeanors: apartment.apt_crime.misdemeanors,
+          violations: apartment.apt_crime.violations
+        },
+        distance_data: apartment.apt_commute.duration.to_i,
+        school_data: {
+          a_schools: apartment.apt_school.a_schools,
+          b_schools: apartment.apt_school.b_schools,
+          c_schools: apartment.apt_school.c_schools,
+          d_schools: apartment.apt_school.d_schools,
+          f_schools: apartment.apt_school.f_schools,
+        },
+        amenities_data: {
+          category_1: apartment.apt_amenities[0],
+          category_2: apartment.apt_amenities[1],
+          category_3: apartment.apt_amenities[2]
+        }
+      },
+      apartment_score: score.round,
+      apartment_id: apartment.id,
+      apartment_address: apartment.address
+    }
+  end
+
+
+  def create
+
+     apartment = Apartment.create(address: params["address"]["destination"], zip: params["address"]["zip"], user_id: params["user_id"])
+     user = User.find(params["user_id"])
     #  crime_data = CrimeAdapter.get_crime(address)
      apt_crime = CrimeAdapter.get_crime(apartment)
      apt_commute = DistanceAdapter.get_distance(apartment)
@@ -81,6 +114,7 @@ class AptsController < ApplicationController
   end
 
   def amenities_score(apartment)
+    
     total = apartment.apt_amenities.pluck(:count).inject(&:+) / 6.0
   end
 
@@ -103,7 +137,7 @@ class AptsController < ApplicationController
   end
 
   def calculate_score(apartment, weights)
-    (school_score(apartment.apt_schools.first.a_schools) * weights[:schools]) + (commute_score(apartment.apt_commutes.first.duration.to_i) * weights[:commute]) + (crime_score(apartment.apt_crimes.first.felonies) * weights[:safety]) + (amenities_score(apartment) * weights[:amenities])
+    (school_score(apartment.apt_school.a_schools) * weights[:schools]) + (commute_score(apartment.apt_commute.duration.to_i) * weights[:commute]) + (crime_score(apartment.apt_crime.felonies) * weights[:safety]) + (amenities_score(apartment) * weights[:amenities])
   end
 
 end

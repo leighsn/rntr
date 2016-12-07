@@ -4,33 +4,19 @@ import { bindActionCreators } from 'redux';
 import { aptSearch } from '../actions/action'
 import { browserHistory } from 'react-router'
 
-
+import Autocomplete from 'react-google-autocomplete';
 
 class ApartmentSearchComponent extends Component {
 
   constructor(props){
     super(props)
-    this.state = {street: '', city: '', state: '', zip: ''}
-  }
-
-  handleStreetChange(event){
-    this.setState({street: event.target.value.replace('.', '')})
-  }
-  handleCityChange(event){
-    this.setState({city: event.target.value.replace('.', '')})
-  }
-  handleStateChange(event){
-    this.setState({state: event.target.value.replace('.', '')})
-  }
-  handleZipChange(event){
-    this.setState({zip: event.target.value.replace('.', '')})
+    this.state = {destination: '', zip: ''}
   }
 
   handleSubmit(event) {
     event.preventDefault()
     if(!!this.props.user.destination)
     {
-     
       this.props.aptSearch(this.state, this.props.user.userID)
     }
     else {
@@ -39,23 +25,28 @@ class ApartmentSearchComponent extends Component {
     }
   }
 
-
   render() {
     return (
       <div id='padding'>
         <br/>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <label>Street:</label>
-          <input type='text' id='street' onChange={this.handleStreetChange.bind(this)} /><br/>
-          <label>City:</label>
-          <input type='text' id='city' onChange={this.handleCityChange.bind(this)} /><br/>
-          <label>State:</label>
-          <input type='text' id='state' onChange={this.handleStateChange.bind(this)} /><br/>
-          <label>Zip:</label>
-          <input type='text' id='zip' onChange={this.handleZipChange.bind(this)} /><br/>
+          <label id="destination">Destination:</label>
+          <Autocomplete
+            id="destination"
+            style={{width: '30%'}}
+            onPlaceSelected={(place) => {
+              this.setState({"destination": place.formatted_address})
+              let zip = place.address_components.find((component)=>{
+                return component.types[0] === "postal_code"}).long_name
+              this.setState({"zip": zip})
+              console.log(place);
+            }}
+            types={['address']}
+            componentRestrictions={{country: "us"}}
+          />
           <input type='submit' value='Search' />
         </form>
-        </div>
+      </div>
     )
   }
 }

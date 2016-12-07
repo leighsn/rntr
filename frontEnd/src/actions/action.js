@@ -38,7 +38,7 @@ const aptSearch = function(address, userID){
       contentType: "application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-      dispatch({type: 'SHOW_APT', payload: data})
+      dispatch({type: 'SHOW_SEARCH', payload: data})
       browserHistory.push('results')
     })
   }

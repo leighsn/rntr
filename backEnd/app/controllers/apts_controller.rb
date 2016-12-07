@@ -33,8 +33,9 @@ class AptsController < ApplicationController
         }
       },
       apartment_score: score.round,
-      apartment_id: apartment.id,
-      apartment_address: apartment.address
+      id: apartment.id,
+      address: apartment.address,
+      user_id: apartment.user.id
     }
   end
 
@@ -77,8 +78,9 @@ class AptsController < ApplicationController
          }
        },
        apartment_score: score.round,
-       apartment_id: apartment.id,
-       apartment_address: apartment.address
+       id: apartment.id,
+       address: apartment.address,
+       user_id: user.id
      }
   end
 
@@ -114,7 +116,7 @@ class AptsController < ApplicationController
   end
 
   def amenities_score(apartment)
-    
+
     total = apartment.apt_amenities.pluck(:count).inject(&:+) / 6.0
   end
 

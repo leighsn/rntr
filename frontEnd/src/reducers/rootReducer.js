@@ -16,6 +16,8 @@ function user(state={}, action) {
 
 function apartment(state={}, action) {
   switch(action.type) {
+    case 'SHOW_SEARCH':
+      return action.payload
     case 'SHOW_APT':
       return action.payload
     case 'LOG_OUT':
@@ -28,10 +30,11 @@ function apartment(state={}, action) {
 
 function savedSearches(state=[], action) {
   switch(action.type) {
-    case 'SHOW_APT':
-    return [...state, action.payload]
+    case 'SHOW_SEARCH':
+      debugger
+      return [...state, action.payload]
     case 'LOG_IN':
-    return action.payload.apartments
+      return action.payload.apartments
     default:
       return state;
   }

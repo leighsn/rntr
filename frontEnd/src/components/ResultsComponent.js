@@ -25,7 +25,7 @@ class ResultsComponent extends Component {
 
     return (
       <div>
-      <h4> Report for: {this.props.apartment.apartment_address}</h4>
+      <h4> Report for: {this.props.apartment.address}</h4>
 
       <h2>Score: {this.props.apartment.apartment_score}</h2>
 

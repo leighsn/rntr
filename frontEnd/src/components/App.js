@@ -12,9 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1><Link to='/' className='logo'>RNTR</Link></h1>
+        <h1><Link to='/' id='logo'>RNTR</Link></h1>
         <LinkComponent />
         {this.props.children}
+        <div className="modal"></div>
       </div>
     );
   }

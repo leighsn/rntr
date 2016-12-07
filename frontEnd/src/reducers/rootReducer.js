@@ -21,5 +21,12 @@ function apartment(state={}, action) {
       return state;
   }
 }
-const rootReducer = combineReducers({user, apartment, LoadingBar: loadingBarReducer})
+
+function savedSearches(state=[], action) {
+  switch(action.type) {
+    default:
+      return state;
+  }
+}
+const rootReducer = combineReducers({user, apartment, savedSearches})
 export default rootReducer

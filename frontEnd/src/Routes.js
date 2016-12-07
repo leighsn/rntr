@@ -5,6 +5,7 @@ import PreferencesComponent from './components/PreferencesComponent'
 import LogInComponent from './components/LogInComponent'
 import ApartmentSearchComponent from './components/ApartmentSearchComponent'
 import ResultsComponent from './components/ResultsComponent'
+import Loader from './components/Loader'
 
 import App from './components/App'
 const Routes = (
@@ -14,6 +15,7 @@ const Routes = (
     <Route path="sign-up" component={SignUpComponent}/>
     <Route path="log-in" component={LogInComponent}/>
     <Route path="results" component={ResultsComponent}/>
+    <Route path="loading" component={Loader}/>
   </Route>
 )
 

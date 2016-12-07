@@ -45,6 +45,7 @@ const signUp = function(email, password){
 
 const aptSearch = function(address, userID){
   let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
+  // browserHistory.push('loading')
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,
@@ -80,7 +81,6 @@ const logIn = function(email, password){
 
 const savePreferences = function(userState, prefState){
   return function(dispatch){
-    dispatch(showLoading())
     $.ajax({
       url: `http://localhost:3000/users/${userState.userID}`,
       type: 'PATCH',
@@ -94,5 +94,9 @@ const savePreferences = function(userState, prefState){
   }
 }
 
+const showSearches = function(userID){
 
-export { signUp, logIn, aptSearch, savePreferences }
+}
+
+
+export { signUp, logIn, aptSearch, savePreferences, showSearches }

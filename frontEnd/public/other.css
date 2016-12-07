@@ -7,7 +7,15 @@ body {
 
 .container {
   background-color: rgba(0, 0, 0, 0.5);
+
 }
+
+
+
+#padding{
+  padding: 1em 1em;
+}
+
 
 #nav {
 	width: 100%;

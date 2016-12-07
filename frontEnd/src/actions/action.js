@@ -1,6 +1,5 @@
 import $ from 'jquery'
 import { browserHistory } from 'react-router'
-import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 const signUp = function(email, password){
   //dispatch({type: CREATING_USER})
@@ -26,26 +25,11 @@ const signUp = function(email, password){
   }
 }
 
-
-
-
-// const getAmenities = function(categories){
-//   return function(dispatch){
-//     $.ajax({
-//       url: `http://localhost:3000/categories/`,
-//       type: 'GET',
-//       data: JSON.stringify({address: address}),
-//     })
-//   }
-
-// }
-
-
-  // let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ')
-
 const aptSearch = function(address, userID){
-  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join(' ') + `&${userID}`
+
+  let urlAddress = Object.keys(address).map((key) => {return address[key]}).join('&') + `&${userID}`
   browserHistory.push('loading')
+
   return function(dispatch){
     $.ajax({
       url: `http://localhost:3000/apts/${urlAddress}`,
@@ -79,6 +63,14 @@ const logIn = function(email, password){
   }
 }
 
+const logOut = function (event){
+  event.preventDefault()
+  localStorage.removeItem('token')
+  {type: 'LOG_OUT'}
+  browserHistory.push('log-in')
+
+}
+
 const savePreferences = function(userState, prefState){
   return function(dispatch){
     $.ajax({
@@ -88,7 +80,6 @@ const savePreferences = function(userState, prefState){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-      dispatch(hideLoading())
       dispatch({type: 'UPDATE_PREFERENCES', payload: data})
     })
   }
@@ -99,4 +90,4 @@ const showSearches = function(userID){
 }
 
 
-export { signUp, logIn, aptSearch, savePreferences, showSearches }
+export { signUp, logIn, aptSearch, savePreferences, showSearches, logOut }

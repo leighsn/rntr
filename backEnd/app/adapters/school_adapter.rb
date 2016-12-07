@@ -18,7 +18,7 @@ class SchoolAdapter
   end
 
   def self.get_all_grades(apartment)
-    zip = apartment.address[-5..-1]
+    zip = apartment.zip
     AptSchool.create(
       apartment_id: apartment.id,
       a_schools: JSON(self.get_schools_of_grade(zip, 'A').response.body).count,

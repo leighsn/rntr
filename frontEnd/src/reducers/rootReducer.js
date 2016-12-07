@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { loadingBarReducer } from 'react-redux-loading-bar'
 
 function user(state={}, action) {
   switch(action.type) {
@@ -8,6 +7,8 @@ function user(state={}, action) {
     case 'UPDATE_PREFERENCES':
     console.log(action.payload)
       return Object.assign({}, state,{userID: action.payload.user_id, destination: action.payload.destination, commute: action.payload.commute, schools: action.payload.schools, safety: action.payload.safety, amenities: action.payload.amenities})
+    case 'LOG_OUT':
+      return {};
     default:
       return state;
   }
@@ -17,10 +18,13 @@ function apartment(state={}, action) {
   switch(action.type) {
     case 'SHOW_APT':
       return action.payload
+    case 'LOG_OUT':
+      return {};
     default:
       return state;
   }
 }
+<<<<<<< HEAD
 
 function savedSearches(state=[], action) {
   switch(action.type) {
@@ -29,4 +33,7 @@ function savedSearches(state=[], action) {
   }
 }
 const rootReducer = combineReducers({user, apartment, savedSearches})
+=======
+const rootReducer = combineReducers({user, apartment})
+>>>>>>> master
 export default rootReducer

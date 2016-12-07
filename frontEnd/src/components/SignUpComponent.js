@@ -14,7 +14,7 @@ const SignUpComponent = (props) => {
 
 
   return (
-    <div>
+    <div id='padding'>
       <form onSubmit={handleSubmit.bind(this)}>
         <label>Email:</label>
         <input type='email' id='email' /><br/>

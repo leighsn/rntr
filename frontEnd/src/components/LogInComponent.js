@@ -13,8 +13,8 @@ const LogInComponent = (props) => {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit.bind(this)}>
+    <div id='padding'>
+      <form  onSubmit={handleSubmit.bind(this)}>
         <label>Email:</label>
         <input type='email' id='email' /><br/>
 

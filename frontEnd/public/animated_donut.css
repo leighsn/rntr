@@ -49,14 +49,14 @@ div.warn {
 /* ------ Score ---------- */
 #gauge1 > .gauge > .dial {
   stroke: #334455;
-  stroke-width: 50;
+  stroke-width: 100;
   fill: rgba(0,0,0,0);
 }
 
 
 #gauge1 > .gauge > .value {
-  stroke: rgb(255, 75, 75);
-  stroke-width: 50;
+  stroke: rgb(41, 135, 163);
+  stroke-width: 100;
   fill: rgba(0,0,0,0);
 }
 #gauge1 > .gauge > .value-text {
@@ -95,7 +95,7 @@ div.warn {
 
 
 #commute_gauge > .gauge > .value {
-  stroke: rgb(255, 75, 75);
+  stroke: rgb(41, 185, 163);
   stroke-width: 50;
   fill: rgba(0,0,0,0);
 }
@@ -117,7 +117,7 @@ div.warn {
 
 
 #schools_gauge > .gauge > .value {
-  stroke: rgb(255, 75, 75);
+  stroke: rgb(219, 163, 61);
   stroke-width: 50;
   fill: rgba(0,0,0,0);
 }
@@ -138,7 +138,7 @@ div.warn {
 
 
 #amenities_gauge > .gauge > .value {
-  stroke: rgb(255, 75, 75);
+  stroke: rgb(94, 63, 181);
   stroke-width: 50;
   fill: rgba(0,0,0,0);
 }

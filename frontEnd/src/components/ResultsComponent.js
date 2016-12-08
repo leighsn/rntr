@@ -93,8 +93,8 @@ class ResultsComponent extends Component {
   render() {
 
     return (
-      <div>
-        <div id="gauge1"></div>
+      <div id="results-padding">
+        <div id="gauge1"className = 'four columns'></div>
         <h4>{this.props.apartment.address}</h4>
 
       <p>Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.
@@ -113,7 +113,8 @@ class ResultsComponent extends Component {
       </p>
 
 
-      <p>Your Preferences:</p>
+        <div className='row'>Your Preferences:</div>
+
         <div className='row'>
           <div className = 'two columns' id="commute_gauge">
             <p>Commute</p>

@@ -67,9 +67,8 @@ const logIn = function(email, password){
 const logOut = function (event){
   event.preventDefault()
   localStorage.removeItem('token')
-  {type: 'LOG_OUT'}
   browserHistory.push('log-in')
-
+  return {type: 'LOG_OUT', payload: null}
 }
 
 const savePreferences = function(userState, prefState){
@@ -101,27 +100,7 @@ const showApartment = function(id){
   }
 }
 
-// const deleteSearch = function(id){
-//   debugger
-//   alert("hello!")
-//   return function(dispatch){
-//     $.ajax({
-//       url: `http://localhost:3000/apts/${id}`,
-//       type: 'DELETE',
-//       contentType:"application/json; charset=utf-8",
-//       dataType:"json"
-
-
-//     }).done(function(data){
-//       dispatch({type: 'DELETE_SEARCH', payload: data})
-//       browserHistory.push('saved-results')
-
-//     })
-//   }
-// }
-
 const deleteSearch = function(id){
- 
 
   return function(dispatch){
     $.ajax({
@@ -130,10 +109,7 @@ const deleteSearch = function(id){
       contentType:"application/json; charset=utf-8",
       dataType:"json"
     }).done(function(data){
-        // alert("hello!")
       dispatch({type: 'DELETE_SEARCH', payload: data})
-      // browserHistory.push('saved-results')
-
     })
   }
 }

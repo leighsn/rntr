@@ -29,7 +29,7 @@ class ResultsComponent extends Component {
       <div>
       <h4> Report for: {this.props.apartment.address}</h4>
 
-      <h2>Score: <DonutChart value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
+      <h2>Score: <DonutChart color='orange' value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
 
       <p>You rated ease of commute as {this.props.user.commute} out of 10</p>
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>

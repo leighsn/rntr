@@ -27,15 +27,11 @@ class ResultsComponent extends Component {
 
     return (
       <div>
-      <h4> Report for: {this.props.apartment.address}</h4>
+      <h4>{this.props.apartment.address}</h4>
 
       <h2>Score: <DonutChart color='orange' value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
-
-      <p>You rated ease of commute as {this.props.user.commute} out of 10</p>
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>
-      <p>You rated the importance of safety as {this.props.user.safety} out of 10</p>
       <p>Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.</p>
-      <p>You rated the importance of good schools as {this.props.user.schools} out of 10</p>
       <ul>
       <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>
       <li>{this.props.apartment.data.school_data.b_schools} schools nearby were given a grade of 'B'</li>
@@ -43,10 +39,31 @@ class ResultsComponent extends Component {
       <li>{this.props.apartment.data.school_data.d_schools} schools nearby were given a grade of 'D'</li>
       <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
       </ul>
-      <p>You rated the importance of amenities as {this.props.user.ammenities} out of 10</p>
       <p>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_1.name}"</p>
       <p>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_2.name}"</p>
       <p>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_3.name}"</p>
+      <p>Your Preferences:</p>
+      <div className='row'>
+
+      <div className = 'two columns'>
+      <DonutChart value={this.props.user.commute} size='80' strokewidth='16'/>
+      <p>Commute</p>
+      </div>
+      <div className = 'two columns'>
+      <DonutChart value={this.props.user.safety} size='80' strokewidth='16'/>
+      <p>Safety</p>
+      </div>
+      <div className = 'two columns'>
+      <DonutChart value={this.props.user.schools} size='80' strokewidth='16'/>
+      <p>Schools</p>
+      </div>
+      <div className = 'two columns'>
+      <DonutChart value={this.props.user.amenities} size='80' strokewidth='16'/>
+      <p>Amenities</p>
+      </div>
+
+      </div>
+
       </div>
     )
   }

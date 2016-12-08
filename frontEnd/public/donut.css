@@ -1,6 +1,6 @@
 .donutchart-track{
   fill: transparent;
-  stroke: white;
+  stroke: #C9D1CF;
   stroke-width: 26;
 }
 .donutchart-indicator {
@@ -12,7 +12,7 @@
 }
 
 .donutchart {
-  margin: 0 auto;
+  margin: 0 ;
   border-radius: 50%;
   display: block;
 }
@@ -27,13 +27,4 @@
 }
 .donutchart-text-percent{
   font-size:20px;
-}
-
-
-
-
-.donutchart{
-  padding:40px;
-  font-family:'Roboto';
-  text-align:center;
 }

@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@grove/react-font-awesome@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@grove/react-font-awesome/-/react-font-awesome-1.1.5.tgz#0fafe82e18dc1a42d27dae80efe2b7205c1a81ff"
+
 Base64@~0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/Base64/-/Base64-0.2.1.tgz#ba3a4230708e186705065e66babdd4c35cf60028"
@@ -999,6 +1003,10 @@ braces@^1.8.2:
     expand-range "^1.8.1"
     preserve "^0.2.0"
     repeat-element "^1.1.2"
+
+brexis.gauge.js@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/brexis.gauge.js/-/brexis.gauge.js-1.2.2.tgz#9fff567401174d115967431cdd9644df6722d55f"
 
 browser-resolve@^1.11.2:
   version "1.11.2"
@@ -4261,9 +4269,17 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-fontawesome@^1.4.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-fontawesome/-/react-fontawesome-1.5.0.tgz#879d1b2aa5c48bba551e9237f84993217b5645c4"
+
 react-google-autocomplete@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/react-google-autocomplete/-/react-google-autocomplete-1.0.9.tgz#a9bd8b1e633e569c6bf5af5ed2e609249a7555bd"
+
+react-redux-loading-bar@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-redux-loading-bar/-/react-redux-loading-bar-2.5.0.tgz#392e4a6ca77940709d94537290ed6ee53052f521"
 
 react-redux@^4.4.5:
   version "4.4.6"

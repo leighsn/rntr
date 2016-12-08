@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import FontAwesome from 'react-fontawesome';
 
 
+
 class SavedSearchesComponent extends Component {
 
   handleClick(event){
@@ -17,11 +18,16 @@ class SavedSearchesComponent extends Component {
     return(
 
       <div id="saved-list">
-   
-       
         <ul>
         {this.props.savedSearches.map(search => {
-          return <li id={search.id} onClick={this.handleClick.bind(this)}>{search.address}</li>
+          return <button><li id={search.id} onClick={this.handleClick.bind(this)}><FontAwesome
+        className='fa fa-times'
+        name='x'
+        size='1x'
+        
+        
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      />  {search.address}</li></button>
         })}
         </ul>
       </div>

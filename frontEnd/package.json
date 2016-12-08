@@ -6,6 +6,7 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "@grove/react-font-awesome": "^1.1.5",
     "axios": "^0.15.2",
     "brexis.gauge.js": "^1.2.2",
     "google-maps-react": "^1.0.19",

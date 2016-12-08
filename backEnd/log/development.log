@@ -1,0 +1,579 @@
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:26:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 173ms (Views: 11.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:26:06 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.6ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.6ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 85ms (Views: 0.8ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-07 22:26:20 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"", "zip"=>""}, "user_id"=>1, "apt"=>{"address"=>{"destination"=>"", "zip"=>""}, "user_id"=>1}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["address", ""], ["zip", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 4.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/adapters/crime_adapter.rb:29:in `toLatLong'
+app/adapters/crime_adapter.rb:6:in `get_crime'
+app/controllers/apts_controller.rb:48:in `create'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:29:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 168ms (Views: 12.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:29:37 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.9ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.5ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 91ms (Views: 1.4ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:30:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 96ms (Views: 4.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:31:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 3.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:32:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 94ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:32:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:32:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:35:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 97ms (Views: 3.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:38:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 102ms (Views: 5.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:39:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apts/" for 127.0.0.1 at 2016-12-07 22:39:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apts"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:39:21 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.4ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 20ms (Views: 1.0ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:40:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 86ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:42:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 95ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:43:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 96ms (Views: 4.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:44:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 91ms (Views: 4.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:46:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 95ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/list-box" for 127.0.0.1 at 2016-12-07 22:46:53 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"list-box", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=list-box):
+  
+app/controllers/apts_controller.rb:10:in `show'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:49:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 89ms (Views: 3.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:51:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 94ms (Views: 4.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:51:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 97ms (Views: 3.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:52:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 94ms (Views: 6.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:52:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 102ms (Views: 6.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:53:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 96ms (Views: 4.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:55:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 96ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:56:07 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 96ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:56:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apts/3" for 127.0.0.1 at 2016-12-07 22:57:26 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"3", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 3]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 3]]
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:57:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 92ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:58:45 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.4ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 20ms (Views: 1.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/apts/2" for 127.0.0.1 at 2016-12-07 22:58:49 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"2", "apt"=>{}}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 2], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 2], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 2]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 2]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:59:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 89ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/3" for 127.0.0.1 at 2016-12-07 22:59:05 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"3", "apt"=>{}}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.5ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 3]]
+  [1m[36mAptAmenity Load (0.4ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 3]]
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:59:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:59:42 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:00:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:01:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 87ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:01:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 91ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:01:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 93ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:02:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 92ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:02:42 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:03:07 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:03:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 89ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:05:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:06:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:07:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 86ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:08:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:09:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 84ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:10:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 86ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:11:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:11:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 86ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:12:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 109ms (Views: 6.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:16:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 89ms (Views: 4.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:17:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:18:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:22:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 107ms (Views: 6.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 23:23:05 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:26:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 112ms (Views: 7.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:27:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 88ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 23:30:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 95ms (Views: 4.9ms | ActiveRecord: 0.7ms)
+
+

@@ -42,7 +42,6 @@ class PreferencesComponent extends React.Component{
 
   render(){
     return(
-
       <div id='padding'>
         <form onSubmit={this.handleSubmit.bind(this)}>
 

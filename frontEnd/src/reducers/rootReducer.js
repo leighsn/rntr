@@ -38,6 +38,8 @@ function savedSearches(state=[], action) {
       return action.payload.apartments
     case 'LOG_IN':
       return action.payload.apartments
+    case 'LOG_OUT':
+      return [];
     default:
       return state;
   }

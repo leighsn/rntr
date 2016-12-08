@@ -17,11 +17,8 @@ class SavedSearchesComponent extends Component {
     }
 
   handleDelete(event){
-    
     event.preventDefault()
-
     this.props.deleteSearch(event.target.parentNode.id)
-
   }
 
   render(){

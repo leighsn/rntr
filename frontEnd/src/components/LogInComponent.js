@@ -23,6 +23,7 @@ class LogInComponent extends React.Component {
     browserHistory.push('sign-up')
   }
 
+
    handleEmailChange(event){
      this.setState({email: event.target.value})
   }
@@ -31,12 +32,18 @@ class LogInComponent extends React.Component {
     this.setState({password: event.target.value})
  }
 
+
   render(){
   return (
     <div id='padding'>
 
+
     <center>
       <form  onSubmit={this.handleSubmit.bind(this)}>
+
+    <center>
+
+      <form  onSubmit={handleSubmit.bind(this)}>
 
         <label>Email:</label>
         <input onChange={this.handleEmailChange.bind(this)}type='email' id='email' /><br/>

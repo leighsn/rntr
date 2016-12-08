@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router'
 
 
+
 class ResultsComponent extends Component {
   constructor(props){
     super(props)

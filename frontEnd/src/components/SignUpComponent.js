@@ -10,7 +10,8 @@ class SignUpComponent extends React.Component {
     super(props)
     this.state = {email: "", password: "", confirmation: ""}
   }
-
+ // <h5>Found a place for rent?</h5> 
+ //      RNTR checks if it best fits you
 
    handleSubmit(event){
     event.preventDefault()

@@ -4,12 +4,23 @@ body {
   background-repeat: no-repeat;;
   background-position: center;
 }
+h5 {
+    margin-bottom: 0;
+}
 
 .container {
   background-color: rgba(0, 0, 0, 0.5);
 
 }
 
+
+.fa fa-times {
+    opacity: 0.10;                /* Opacity (Transparency) */
+    color: rgba(0, 0, 0, 0.75);   /* RGBA Color (Alternative Transparency) */
+    -webkit-filter: blur(2px);    /* Blur */
+    -moz-filter: blur(2px);
+    filter: blur(2px);
+}
 #hr{
     padding: 2px;
     margin: 0px;    
@@ -68,6 +79,19 @@ body {
                 no-repeat;
 }
 
+div#saved-list{
+  padding: 10em;
+}
+
+div#saved-list li{
+    display: inline-block;
+    text-align:center
+
+}
+
+span.fa.fa-x.fa-1x.fa-times:hover{
+color: red
+}
 
 /* Anytime the body has the loading class, our
    modal element will be visible */

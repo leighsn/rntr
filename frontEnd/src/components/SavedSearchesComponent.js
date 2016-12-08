@@ -13,8 +13,9 @@ class SavedSearchesComponent extends Component {
 
   handleClick(event){
     event.preventDefault()
+    alert("HERE!")
     this.props.showApartment(event.target.id)
-  }
+    }
 
   handleDelete(event){
     
@@ -29,15 +30,14 @@ class SavedSearchesComponent extends Component {
       <div id="saved-list">
         <ul>
         {this.props.savedSearches.map(search => {
-          return <button><li id={search.id} onClick={this.handleClick.bind(this)}>
+          return <button><li id={search.id} >
             <FontAwesome
               className='fa fa-times'
               onClick={this.handleDelete.bind(this)}
               name='x'
               size='1x'
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
-           {search.address}</li>
+            /><div id={search.id} onClick={this.handleClick.bind(this)}> {search.address}</div></li>
           </button>
         })}
         </ul>

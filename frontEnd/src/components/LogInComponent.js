@@ -17,11 +17,13 @@ const LogInComponent = (props) => {
     browserHistory.push('sign-up')
   }
 
+   
 
   return (
     <div id='padding'>
-   
+  
     <center>
+    
       <form  onSubmit={handleSubmit.bind(this)}>
        
         <label>Email:</label>

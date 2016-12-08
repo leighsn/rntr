@@ -16,7 +16,6 @@ class SavedSearchesComponent extends Component {
 
   render(){
     return(
-
       <div id="saved-list">
         <ul>
         {this.props.savedSearches.map(search => {
@@ -24,8 +23,6 @@ class SavedSearchesComponent extends Component {
         className='fa fa-times'
         name='x'
         size='1x'
-        
-        
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
       />  {search.address}</li></button>
         })}

@@ -110,7 +110,7 @@ class PreferencesComponent extends React.Component{
             <label id="category_3">Amenity Category 3:</label>
             <input type="text" id="category_3" value={this.state.category_3} onChange={this.handleCategoryChange.bind(this)} />
             </p>
-          <p><input type="submit"/></p>
+          <p><input type="submit" value="save"/></p>
         </form>
       </div>
     )

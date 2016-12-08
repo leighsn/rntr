@@ -4,6 +4,8 @@ import { showApartment } from '../actions/action'
 import auth from '../lib/auth'
 import { bindActionCreators } from 'redux';
 import FontAwesome from 'react-fontawesome';
+import { deleteSearch } from '../actions/action.js'
+
 
 
 
@@ -14,17 +16,29 @@ class SavedSearchesComponent extends Component {
     this.props.showApartment(event.target.id)
   }
 
+  handleDelete(event){
+    
+    event.preventDefault()
+
+    this.props.deleteSearch(event.target.parentNode.id)
+
+  }
+
   render(){
     return(
       <div id="saved-list">
         <ul>
         {this.props.savedSearches.map(search => {
-          return <button><li id={search.id} onClick={this.handleClick.bind(this)}><FontAwesome
-        className='fa fa-times'
-        name='x'
-        size='1x'
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      />  {search.address}</li></button>
+          return <button><li id={search.id} onClick={this.handleClick.bind(this)}>
+            <FontAwesome
+              className='fa fa-times'
+              onClick={this.handleDelete.bind(this)}
+              name='x'
+              size='1x'
+              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+            />
+           {search.address}</li>
+          </button>
         })}
         </ul>
       </div>
@@ -33,7 +47,7 @@ class SavedSearchesComponent extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({showApartment: showApartment}, dispatch)
+  return bindActionCreators({showApartment: showApartment, deleteSearch: deleteSearch}, dispatch)
 }
 
 function mapStateToProps(state) {

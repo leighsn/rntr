@@ -13,7 +13,6 @@ class SavedSearchesComponent extends Component {
 
   handleClick(event){
     event.preventDefault()
-    alert("HERE!")
     this.props.showApartment(event.target.id)
     }
 
@@ -37,7 +36,7 @@ class SavedSearchesComponent extends Component {
               name='x'
               size='1x'
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            /><div id={search.id} onClick={this.handleClick.bind(this)}> {search.address}</div></li>
+            /><span id={search.id} onClick={this.handleClick.bind(this)}> {search.address}</span></li>
           </button>
         })}
         </ul>

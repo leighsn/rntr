@@ -34,6 +34,8 @@ function savedSearches(state=[], action) {
   switch(action.type) {
     case 'SHOW_SEARCH':
       return [...state, action.payload]
+    case 'DELETE_SEARCH':
+      return action.payload.apartments
     case 'LOG_IN':
       return action.payload.apartments
     default:

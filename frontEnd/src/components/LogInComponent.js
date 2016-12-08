@@ -39,11 +39,7 @@ class LogInComponent extends React.Component {
 
 
     <center>
-      <form  onSubmit={this.handleSubmit.bind(this)}>
-
-    <center>
-
-      <form  onSubmit={handleSubmit.bind(this)}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
 
         <label>Email:</label>
         <input onChange={this.handleEmailChange.bind(this)}type='email' id='email' /><br/>
@@ -57,7 +53,7 @@ class LogInComponent extends React.Component {
         <a href="javascript:" onClick={this.handleCreateAccountLink.bind(this)}> Create an Account</a>
 
       </form>
-  </center>
+    </center>
     </div>
   )
 }

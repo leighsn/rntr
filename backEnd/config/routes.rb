@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :apts, only: [:show, :create]
+  resources :apts, only: [:show, :create, :destroy]
   resources :users
 
   resources :sessions

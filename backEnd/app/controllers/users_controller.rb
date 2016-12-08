@@ -23,6 +23,11 @@ class UsersController < ApplicationController
 
  end
 
+  # def delete
+  #   apartment = Apartment.find(params['id']).destroy
+  #   render json: { Apartment.all }
+  # end
+
  def update
 
    userId = Auth.decode(params["token"])["user_id"]

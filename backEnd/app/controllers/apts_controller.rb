@@ -39,6 +39,16 @@ class AptsController < ApplicationController
     }
   end
 
+  def destroy
+
+    apartment = Apartment.find(params['id'])
+    user = User.find(apartment.user_id)
+    apartment.destroy
+    render json: { apartments: user.apartments }
+  end
+
+
+
 
   def create
 

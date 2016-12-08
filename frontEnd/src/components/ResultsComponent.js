@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router'
 import DonutChart from './DonutChart'
+import AnimatedDonut from './AnimatedDonut'
+import Gauge from 'svg-gauge'
+import '../../public/animated_donut.css'
 
 
 
@@ -23,10 +26,68 @@ class ResultsComponent extends Component {
     }
   }
 
+
+  componentDidMount(){
+     let gauge1 = Gauge(
+      document.getElementById("gauge1"), {
+        max: 10,
+        dialStartAngle: -90,
+        dialEndAngle: -90.001,
+        value: 0,
+        label: function(value) {
+          return Math.round(value) + " / " + this.max;
+        }})
+      gauge1.setValueAnimated(this.props.apartment.apartment_score, 1);
+
+
+      let safety_gauge = Gauge(
+      document.getElementById("safety_gauge"), {
+        max: 10,
+        dialStartAngle: -90,
+        dialEndAngle: -90.001,
+        value: 0,
+        label: function(value) {
+          return Math.round(value) + " / " + this.max;
+        }})
+      safety_gauge.setValueAnimated(this.props.user.safety, 1);
+
+
+      let commute_gauge = Gauge(
+      document.getElementById("commute_gauge"), {
+        max: 10,
+        dialStartAngle: -90,
+        dialEndAngle: -90.001,
+        value: 0,
+        label: function(value) {
+          return Math.round(value) + " / " + this.max;
+        }})
+      commute_gauge.setValueAnimated(this.props.user.commute, 1);
+
+
+
+        
+      let schools_gauge = Gauge(
+      document.getElementById("schools_gauge"), {
+        max: 10,
+        dialStartAngle: -90,
+        dialEndAngle: -90.001,
+        value: 0,
+        label: function(value) {
+          return Math.round(value) + " / " + this.max;
+        }})
+      schools_gauge.setValueAnimated(this.props.user.schools, 1);
+  }
+
+
+
+
   render() {
 
     return (
       <div>
+
+        <div id="gauge1"></div>
+
       <h4>{this.props.apartment.address}</h4>
 
       <h2>Score: <DonutChart color='orange' value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
@@ -45,16 +106,17 @@ class ResultsComponent extends Component {
       <p>Your Preferences:</p>
       <div className='row'>
 
-      <div className = 'two columns'>
-      <DonutChart value={this.props.user.commute} size='80' strokewidth='16'/>
+      <div className = 'two columns' id="commute_gauge">
       <p>Commute</p>
       </div>
-      <div className = 'two columns'>
-      <DonutChart value={this.props.user.safety} size='80' strokewidth='16'/>
+
+
+      <div className = 'two columns' id="safety_gauge">
       <p>Safety</p>
       </div>
-      <div className = 'two columns'>
-      <DonutChart value={this.props.user.schools} size='80' strokewidth='16'/>
+
+
+      <div className = 'two columns'id="schools_gauge"> 
       <p>Schools</p>
       </div>
       <div className = 'two columns'>

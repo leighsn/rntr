@@ -1,0 +1,119 @@
+body {
+  background-color: rgba(0,0,0,0.8);
+  color: #999;
+  font-family: Hevletica, sans-serif;
+}
+
+div.info {
+  clear: both;
+  padding: 10px;
+  font-size: 0.9em;
+}
+a.link {
+  color: rgb(47, 227, 255);
+  text-decoration: none;
+}
+
+div.warn {
+  font-size: 0.8em;
+  color: white;
+  padding: 0 10px;
+}
+
+/* ------ General Donut Settings ---------- */
+#gauge1, #safety_gauge, #commute_gauge #schools_gauge {
+  width: 150px;
+  height: 150px;
+  display: block;
+  float: left;
+  padding: 10px;
+  background-color: none;
+  margin: 7px;
+  border-radius: 3px;
+}
+
+/* ------ Score ---------- */
+#gauge1 > .gauge > .dial {
+  stroke: #334455;
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+
+
+#gauge1 > .gauge > .value {
+  stroke: rgb(255, 75, 75);
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+#gauge1 > .gauge > .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 8em;
+}
+
+/* ------ Safety ---------- */
+#safety_gauge > .gauge > .dial {
+  stroke: #334455;
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+
+
+#safety_gauge > .gauge > .value {
+  stroke: rgb(255, 75, 75);
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+#safety_gauge > .gauge > .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 8em;
+}
+
+/* ------ Commute---------- */
+#commute_gauge > .gauge > .dial {
+  stroke: #334455;
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+
+
+#commute_gauge > .gauge > .value {
+  stroke: rgb(255, 75, 75);
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+#commute_gauge > .gauge > .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 8em;
+}
+
+
+
+
+/* ------ Schools --------- */
+#schools_gauge > .gauge > .dial {
+  stroke: #334455;
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+
+
+#schools_gauge > .gauge > .value {
+  stroke: rgb(255, 75, 75);
+  stroke-width: 50;
+  fill: rgba(0,0,0,0);
+}
+#schools_gauge > .gauge > .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 8em;
+}
+
+
+

@@ -2893,3 +2893,714 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 125ms (Views: 1.7ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 14:37:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 85ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 14:38:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (2.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 87ms (Views: 1.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-08 14:38:46 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"Oak Harbor Rd, Trumansburg, NY 14886, USA", "zip"=>"14886"}, "user_id"=>10, "apt"=>{"address"=>{"destination"=>"Oak Harbor Rd, Trumansburg, NY 14886, USA", "zip"=>"14886"}, "user_id"=>10}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 10], ["address", "Oak Harbor Rd, Trumansburg, NY 14886, USA"], ["zip", "14886"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 20], ["felonies", 0], ["misdemeanors", 0], ["violations", 0]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 20], ["duration", "254"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 20], ["a_schools", 0], ["b_schools", 0], ["c_schools", 0], ["d_schools", 0], ["f_schools", 0]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 20], ["count", 0], ["name", "coffee"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 20], ["count", 0], ["name", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 20], ["count", 0], ["name", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 4959ms (Views: 0.7ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 14:45:09 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.7ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.4ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.5ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 46ms (Views: 3.3ms | ActiveRecord: 3.9ms)
+
+
+Started PATCH "/users/10" for 127.0.0.1 at 2016-12-08 14:45:38 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"11 Broadway, New York, NY 10004, USA", "commute"=>10, "schools"=>1, "amenities"=>1, "safety"=>10, "category_1"=>"coffee", "category_2"=>"dry clean", "category_3"=>"grocery"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMH0.aBSm1ZLGLD11En-LnlfmITOn3e4S4zwmbxmFGABpxXM", "id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "s@s"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "commute" = $1, "safety" = $2, "category_2" = $3, "category_3" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["commute", 10], ["safety", 10], ["category_2", "dry clean"], ["category_3", "grocery"], ["updated_at", 2016-12-08 19:45:39 UTC], ["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 65ms (Views: 0.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-08 14:46:02 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"1 Montague St, Brooklyn, NY 11201, USA", "zip"=>"11201"}, "user_id"=>10, "apt"=>{"address"=>{"destination"=>"1 Montague St, Brooklyn, NY 11201, USA", "zip"=>"11201"}, "user_id"=>10}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 10], ["address", "1 Montague St, Brooklyn, NY 11201, USA"], ["zip", "11201"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 21], ["felonies", 22], ["misdemeanors", 38], ["violations", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 21], ["duration", "12"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 21], ["a_schools", 3], ["b_schools", 6], ["c_schools", 5], ["d_schools", 2], ["f_schools", 0]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 21], ["count", 5], ["name", "coffee"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 21], ["count", 5], ["name", "dry clean"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 21], ["count", 1], ["name", "grocery"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+Completed 200 OK in 22191ms (Views: 1.6ms | ActiveRecord: 22.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 14:59:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 156ms (Views: 2.1ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-08 14:59:55 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"Oak Harbor Rd, Trumansburg, NY 14886, USA", "zip"=>"14886"}, "user_id"=>1, "apt"=>{"address"=>{"destination"=>"Oak Harbor Rd, Trumansburg, NY 14886, USA", "zip"=>"14886"}, "user_id"=>1}}
+  [1m[35m (7.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["address", "Oak Harbor Rd, Trumansburg, NY 14886, USA"], ["zip", "14886"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 22], ["felonies", 0], ["misdemeanors", 0], ["violations", 0]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 22], ["duration", "254"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 22], ["a_schools", 0], ["b_schools", 0], ["c_schools", 0], ["d_schools", 0], ["f_schools", 0]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 22], ["count", 0], ["name", "Coffee"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 22], ["count", 0], ["name", "Dry Clean"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 22], ["count", 0], ["name", "Grocery"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.7ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 22], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.7ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 22], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.6ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 22], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 22]]
+Completed 200 OK in 5624ms (Views: 1.4ms | ActiveRecord: 53.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 15:48:57 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 119ms (Views: 8.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:29:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (2.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 113ms (Views: 6.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:29:49 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.6ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.9ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.6ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.5ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 41ms (Views: 1.1ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:32:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 86ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:32:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 89ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:33:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 86ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:33:15 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.5ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:37:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 85ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:37:36 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:38:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 86ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:38:11 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.6ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:39:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 86ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:39:25 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.6ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:43:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 86ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:43:26 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.4ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:43:59 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:47:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 88ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:47:32 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:53:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 91ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:53:04 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 16:58:09 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 87ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 16:58:13 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.5ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 18ms (Views: 1.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:02:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 87ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:02:27 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 19ms (Views: 0.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:03:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 87ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:03:30 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apts/21" for 127.0.0.1 at 2016-12-08 17:03:50 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"21", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+Completed 200 OK in 11ms (Views: 1.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/apts/21" for 127.0.0.1 at 2016-12-08 17:03:55 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"21", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:06:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 91ms (Views: 2.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:06:18 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:07:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 85ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:07:16 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:07:49 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:20:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 149ms (Views: 7.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:20:04 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (1.0ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.7ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 31ms (Views: 3.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:21:47 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:28:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 106ms (Views: 4.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:28:13 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 19ms (Views: 1.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:29:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 85ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:29:42 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.4ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:30:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 87ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:30:38 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:30:44 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/apts/21" for 127.0.0.1 at 2016-12-08 17:30:55 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"21", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:31:22 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/apts/21" for 127.0.0.1 at 2016-12-08 17:31:52 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"21", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (1.5ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 21], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 21]]
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:32:26 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:33:09 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.2ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.2ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-08 17:35:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"s@s", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@s"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 94ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apts/20" for 127.0.0.1 at 2016-12-08 17:35:45 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"20", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.2ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+  [1m[36mAptAmenity Load (0.2ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 20]]
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 2.1ms)
+
+

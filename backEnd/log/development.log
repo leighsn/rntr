@@ -2649,3 +2649,287 @@ NoMethodError (undefined method `split' for nil:NilClass):
 app/adapters/crime_adapter.rb:27:in `toLatLong'
 app/adapters/crime_adapter.rb:6:in `get_crime'
 app/controllers/apts_controller.rb:48:in `create'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:09:19 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:10:28 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:11:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 189ms (Views: 12.1ms | ActiveRecord: 24.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:16:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 91ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:18:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 89ms (Views: 3.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-07 22:18:42 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"h@h.com", "password"=>"[FILTERED]"}}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h.com"], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "h@h.com"], ["password_digest", "$2a$10$vxQf6p9TX0vrEVq5udgKVO7xj.Pdukr9EaTJHVt9imHlZ3rViRCZ2"], ["created_at", 2016-12-08 03:18:43 UTC], ["updated_at", 2016-12-08 03:18:43 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 146ms (Views: 0.3ms | ActiveRecord: 12.1ms)
+
+
+Started PATCH "/users/7" for 127.0.0.1 at 2016-12-07 22:19:28 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"prefState"=>{"destination"=>"11 Broadway, New York, NY 10004, USA", "commute"=>8, "schools"=>1, "amenities"=>2, "safety"=>10, "category_1"=>"Coffee", "category_2"=>"Dry Clean", "category_3"=>"Grocery", "zip"=>"United States"}, "token"=>"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3fQ.i1gbFEnTEvUDaBZEZsafAtuguspxZzJ4C8h04dV-_Ck", "id"=>"7", "user"=>{}}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Unpermitted parameter: zip
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "h@h.com"], ["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "destination" = $1, "commute" = $2, "schools" = $3, "amenities" = $4, "safety" = $5, "category_1" = $6, "category_2" = $7, "category_3" = $8, "updated_at" = $9 WHERE "users"."id" = $10[0m  [["destination", "11 Broadway, New York, NY 10004, USA"], ["commute", 8], ["schools", 1], ["amenities", 2], ["safety", 10], ["category_1", "Coffee"], ["category_2", "Dry Clean"], ["category_3", "Grocery"], ["updated_at", 2016-12-08 03:19:28 UTC], ["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-07 22:19:50 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"1051 78th St, Brooklyn, NY 11228, USA", "zip"=>"11228"}, "user_id"=>7, "apt"=>{"address"=>{"destination"=>"1051 78th St, Brooklyn, NY 11228, USA", "zip"=>"11228"}, "user_id"=>7}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 7], ["address", "1051 78th St, Brooklyn, NY 11228, USA"], ["zip", "11228"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 13], ["felonies", 13], ["misdemeanors", 23], ["violations", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 13], ["duration", "18"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 13], ["a_schools", 3], ["b_schools", 3], ["c_schools", 0], ["d_schools", 0], ["f_schools", 0]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 13], ["count", 0], ["name", "Coffee"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 13], ["count", 0], ["name", "Dry Clean"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 13], ["count", 0], ["name", "Grocery"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.5ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 13]]
+Completed 200 OK in 6248ms (Views: 0.6ms | ActiveRecord: 57.6ms)
+
+
+Started GET "/apts/13" for 127.0.0.1 at 2016-12-07 22:20:06 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"13", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 13]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 13]]
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:20:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 2.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/apts" for 127.0.0.1 at 2016-12-07 22:21:48 -0500
+Processing by AptsController#create as HTML
+  Parameters: {"address"=>{"destination"=>"1 Park Ave, New York, NY 10016, USA", "zip"=>"10016"}, "user_id"=>1, "apt"=>{"address"=>{"destination"=>"1 Park Ave, New York, NY 10016, USA", "zip"=>"10016"}, "user_id"=>1}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "apartments" ("user_id", "address", "zip") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["address", "1 Park Ave, New York, NY 10016, USA"], ["zip", "10016"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apt_crimes" ("apartment_id", "felonies", "misdemeanors", "violations") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["apartment_id", 14], ["felonies", 118], ["misdemeanors", 156], ["violations", 42]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_commutes" ("apartment_id", "duration") VALUES ($1, $2) RETURNING "id"[0m  [["apartment_id", 14], ["duration", "17"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_schools" ("apartment_id", "a_schools", "b_schools", "c_schools", "d_schools", "f_schools") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["apartment_id", 14], ["a_schools", 1], ["b_schools", 0], ["c_schools", 1], ["d_schools", 0], ["f_schools", 0]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 14], ["count", 20], ["name", "Coffee"]]
+  [1m[35m (98.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 14], ["count", 20], ["name", "Dry Clean"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "apt_amenities" ("apartment_id", "count", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["apartment_id", 14], ["count", 20], ["name", "Grocery"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 14], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.3ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 14], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 14]]
+Completed 200 OK in 12032ms (Views: 0.7ms | ActiveRecord: 119.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-12-07 22:22:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"krissa.santos31@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krissa.santos31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments" WHERE "apartments"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 90ms (Views: 3.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apts/1" for 127.0.0.1 at 2016-12-07 22:22:54 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"1", "apt"=>{}}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.4ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 1]]
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/apts/4" for 127.0.0.1 at 2016-12-07 22:22:58 -0500
+Processing by AptsController#show as HTML
+  Parameters: {"id"=>"4", "apt"=>{}}
+  [1m[36mApartment Load (0.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAptSchool Load (0.3ms)[0m  [1m[34mSELECT  "apt_schools".* FROM "apt_schools" WHERE "apt_schools"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 4], ["LIMIT", 1]]
+  [1m[36mAptCommute Load (0.4ms)[0m  [1m[34mSELECT  "apt_commutes".* FROM "apt_commutes" WHERE "apt_commutes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 4], ["LIMIT", 1]]
+  [1m[36mAptCrime Load (0.3ms)[0m  [1m[34mSELECT  "apt_crimes".* FROM "apt_crimes" WHERE "apt_crimes"."apartment_id" = $1 LIMIT $2[0m  [["apartment_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "apt_amenities"."count" FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 4]]
+  [1m[36mAptAmenity Load (0.3ms)[0m  [1m[34mSELECT "apt_amenities".* FROM "apt_amenities" WHERE "apt_amenities"."apartment_id" = $1[0m  [["apartment_id", 4]]
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+

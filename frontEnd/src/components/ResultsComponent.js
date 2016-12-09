@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router'
-import DonutChart from './DonutChart'
 import AnimatedDonut from './AnimatedDonut'
+import SavedSearchesComponent from './SavedSearchesComponent'
 import Gauge from 'svg-gauge'
 import '../../public/animated_donut.css'
 
@@ -151,12 +151,16 @@ class ResultsComponent extends Component {
   render() {
     return (
       <div id="results-padding">
-        <div id="gauge1"className = 'four columns'></div>
-        <h4>{this.props.apartment.address}</h4>
-        <iframe width="450" height="250" frameborder="0" src={this.props.apartment.map}>
-        </iframe>
-
-        <p>
+        <div className="row">
+          <center id="gauge1" className='six columns'></center>
+          <div className="six columns">
+            <h4>{this.props.apartment.address}</h4>
+            <iframe width="450" height="250" frameborder="0" src={this.props.apartment.map}>
+            </iframe>
+          </div>
+        </div>
+        <br/>
+        <p className="twelve columns">
           Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.
           <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>
         </p>
@@ -177,16 +181,22 @@ class ResultsComponent extends Component {
             </div>
           </center>
         </div>
-        <ul>
-          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>
-          <li>{this.props.apartment.data.school_data.b_schools} schools nearby were given a grade of 'B'</li>
-          <li>{this.props.apartment.data.school_data.c_schools} schools nearby were given a grade of 'C'</li>
-          <li>{this.props.apartment.data.school_data.d_schools} schools nearby were given a grade of 'D'</li>
-          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_1.name}"</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_2.name}"</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_3.name}"</li>
-        </ul>
+        <div className="row">
+          <div className="six columns">
+            <h4>Breakdown of Results:</h4>
+            <ul>
+              <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>
+              <li>{this.props.apartment.data.school_data.b_schools} schools nearby were given a grade of 'B'</li>
+              <li>{this.props.apartment.data.school_data.c_schools} schools nearby were given a grade of 'C'</li>
+              <li>{this.props.apartment.data.school_data.d_schools} schools nearby were given a grade of 'D'</li>
+              <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
+              <li>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_1.name}"</li>
+              <li>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_2.name}"</li>
+              <li>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_3.name}"</li>
+            </ul>
+          </div>
+          <SavedSearchesComponent />
+        </div>
       </div>
     )
   }

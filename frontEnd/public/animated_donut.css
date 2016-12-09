@@ -1,6 +1,5 @@
 body {
   background-color: rgba(0,0,0,0.8);
-  color: #999;
   font-family: Hevletica, sans-serif;
 }
 
@@ -26,7 +25,6 @@ div.warn {
 
 #gauge1{
   width: 300px;
-  height: 300px;
   display: inline-table;
   float: left;
   padding: 10px;
@@ -148,7 +146,3 @@ div.warn {
   font-weight: lighter;
   font-size: 8em;
 }
-
-
-
-

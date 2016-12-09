@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { aptSearch } from '../actions/action'
 import { browserHistory } from 'react-router'
+import SavedSearchesComponent from './SavedSearchesComponent'
 
 import Autocomplete from 'react-google-autocomplete';
 
@@ -34,7 +35,7 @@ class ApartmentSearchComponent extends Component {
           <label id="destination">Enter an address in New York City:</label>
           <Autocomplete
             id="destination"
-            style={{width: '30%'}}
+            style={{width: '50%'}}
             onPlaceSelected={(place) => {
               this.setState({"destination": place.formatted_address})
               let zip = place.address_components.find((component)=>{

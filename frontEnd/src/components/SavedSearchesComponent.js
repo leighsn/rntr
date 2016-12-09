@@ -11,32 +11,32 @@ class SavedSearchesComponent extends Component {
   handleClick(event){
     event.preventDefault()
     this.props.showApartment(event.target.id)
-    }
+  }
 
   handleDelete(event){
     event.preventDefault()
     this.props.deleteSearch(event.target.parentNode.id)
+    event.stopPropagation()
   }
 
   render(){
     return(
-      <div id="saved-list" className="three columns">
-        <ul>
+      <div id="saved-list" className="six columns">
+        <h4>Previous Searches:</h4>
         {this.props.savedSearches.map(search => {
-          return <button><li id={search.id} >
-            <FontAwesome
-              className='fa fa-times'
-              onClick={this.handleDelete.bind(this)}
-              name='x'
-              size='1x'
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
-            <span id={search.id} onClick={this.handleClick.bind(this)}>
-              {search.address}
-            </span></li>
-          </button>
+          return <div>
+            <button style={{zIndex: 0}} id={search.id} onClick={this.handleClick.bind(this)}>
+              <FontAwesome
+                className='fa fa-times'
+                onClick={this.handleDelete.bind(this)}
+                name='x'
+                size='1x'
+                style={{ padding: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', zIndex: 1 }}
+              />
+              <span id={search.id}>  {search.address.split(',')[0]}</span>
+            </button>
+          </div>
         })}
-        </ul>
       </div>
     )
   }

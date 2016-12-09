@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApartmentSearchComponent from './ApartmentSearchComponent'
-import ResultsComponent from './ResultsComponent'
+import SavedSearchesComponent from './SavedSearchesComponent'
 
 export default class MainPage extends Component {
 
@@ -8,7 +8,7 @@ export default class MainPage extends Component {
     return(
       <div>
         <ApartmentSearchComponent />
-        <ResultsComponent />
+        <SavedSearchesComponent />
       </div>
     )
   }

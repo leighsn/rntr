@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import logo from '../logo.svg';
 import '../App.css';
 import { Link } from 'react-router'
-
+import ApartmentSearchComponent from './ApartmentSearchComponent'
+import ResultsComponent from './ResultsComponent'
 
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
@@ -15,8 +16,8 @@ class App extends Component {
         <h1><Link to='/' id='logo'>RNTR</Link></h1>
         <div className="container">
         <LinkComponent />
-        {this.props.children}
-      </div>
+        {this.props.children}    
+        </div>
       </div>
     );
   }

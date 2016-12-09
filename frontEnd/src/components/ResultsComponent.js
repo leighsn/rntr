@@ -13,15 +13,16 @@ class ResultsComponent extends Component {
 
   componentWillMount(){
     if(!this.props.apartment.apartment_score){
-      browserHistory.push('/')
+      browserHistory.push('search')
     }
   }
 
   componentWillReceiveProps(){
     if(!this.props.apartment.apartment_score){
-      browserHistory.push('/')
+      browserHistory.push('search')
     }
   }
+
 
   render() {
 
@@ -29,7 +30,7 @@ class ResultsComponent extends Component {
       <div>
       <h4>{this.props.apartment.address}</h4>
 
-      <h2>Score: <DonutChart color='orange' value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
+      <h2>Score: <DonutChart value={this.props.apartment.apartment_score} size='116' strokewidth='26'/></h2>
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>
       <p>Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.</p>
       <ul>

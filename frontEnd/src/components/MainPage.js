@@ -9,8 +9,12 @@ export default class MainPage extends Component {
     return(
       <div>
         <ApartmentSearchComponent />
-        <ResultsComponent />
-        <SavedSearchesComponent />
+        <div className="five columns">
+          <ResultsComponent />
+        </div>
+        <div>
+          <SavedSearchesComponent />
+        </div>
       </div>
     )
   }

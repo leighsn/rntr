@@ -20,7 +20,7 @@ class SavedSearchesComponent extends Component {
 
   render(){
     return(
-      <div id="saved-list">
+      <div id="saved-list" className="three columns">
         <ul>
         {this.props.savedSearches.map(search => {
           return <button><li id={search.id} >
@@ -30,7 +30,10 @@ class SavedSearchesComponent extends Component {
               name='x'
               size='1x'
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            /><span id={search.id} onClick={this.handleClick.bind(this)}> {search.address}</span></li>
+            />
+            <span id={search.id} onClick={this.handleClick.bind(this)}>
+              {search.address}
+            </span></li>
           </button>
         })}
         </ul>

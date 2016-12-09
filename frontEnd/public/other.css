@@ -10,9 +10,11 @@ h5 {
 
 .container {
   background-color: rgba(0, 0, 0, 0.5);
-
 }
 
+#saved-list li {
+  width: 100%
+}
 
 .fa fa-times {
     opacity: 0.10;                /* Opacity (Transparency) */
@@ -23,7 +25,7 @@ h5 {
 }
 #hr{
     padding: 2px;
-    margin: 0px;    
+    margin: 0px;
   }
 
 

@@ -30,8 +30,8 @@ class ApartmentSearchComponent extends Component {
       <div id='padding'>
         <br/>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          
-          <label id="destination">Potential Apartment:</label>
+
+          <label id="destination">Enter an address in New York City:</label>
           <Autocomplete
             id="destination"
             style={{width: '30%'}}

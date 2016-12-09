@@ -25,7 +25,6 @@ class LinkComponent extends Component {
       navbar = <ul id='nav'>
         <li><Link to='/search'>Search</Link></li>
         <li><Link to='/preferences'>Preferences</Link></li>
-        <li><Link to='saved'>Saved Searches</Link></li>
         <li><a href='javascript:' onClick={this.props.logOut}>Log Out</a></li>
       </ul>
     }

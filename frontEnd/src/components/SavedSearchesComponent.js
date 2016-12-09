@@ -6,9 +6,6 @@ import { bindActionCreators } from 'redux';
 import FontAwesome from 'react-fontawesome';
 import { deleteSearch } from '../actions/action.js'
 
-
-
-
 class SavedSearchesComponent extends Component {
 
   handleClick(event){

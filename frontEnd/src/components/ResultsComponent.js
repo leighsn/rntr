@@ -7,8 +7,6 @@ import AnimatedDonut from './AnimatedDonut'
 import Gauge from 'svg-gauge'
 import '../../public/animated_donut.css'
 
-
-
 class ResultsComponent extends Component {
   constructor(props){
     super(props)

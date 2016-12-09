@@ -6,6 +6,7 @@ import LogInComponent from './components/LogInComponent'
 import SavedSearchesComponent from './components/SavedSearchesComponent'
 import ApartmentSearchComponent from './components/ApartmentSearchComponent'
 import ResultsComponent from './components/ResultsComponent'
+import MainPage from './components/MainPage'
 import Loader from './components/Loader'
 
 import App from './components/App'
@@ -15,9 +16,8 @@ const Routes = (
     <Route path="preferences" component={PreferencesComponent} />
     <Route path="sign-up" component={SignUpComponent}/>
     <Route path="log-in" component={LogInComponent}/>
-    <Route path="results" component={ResultsComponent}/>
+    <Route path="results" component={MainPage}/>
     <Route path="loading" component={Loader}/>
-    <Route path="saved" component={SavedSearchesComponent} />
   </Route>
 )
 

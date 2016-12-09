@@ -100,22 +100,14 @@ class ResultsComponent extends Component {
       <p>Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>
 
-        <ul>
-          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>
-          <li>{this.props.apartment.data.school_data.b_schools} schools nearby were given a grade of 'B'</li>
-          <li>{this.props.apartment.data.school_data.c_schools} schools nearby were given a grade of 'C'</li>
-          <li>{this.props.apartment.data.school_data.d_schools} schools nearby were given a grade of 'D'</li>
-          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_1.name}"</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_2.name}"</li>
-          <li>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_3.name}"</li>
-        </ul>
+     
       </p>
+   
 
-
-        <div className='row'>Your Preferences:</div>
-
+        <div className='row'><h4>Your Preferences:</h4></div>
+  
         <div className='row'>
+         <center>
           <div className = 'two columns' id="commute_gauge">
             <p>Commute</p>
           </div>
@@ -134,7 +126,22 @@ class ResultsComponent extends Component {
           <div className = 'two columns' id="amenities_gauge">
             <p>Amenities</p>
           </div>
+
+     </center>
         </div>
+       
+
+           <ul>
+          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>
+          <li>{this.props.apartment.data.school_data.b_schools} schools nearby were given a grade of 'B'</li>
+          <li>{this.props.apartment.data.school_data.c_schools} schools nearby were given a grade of 'C'</li>
+          <li>{this.props.apartment.data.school_data.d_schools} schools nearby were given a grade of 'D'</li>
+          <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'F'</li>
+          <li>Yelp found {this.props.apartment.data.amenities_data.category_1.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_1.name}"</li>
+          <li>Yelp found {this.props.apartment.data.amenities_data.category_2.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_2.name}"</li>
+          <li>Yelp found {this.props.apartment.data.amenities_data.category_3.count} locations that matched the search term "{this.props.apartment.data.amenities_data.category_3.name}"</li>
+        </ul>
+
       </div>
     )
   }

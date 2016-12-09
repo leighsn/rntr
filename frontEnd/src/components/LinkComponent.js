@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import { logOut} from '../actions/action.js'
-
+import LogInComponent from './LogInComponent.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+   // navbar = <ul id='nav'>
+   //      <li><Link to='/log-in'>Log In</Link></li>
+   //    </ul>
+
 
 class LinkComponent extends Component {
 
@@ -17,6 +22,9 @@ class LinkComponent extends Component {
         <li><a href='javascript:' onClick={this.props.logOut}>Log Out</a></li>
       </ul>
     }
+    else{
+      navbar = <LogInComponent />
+       }
     return (
       <div>{navbar}</div>
     )

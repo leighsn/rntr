@@ -96,16 +96,22 @@ class ResultsComponent extends Component {
       <div id="results-padding">
         <div id="gauge1"className = 'four columns'></div>
         <h4>{this.props.apartment.address}</h4>
+        <iframe
+                width="450"
+                  height="250"
+  frameborder="0"
+  src={this.props.apartment.map} >
+  </iframe>
 
       <p>Within the past year, there were {this.props.apartment.data.crime_data.felonies} felonies, {this.props.apartment.data.crime_data.misdemeanors} misdemeanors, and {this.props.apartment.data.crime_data.violations} violations reported near the apartment.
       <p>The commute time from this apartment to your workplace is {this.props.apartment.data.distance_data} mins.</p>
 
-     
+
       </p>
-   
+
 
         <div className='row'><h4>Your Preferences:</h4></div>
-  
+
         <div className='row'>
          <center>
           <div className = 'two columns' id="commute_gauge">
@@ -119,7 +125,7 @@ class ResultsComponent extends Component {
           </div>
 
 
-          <div className = 'two columns'id="schools_gauge"> 
+          <div className = 'two columns'id="schools_gauge">
             <p>Schools</p>
           </div>
 
@@ -129,7 +135,7 @@ class ResultsComponent extends Component {
 
      </center>
         </div>
-       
+
 
            <ul>
           <li>{this.props.apartment.data.school_data.a_schools} schools nearby were given a grade of 'A'</li>

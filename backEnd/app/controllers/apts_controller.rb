@@ -35,7 +35,8 @@ class AptsController < ApplicationController
       apartment_score: score.round,
       id: apartment.id,
       address: apartment.address,
-      user_id: apartment.user.id
+      user_id: apartment.user.id,
+      map: MapAdapter.get_map(apartment.address)
     }
   end
 
@@ -62,7 +63,7 @@ class AptsController < ApplicationController
      apt_amenities1 = YelpAdapter.get_amenities(search: user.category_1, apartment: apartment)
      apt_amenities2 = YelpAdapter.get_amenities(search: user.category_2, apartment: apartment)
      apt_amenities3 = YelpAdapter.get_amenities(search: user.category_3, apartment: apartment)
-
+     map = MapAdapter.get_map(apartment.address)
      weights = calculate_weights(user)
      score = calculate_score(apartment, weights)
 
@@ -90,7 +91,8 @@ class AptsController < ApplicationController
        apartment_score: score.round,
        id: apartment.id,
        address: apartment.address,
-       user_id: user.id
+       user_id: user.id,
+       map: map
      }
   end
 

@@ -4,6 +4,7 @@ import { logOut} from '../actions/action.js'
 import LogInComponent from './LogInComponent.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router'
 
    // navbar = <ul id='nav'>
    //      <li><Link to='/log-in'>Log In</Link></li>
@@ -11,6 +12,12 @@ import { bindActionCreators } from 'redux';
 
 
 class LinkComponent extends Component {
+
+  componentWillMount(){
+    if (!this.props.userID){
+      browserHistory.push('log-in')
+  }
+}
 
   render(){
     let navbar
@@ -22,9 +29,7 @@ class LinkComponent extends Component {
         <li><a href='javascript:' onClick={this.props.logOut}>Log Out</a></li>
       </ul>
     }
-    else{
-      navbar = <LogInComponent />
-       }
+
     return (
       <div>{navbar}</div>
     )

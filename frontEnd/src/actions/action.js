@@ -40,6 +40,9 @@ const aptSearch = function(address, userID){
     }).done(function(data){
       dispatch({type: 'SHOW_SEARCH', payload: data})
       browserHistory.push('results')
+    }).fail(function(){
+      alert('Apartment not found - please try again later')
+      browserHistory.push('search')
     })
   }
 }

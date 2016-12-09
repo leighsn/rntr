@@ -23,7 +23,7 @@ h5 {
 }
 #hr{
     padding: 2px;
-    margin: 0px;    
+    margin: 0px;
   }
 
 
@@ -96,6 +96,7 @@ div#saved-list{
 div#saved-list li{
     display: inline-block;
     text-align:center
+    max-width: 20px;
 
 }
 

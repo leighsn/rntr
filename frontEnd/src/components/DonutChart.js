@@ -9,6 +9,8 @@ export default class DonutChart extends Component {
   }
 
   render() {
+    //move the logic around determining color and other circle properties out of render method
+    //create helper methods and call in contructor. Right now, constructor method has no purpose (not doing anything)
     var color
     if (this.props.value < 4){
       color = '#FF4633'

@@ -25,6 +25,7 @@ class ResultsComponent extends Component {
   }
 
   componentDidMount(){
+    //seeing lots of repetition in code to create the gauges - suggest creating a helper method to create them and re-using that
      let gauge1 = Gauge(
       document.getElementById("gauge1"), {
         max: 10,

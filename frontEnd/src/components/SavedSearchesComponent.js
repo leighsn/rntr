@@ -26,6 +26,8 @@ class SavedSearchesComponent extends Component {
         {this.props.savedSearches.map(search => {
           return <div>
             <button style={{zIndex: 0}} id={search.id} onClick={this.handleClick.bind(this)}>
+              //I'm noticing a lot of binding this when functions are passed into action handlers. Each time you bind, a function is copied.
+              //For this reason, it's better to bind in constructor so the function is only copied once
               <FontAwesome
                 className='fa fa-times'
                 onClick={this.handleDelete.bind(this)}
